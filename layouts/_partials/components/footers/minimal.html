@@ -1,0 +1,117 @@
+{{/*
+  FRANTZ LAB - INSTITUTIONAL FOOTER
+  WashU Brand Compliant
+*/}}
+
+<div class="bg-[#252525] text-white py-16">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      
+      {{/* Logo & Branding */}}
+      <div class="space-y-6">
+        {{/* WashU Logo - White version */}}
+        <div class="mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 40" class="h-10 w-auto fill-white">
+            <text x="0" y="28" font-family="Georgia, serif" font-size="16" font-weight="bold">
+              Washington University in St. Louis
+            </text>
+          </svg>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Advancing translational chemistry and drug discovery through innovative research and strategic partnerships.
+        </p>
+      </div>
+
+      {{/* Address Block */}}
+      <div class="space-y-4">
+        <h4 class="text-[#A51417] font-semibold uppercase tracking-wider text-sm mb-4">
+          Contact Information
+        </h4>
+        <div class="text-gray-300 text-sm space-y-2">
+          <p class="font-semibold text-white">Frantz Laboratory</p>
+          <p>Department of Biochemistry & Molecular Biophysics</p>
+          <p>Washington University School of Medicine</p>
+          <p>660 S. Euclid Ave., Campus Box 8231</p>
+          <p>St. Louis, MO 63110</p>
+        </div>
+        <div class="pt-4">
+          <a href="mailto:dougf@wustl.edu" 
+             class="text-gray-400 hover:text-[#A51417] transition-colors text-sm inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            dougf@wustl.edu
+          </a>
+        </div>
+      </div>
+
+      {{/* Quick Links */}}
+      <div class="space-y-4">
+        <h4 class="text-[#A51417] font-semibold uppercase tracking-wider text-sm mb-4">
+          Quick Links
+        </h4>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="/research/" class="text-gray-400 hover:text-white transition-colors">
+              Research Programs
+            </a>
+          </li>
+          <li>
+            <a href="/innovation/" class="text-gray-400 hover:text-white transition-colors">
+              Innovation & Commercialization
+            </a>
+          </li>
+          <li>
+            <a href="/publication/" class="text-gray-400 hover:text-white transition-colors">
+              Publications
+            </a>
+          </li>
+          <li>
+            <a href="/team/" class="text-gray-400 hover:text-white transition-colors">
+              Our Team
+            </a>
+          </li>
+          <li>
+            <a href="https://biochem.wustl.edu/" target="_blank" rel="noopener" 
+               class="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1">
+              Department of Biochemistry
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://wustl.edu/" target="_blank" rel="noopener" 
+               class="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1">
+              WashU Main Site
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {{/* Bottom Bar */}}
+    <div class="mt-12 pt-8 border-t border-gray-700">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-sm">
+          © {{ now.Year }} Washington University in St. Louis. All rights reserved.
+        </p>
+        <div class="flex items-center gap-6 text-sm text-gray-500">
+          <a href="https://wustl.edu/about/compliance-policies/privacy-policy/" 
+             target="_blank" rel="noopener"
+             class="hover:text-gray-300 transition-colors">
+            Privacy Policy
+          </a>
+          <a href="https://wustl.edu/about/compliance-policies/accessibility/" 
+             target="_blank" rel="noopener"
+             class="hover:text-gray-300 transition-colors">
+            Accessibility
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

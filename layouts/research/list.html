@@ -1,0 +1,142 @@
+{{ define "main" }}
+{{/*
+  FRANTZ LAB - RESEARCH SECTION
+  Three Pillars Layout with Interactive Cards
+*/}}
+
+{{/* Hero header */}}
+<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#1A1A1A] dark:to-[#171717]">
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="max-w-3xl">
+      <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+          style="font-family: 'Source Sans Pro', sans-serif;">
+        Research Programs
+      </h3>
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] dark:text-white mb-6"
+          style="font-family: 'Libre Baskerville', Georgia, serif;">
+        {{ .Title | default "Translational Chemistry & Drug Discovery" }}
+      </h1>
+      <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
+      <p class="text-gray-600 dark:text-gray-400 text-xl leading-relaxed"
+         style="font-family: 'Source Sans Pro', sans-serif;">
+        {{ .Summary | default "Integrated expertise spanning synthetic methodology, chemical screening, and translational biology to accelerate drug discovery." }}
+      </p>
+    </div>
+  </div>
+</section>
+
+{{/* Research Pillars Grid */}}
+<section class="py-16 lg:py-24 bg-white dark:bg-[#171717]">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    
+    {{/* Section intro */}}
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-bold text-[#252525] dark:text-white mb-4"
+          style="font-family: 'Libre Baskerville', Georgia, serif;">
+        Our Research Focus Areas
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg"
+         style="font-family: 'Source Sans Pro', sans-serif;">
+        Click on each area to explore our research programs in detail.
+      </p>
+    </div>
+    
+    {{/* Cards grid */}}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {{ range .Pages }}
+      <article class="group bg-white dark:bg-[#1F1F1F] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl 
+                     transition-all duration-500 hover:-translate-y-2 cursor-pointer border border-gray-100 dark:border-gray-800">
+        <a href="{{ .RelPermalink }}" class="block">
+          {{/* Card image if available */}}
+          {{ $image := .Resources.GetMatch "featured*" }}
+          {{ if $image }}
+          <div class="relative h-48 overflow-hidden">
+            <img src="{{ $image.RelPermalink }}" 
+                 alt="{{ .Title }}" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          </div>
+          {{ else }}
+          <div class="h-4 bg-gradient-to-r from-[#A51417] to-[#8B1114] group-hover:h-2 transition-all duration-300"></div>
+          {{ end }}
+          
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-[#252525] dark:text-white mb-3 group-hover:text-[#A51417] transition-colors"
+                style="font-family: 'Libre Baskerville', Georgia, serif;">
+              {{ .Title }}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
+               style="font-family: 'Source Sans Pro', sans-serif;">
+              {{ .Summary }}
+            </p>
+            <span class="inline-flex items-center gap-2 text-[#A51417] font-semibold text-sm uppercase tracking-wider
+                        group-hover:gap-3 transition-all duration-300">
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* Collaborations callout */}}
+<section class="py-16 bg-gray-50 dark:bg-[#1A1A1A]">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="bg-[#252525] text-white rounded-lg p-8 lg:p-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+              style="font-family: 'Source Sans Pro', sans-serif;">
+            Collaborative Research
+          </h3>
+          <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4"
+              style="font-family: 'Libre Baskerville', Georgia, serif;">
+            Industry-Academic Partnerships
+          </h2>
+          <p class="text-gray-300 mb-6"
+             style="font-family: 'Source Sans Pro', sans-serif;">
+            Our research programs are developed in close collaboration with pharmaceutical 
+            industry partners including Bristol-Myers Squibb, enabling rapid translation 
+            of academic discoveries into practical applications.
+          </p>
+          <a href="/innovation/" 
+             class="inline-flex items-center gap-2 px-6 py-3
+                    bg-[#A51417] text-white font-semibold text-sm uppercase tracking-wider
+                    rounded hover:bg-[#8B1114] transition-all duration-300">
+            Explore Partnerships
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-4 text-center">
+          <div class="bg-white/5 backdrop-blur p-6 rounded-lg">
+            <div class="text-3xl font-bold text-[#A51417]">65+</div>
+            <div class="text-sm text-gray-400 mt-1">Publications</div>
+          </div>
+          <div class="bg-white/5 backdrop-blur p-6 rounded-lg">
+            <div class="text-3xl font-bold text-[#A51417]">20+</div>
+            <div class="text-sm text-gray-400 mt-1">Years Research</div>
+          </div>
+          <div class="bg-white/5 backdrop-blur p-6 rounded-lg">
+            <div class="text-3xl font-bold text-[#A51417]">3</div>
+            <div class="text-sm text-gray-400 mt-1">Research Pillars</div>
+          </div>
+          <div class="bg-white/5 backdrop-blur p-6 rounded-lg">
+            <div class="text-3xl font-bold text-[#A51417]">5+</div>
+            <div class="text-sm text-gray-400 mt-1">Active Programs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

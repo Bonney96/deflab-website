@@ -1,0 +1,1025 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   FRANTZ LABORATORY - WASHU BRAND DESIGN SYSTEM
+   Washington University in St. Louis
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   1. CSS VARIABLES - STRICT BRAND COMPLIANCE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Primary Brand Colors - WASHU Official */
+  --washu-red: #A51417;
+  --washu-red-dark: #8B1114;
+  --washu-red-light: #C41E22;
+  --washu-dark-gray: #252525;
+  --washu-charcoal: #1A1A1A;
+  
+  /* Neutral Supports */
+  --light-gray: #F5F5F5;
+  --off-white: #FAFAFA;
+  --pure-white: #FFFFFF;
+  --border-color: #E0E0E0;
+  --border-subtle: #EBEBEB;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-bg-dark: rgba(37, 37, 37, 0.95);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 2px 15px rgba(0, 0, 0, 0.08);
+  
+  /* Typography */
+  --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Spacing */
+  --section-padding: clamp(3rem, 8vw, 6rem);
+  --container-padding: clamp(1rem, 5vw, 3rem);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-smooth: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Dark mode overrides */
+.dark {
+  --light-gray: #1F1F1F;
+  --off-white: #171717;
+  --border-color: #333333;
+  --border-subtle: #2A2A2A;
+  --glass-bg: rgba(37, 37, 37, 0.95);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2. TYPOGRAPHY SYSTEM
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Load Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+
+/* Headings - Serif, Authoritative */
+h1, h2, .heading-serif {
+  font-family: var(--font-serif);
+  color: var(--washu-dark-gray);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.dark h1, .dark h2, .dark .heading-serif {
+  color: var(--pure-white);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+/* Subheadings - Sans-serif, Tracked */
+h3, h4, .heading-sans {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--washu-red);
+}
+
+/* Body Text */
+body, p, li {
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  color: #444;
+}
+
+.dark body, .dark p, .dark li {
+  color: #D1D5DB;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   3. CUSTOM NAVBAR - STICKY WITH INNOVATION HIGHLIGHT
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.header {
+  background: var(--pure-white);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all var(--transition-smooth);
+}
+
+.dark .header {
+  background: var(--washu-charcoal);
+  border-bottom-color: #333;
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+/* Brand name */
+.navbar-brand {
+  font-family: var(--font-sans) !important;
+  font-weight: 600 !important;
+  font-size: 1.25rem !important;
+  color: var(--washu-dark-gray) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.02em;
+}
+
+.dark .navbar-brand {
+  color: var(--pure-white) !important;
+}
+
+/* Navigation links */
+.nav-link {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--washu-dark-gray);
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color var(--transition-base);
+}
+
+.dark .nav-link {
+  color: #E5E5E5;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--washu-red);
+  transition: width var(--transition-smooth);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--washu-red);
+}
+
+/* Innovation menu item highlight */
+.nav-item-innovation .nav-link {
+  font-weight: 700;
+  color: var(--washu-red);
+}
+
+.nav-item-innovation .nav-link::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 18px;
+  background: var(--washu-red);
+  border-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   4. HERO SECTION - CINEMATIC WITH GLASSMORPHISM
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* Red accent line */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: var(--washu-red);
+  z-index: 10;
+}
+
+/* Gradient overlay */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  margin-left: 8%;
+  max-width: 680px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 3rem 3.5rem;
+  border-left: 5px solid var(--washu-red);
+  box-shadow: var(--shadow-hover);
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--washu-dark-gray);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-tagline {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--washu-red);
+  margin-bottom: 1rem;
+}
+
+/* Hero CTA Buttons */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   5. BUTTONS - DUAL AUDIENCE (STUDENTS vs INDUSTRY)
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.btn {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.875rem 2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Primary button - Red (For Students) */
+.btn-primary {
+  background: var(--washu-red);
+  color: var(--pure-white);
+  border: 2px solid var(--washu-red);
+}
+
+.btn-primary:hover {
+  background: var(--washu-red-dark);
+  border-color: var(--washu-red-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Secondary button - Outline (For Industry) */
+.btn-secondary {
+  background: transparent;
+  color: var(--washu-dark-gray);
+  border: 2px solid var(--washu-dark-gray);
+}
+
+.btn-secondary:hover {
+  background: var(--washu-dark-gray);
+  color: var(--pure-white);
+  transform: translateY(-2px);
+}
+
+/* Dark button - Dark Gray */
+.btn-dark {
+  background: var(--washu-dark-gray);
+  color: var(--pure-white);
+  border: 2px solid var(--washu-dark-gray);
+}
+
+.btn-dark:hover {
+  background: var(--washu-red);
+  border-color: var(--washu-red);
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   6. RESEARCH PILLAR CARDS - INTERACTIVE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.pillar-card {
+  background: var(--pure-white);
+  padding: 2.5rem;
+  border-top: 4px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-bounce);
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+}
+
+.dark .pillar-card {
+  background: var(--washu-charcoal);
+  border-top-color: #333;
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--washu-red);
+  transition: width var(--transition-smooth);
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.pillar-card:hover::before {
+  width: 100%;
+}
+
+.pillar-card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.5rem;
+  color: var(--washu-red);
+  stroke-width: 1.5;
+}
+
+.pillar-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--washu-dark-gray);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.dark .pillar-card-title {
+  color: var(--pure-white);
+}
+
+.pillar-card-description {
+  font-family: var(--font-sans);
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.dark .pillar-card-description {
+  color: #9CA3AF;
+}
+
+.pillar-card-link {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--washu-red);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap var(--transition-base);
+}
+
+.pillar-card-link:hover {
+  gap: 0.75rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   7. INNOVATION SECTION - VC/BIOTECH AESTHETIC
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.innovation-section {
+  background: linear-gradient(135deg, var(--washu-dark-gray) 0%, #1A1A1A 100%);
+  color: var(--pure-white);
+  padding: var(--section-padding) 0;
+}
+
+.innovation-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 0 var(--container-padding);
+}
+
+.innovation-header h2 {
+  color: var(--pure-white);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.innovation-header .subtitle {
+  font-size: 1.25rem;
+  color: #9CA3AF;
+  font-weight: 300;
+}
+
+/* Pipeline Timeline */
+.pipeline-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.pipeline-timeline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--washu-red), #666);
+}
+
+.pipeline-stage {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.pipeline-stage-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--washu-red);
+  margin: 0 auto 1rem;
+  border: 3px solid var(--washu-dark-gray);
+}
+
+.pipeline-stage-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Partner Logos */
+.partner-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.partner-logo {
+  filter: grayscale(100%) brightness(0.8);
+  opacity: 0.7;
+  transition: all var(--transition-smooth);
+  max-height: 50px;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   8. TEAM SECTION - HIERARCHY
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.team-card {
+  text-align: center;
+  background: var(--pure-white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-smooth);
+}
+
+.dark .team-card {
+  background: var(--washu-charcoal);
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-card-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+  border: 4px solid var(--border-subtle);
+  transition: border-color var(--transition-base);
+}
+
+.team-card:hover .team-card-image {
+  border-color: var(--washu-red);
+}
+
+.team-card-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--washu-dark-gray);
+  margin-bottom: 0.25rem;
+}
+
+.dark .team-card-name {
+  color: var(--pure-white);
+}
+
+.team-card-role {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--washu-red);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.team-card-email {
+  font-size: 0.875rem;
+  color: #666;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team-card-email:hover {
+  color: var(--washu-red);
+}
+
+/* Alumni Table */
+.alumni-section {
+  background: var(--light-gray);
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.dark .alumni-section {
+  background: #1A1A1A;
+}
+
+.alumni-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--pure-white);
+  box-shadow: var(--shadow-card);
+}
+
+.dark .alumni-table {
+  background: var(--washu-charcoal);
+}
+
+.alumni-table th {
+  background: var(--washu-dark-gray);
+  color: var(--pure-white);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.alumni-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.9rem;
+}
+
+.alumni-table tr:hover td {
+  background: var(--off-white);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   9. PUBLICATIONS - FEATURED & SCANNABLE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.publications-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--section-padding) var(--container-padding);
+}
+
+.publication-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all var(--transition-base);
+}
+
+.publication-item:hover {
+  padding-left: 1rem;
+  border-left: 3px solid var(--washu-red);
+}
+
+.publication-number {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--washu-red);
+  margin-right: 0.5rem;
+}
+
+.publication-authors {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.publication-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--washu-dark-gray);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.dark .publication-title {
+  color: var(--pure-white);
+}
+
+.publication-journal {
+  font-style: italic;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* High-impact journals highlighted */
+.publication-journal.high-impact {
+  color: var(--washu-red);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.publication-doi {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.publication-doi a {
+  color: var(--washu-red);
+  text-decoration: none;
+}
+
+.publication-doi a:hover {
+  text-decoration: underline;
+}
+
+/* Featured publications */
+.publication-featured {
+  background: var(--off-white);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--washu-red);
+}
+
+.dark .publication-featured {
+  background: #1F1F1F;
+}
+
+.publication-featured .publication-title {
+  font-size: 1.25rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   10. FOOTER - INSTITUTIONAL
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.site-footer {
+  background: var(--washu-dark-gray);
+  color: var(--pure-white);
+  padding: 4rem var(--container-padding) 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.footer-logo img {
+  max-width: 280px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-address {
+  font-family: var(--font-sans);
+  line-height: 1.8;
+  color: #9CA3AF;
+}
+
+.footer-address strong {
+  color: var(--pure-white);
+  font-weight: 600;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #444;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #9CA3AF;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   11. SECTION HEADERS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  padding: 0 var(--container-padding);
+}
+
+.section-header h2 {
+  margin-bottom: 1rem;
+}
+
+.section-header .lead {
+  font-size: 1.125rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+.dark .section-header .lead {
+  color: #9CA3AF;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--washu-red);
+  margin: 1.5rem auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   12. UTILITY CLASSES
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.text-washu-red { color: var(--washu-red); }
+.bg-washu-red { background-color: var(--washu-red); }
+.border-washu-red { border-color: var(--washu-red); }
+
+.text-washu-gray { color: var(--washu-dark-gray); }
+.bg-washu-gray { background-color: var(--washu-dark-gray); }
+
+.bg-light-section { background-color: var(--light-gray); }
+.bg-dark-section { background-color: var(--washu-dark-gray); color: var(--pure-white); }
+
+.container-narrow { max-width: 800px; margin: 0 auto; }
+.container-wide { max-width: 1400px; margin: 0 auto; }
+
+/* Responsive padding */
+.section-padding {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   13. ANIMATIONS & MICRO-INTERACTIONS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+
+/* Link hover transitions */
+a {
+  transition: color var(--transition-base);
+}
+
+/* Image lazy loading placeholder */
+img[loading="lazy"] {
+  background: var(--light-gray);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   14. RESPONSIVE ADJUSTMENTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .hero-content {
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .hero-content {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pipeline-timeline {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .pipeline-timeline::before {
+    width: 2px;
+    height: 80%;
+    top: 10%;
+    left: 50%;
+    right: auto;
+  }
+  
+  /* Innovation link prominent in mobile menu */
+  .nav-item-innovation {
+    background: var(--off-white);
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid var(--washu-red);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   15. ACCESSIBILITY - WCAG 2.1 COMPLIANCE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Focus states */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--washu-red);
+  outline-offset: 2px;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--washu-red);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   16. PRINT STYLES
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@media print {
+  .header,
+  .site-footer,
+  .btn,
+  nav {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}

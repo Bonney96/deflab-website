@@ -1,8 +1,7 @@
 # ══════════════════════════════════════════════════════════════════════════════
-# HUGO BLOX CONFIGURATION
+# HUGO BLOX CONFIGURATION - FRANTZ LAB
+# Washington University in St. Louis
 # Schema: hugoblox.com/schema/v2
-# Tutorial: https://docs.hugoblox.com/tutorial/
-# Documentation: https://docs.hugoblox.com/
 # ══════════════════════════════════════════════════════════════════════════════
 hugoblox:
   schema: "2.0"
@@ -13,33 +12,56 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   identity:
     # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "The Frantz Lab"
+    name: "Frantz Laboratory"
     # Legal entity for copyright notices (defaults to name if not set)
     organization: "Washington University School of Medicine"
     # Schema.org type for structured data
-    type: organization                        # person | organization | local_business
+    type: organization
     # Short tagline displayed on your site
-    tagline: "Department of Biochemistry & Molecular Biophysics"
+    tagline: "Translational Chemistry & Drug Discovery"
     # Site meta description for search engines and social sharing
-    description: "The Frantz Lab at Washington University in St. Louis - Research in organic chemistry and drug discovery."
+    description: "The Frantz Lab at Washington University in St. Louis - Advancing drug discovery through innovative synthetic chemistry, high-throughput screening, and strategic industry partnerships."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
-      twitter: ""              # Twitter/X handle for Twitter Cards (without @)
+      twitter: ""
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # HEADER
+  # Navigation configuration
+  # ────────────────────────────────────────────────────────────────────────────
+  header:
+    enable: true
+    sticky: true
+    align: "center"
+    theme_toggle: true
+    search: false
+    language_switcher: false
+    cta:
+      enable: true
+      text: "Contact Lab"
+      url: "/#contact"
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # FOOTER
+  # ────────────────────────────────────────────────────────────────────────────
+  footer:
+    text: ""
+    language_switcher: false
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
-  # Color and visual design system
+  # WashU Brand Color System
   # ────────────────────────────────────────────────────────────────────────────
   theme:
     # Mode: 'light', 'dark', or 'system' (follows OS preference)
-    mode: system
-    # Theme pack: name from data/themes/ or { light: "x", dark: "y" } for mix-and-match
+    mode: light
+    # Theme pack
     pack: "default"
-    # Optional: Override theme pack colors
+    # WashU Official Colors
     colors:
-      primary: "#A51417"                # WashU Red
-      secondary: "#252525"              # WashU Dark Gray
-      neutral: "slate"                  # Affects gray utilities (text-gray-*, bg-gray-*)
+      primary: "#A51417"                # WashU Red - Primary brand color
+      secondary: "#252525"              # WashU Dark Gray - Text and accents
+      neutral: "slate"                  # Gray utilities
 
   # ────────────────────────────────────────────────────────────────────────────
   # NAVIGATION

@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{/*
+  FRANTZ LAB - RESEARCH SINGLE PAGE
+  Individual research area detail view
+*/}}
+
+{{/* Hero header */}}
+<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white dark:from-[#1A1A1A] dark:to-[#171717]">
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
+  <div class="max-w-4xl mx-auto px-4 lg:px-8">
+    <nav class="mb-6">
+      <a href="/research/" class="text-[#A51417] text-sm font-semibold uppercase tracking-wider hover:underline inline-flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Research
+      </a>
+    </nav>
+    <h1 class="text-3xl lg:text-4xl font-bold text-[#252525] dark:text-white mb-6"
+        style="font-family: 'Libre Baskerville', Georgia, serif;">
+      {{ .Title }}
+    </h1>
+    <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
+    {{ with .Summary }}
+    <p class="text-gray-600 dark:text-gray-400 text-xl leading-relaxed"
+       style="font-family: 'Source Sans Pro', sans-serif;">
+      {{ . }}
+    </p>
+    {{ end }}
+  </div>
+</section>
+
+{{/* Content */}}
+<article class="py-12 lg:py-16 bg-white dark:bg-[#171717]">
+  <div class="max-w-4xl mx-auto px-4 lg:px-8">
+    <div class="prose prose-lg dark:prose-invert max-w-none
+                prose-headings:font-bold prose-headings:text-[#252525] dark:prose-headings:text-white
+                prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6
+                prose-h2:font-[Libre_Baskerville,Georgia,serif]
+                prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-p:leading-relaxed
+                prose-a:text-[#A51417] prose-a:no-underline hover:prose-a:underline
+                prose-img:rounded-lg prose-img:shadow-lg prose-img:my-8
+                prose-strong:text-[#252525] dark:prose-strong:text-white">
+      {{ .Content }}
+    </div>
+    
+    {{/* Related content */}}
+    <div class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
+      <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-6"
+          style="font-family: 'Source Sans Pro', sans-serif;">
+        Related Research
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {{ $currentPage := . }}
+        {{ range first 2 (where (where .Site.RegularPages "Section" "research") ".RelPermalink" "!=" $currentPage.RelPermalink) }}
+        <a href="{{ .RelPermalink }}" 
+           class="group bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg hover:shadow-lg transition-all duration-300">
+          <h4 class="font-bold text-[#252525] dark:text-white group-hover:text-[#A51417] transition-colors mb-2"
+              style="font-family: 'Libre Baskerville', Georgia, serif;">
+            {{ .Title }}
+          </h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+            {{ .Summary }}
+          </p>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</article>
+
+{{ end }}

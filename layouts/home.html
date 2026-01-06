@@ -1,0 +1,382 @@
+{{ define "main" }}
+{{/*
+  FRANTZ LAB - HOME PAGE
+  Cinematic Hero with Glassmorphism + Research Pillars + Innovation Stripe
+*/}}
+
+{{/* ═══════════════════════════════════════════════════════════════════════════
+     HERO SECTION - Full viewport with glassmorphism content box
+   ═══════════════════════════════════════════════════════════════════════════ */}}
+<section class="hero-section relative min-h-[90vh] flex items-center overflow-hidden"
+         style="background-image: url('/images/IMG_7090_JPG.avif'); background-size: cover; background-position: center;">
+  
+  {{/* Red accent bar */}}
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417] z-10"></div>
+  
+  {{/* Gradient overlay */}}
+  <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-black/20 z-[1]"></div>
+  
+  {{/* Hero content with glassmorphism */}}
+  <div class="hero-content relative z-10 ml-[5%] lg:ml-[8%] mr-4 lg:mr-0 max-w-2xl 
+              bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl
+              p-8 lg:p-12 border-l-[5px] border-[#A51417]
+              shadow-2xl
+              animate-[slideInLeft_0.8s_ease-out]">
+    
+    {{/* Tagline */}}
+    <p class="text-[#A51417] text-xs lg:text-sm font-semibold uppercase tracking-[0.2em] mb-4"
+       style="font-family: 'Source Sans Pro', sans-serif;">
+      Washington University School of Medicine
+    </p>
+    
+    {{/* Main headline */}}
+    <h1 class="text-3xl lg:text-5xl font-bold text-[#252525] dark:text-white mb-4 leading-tight"
+        style="font-family: 'Libre Baskerville', Georgia, serif;">
+      Translational Chemistry<br>& Drug Discovery
+    </h1>
+    
+    {{/* Subtitle */}}
+    <p class="text-gray-600 dark:text-gray-300 text-lg lg:text-xl mb-8 leading-relaxed"
+       style="font-family: 'Source Sans Pro', sans-serif;">
+      Bridging academic innovation with commercial impact through synthetic chemistry, 
+      high-throughput screening, and strategic industry partnerships.
+    </p>
+    
+    {{/* Dual CTA buttons */}}
+    <div class="flex flex-col sm:flex-row gap-4">
+      {{/* Primary CTA - For Students/Academics */}}
+      <a href="/research/" 
+         class="inline-flex items-center justify-center gap-2 px-6 py-3
+                bg-[#A51417] text-white font-semibold text-sm uppercase tracking-wider
+                rounded hover:bg-[#8B1114] hover:-translate-y-0.5
+                transition-all duration-300 shadow-lg hover:shadow-xl">
+        Explore Research
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+      
+      {{/* Secondary CTA - For Industry Partners */}}
+      <a href="/innovation/" 
+         class="inline-flex items-center justify-center gap-2 px-6 py-3
+                bg-transparent text-[#252525] dark:text-white font-semibold text-sm uppercase tracking-wider
+                border-2 border-[#252525] dark:border-white rounded
+                hover:bg-[#252525] hover:text-white dark:hover:bg-white dark:hover:text-[#252525]
+                hover:-translate-y-0.5 transition-all duration-300">
+        Partner With Us
+      </a>
+    </div>
+  </div>
+</section>
+
+{{/* ═══════════════════════════════════════════════════════════════════════════
+     RESEARCH PILLARS SECTION
+   ═══════════════════════════════════════════════════════════════════════════ */}}
+<section class="py-20 lg:py-28 bg-white dark:bg-[#171717]">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    
+    {{/* Section header */}}
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+          style="font-family: 'Source Sans Pro', sans-serif;">
+        Our Research Focus
+      </h3>
+      <h2 class="text-3xl lg:text-4xl font-bold text-[#252525] dark:text-white mb-6"
+          style="font-family: 'Libre Baskerville', Georgia, serif;">
+        Three Pillars of Discovery
+      </h2>
+      <div class="w-16 h-1 bg-[#A51417] mx-auto mb-6"></div>
+      <p class="text-gray-600 dark:text-gray-400 text-lg"
+         style="font-family: 'Source Sans Pro', sans-serif;">
+        Integrated expertise spanning synthetic methodology, chemical screening, and translational biology.
+      </p>
+    </div>
+    
+    {{/* Research cards grid */}}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      {{/* Card 1: Synthetic Methods */}}
+      <div class="pillar-card group bg-white dark:bg-[#1F1F1F] p-8 border-t-4 border-gray-100 dark:border-gray-800
+                  shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 cursor-pointer relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-0 h-1 bg-[#A51417] group-hover:w-full transition-all duration-500"></div>
+        
+        {{/* Icon */}}
+        <div class="w-14 h-14 mb-6 text-[#A51417]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+          </svg>
+        </div>
+        
+        <h3 class="text-xl font-bold text-[#252525] dark:text-white mb-4"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          Small Molecule Synthesis
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
+           style="font-family: 'Source Sans Pro', sans-serif;">
+          Development of novel Pd and Ni-catalyzed methodologies for allene synthesis, 
+          cross-coupling reactions, and asymmetric transformations.
+        </p>
+        <a href="/research/synthetic-methods/" 
+           class="inline-flex items-center gap-2 text-[#A51417] font-semibold text-sm uppercase tracking-wider
+                  group-hover:gap-3 transition-all duration-300">
+          Learn More
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      {{/* Card 2: Drug Discovery */}}
+      <div class="pillar-card group bg-white dark:bg-[#1F1F1F] p-8 border-t-4 border-gray-100 dark:border-gray-800
+                  shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 cursor-pointer relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-0 h-1 bg-[#A51417] group-hover:w-full transition-all duration-500"></div>
+        
+        {{/* Icon */}}
+        <div class="w-14 h-14 mb-6 text-[#A51417]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+        </div>
+        
+        <h3 class="text-xl font-bold text-[#252525] dark:text-white mb-4"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          Drug Discovery & Screening
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
+           style="font-family: 'Source Sans Pro', sans-serif;">
+          Medicinal chemistry programs targeting taccalonolide analogs for cancer treatment 
+          and high-throughput screening platforms for hit identification.
+        </p>
+        <a href="/research/drug-discovery/" 
+           class="inline-flex items-center gap-2 text-[#A51417] font-semibold text-sm uppercase tracking-wider
+                  group-hover:gap-3 transition-all duration-300">
+          Learn More
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      {{/* Card 3: Translational Biology */}}
+      <div class="pillar-card group bg-white dark:bg-[#1F1F1F] p-8 border-t-4 border-gray-100 dark:border-gray-800
+                  shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 cursor-pointer relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-0 h-1 bg-[#A51417] group-hover:w-full transition-all duration-500"></div>
+        
+        {{/* Icon */}}
+        <div class="w-14 h-14 mb-6 text-[#A51417]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+          </svg>
+        </div>
+        
+        <h3 class="text-xl font-bold text-[#252525] dark:text-white mb-4"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          Translational Biology
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
+           style="font-family: 'Source Sans Pro', sans-serif;">
+          Collaborative programs bridging chemical discovery with disease biology, 
+          from target validation to preclinical development.
+        </p>
+        <a href="/research/" 
+           class="inline-flex items-center gap-2 text-[#A51417] font-semibold text-sm uppercase tracking-wider
+                  group-hover:gap-3 transition-all duration-300">
+          Learn More
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ═══════════════════════════════════════════════════════════════════════════
+     INNOVATION STRIPE - VC/Industry Focus
+   ═══════════════════════════════════════════════════════════════════════════ */}}
+<section class="py-20 lg:py-28 bg-[#252525] text-white">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      
+      {{/* Left: Content */}}
+      <div>
+        <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+            style="font-family: 'Source Sans Pro', sans-serif;">
+          Innovation & Commercialization
+        </h3>
+        <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          From Bench to Bedside
+        </h2>
+        <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
+        
+        <p class="text-gray-300 text-lg mb-8 leading-relaxed"
+           style="font-family: 'Source Sans Pro', sans-serif;">
+          The Frantz Laboratory operates at the intersection of fundamental chemistry and translational medicine. 
+          As a Vice Chancellor-led initiative, we are uniquely positioned to bridge the gap between academic exploration 
+          and commercial viability.
+        </p>
+        
+        {{/* Feature box */}}
+        <div class="bg-white/5 backdrop-blur border border-white/10 p-6 rounded-lg mb-8">
+          <h4 class="text-white font-bold mb-3" style="font-family: 'Source Sans Pro', sans-serif;">
+            Strategic Partnership Highlight
+          </h4>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            In collaboration with <span class="text-white font-semibold">MilliporeSigma</span>, our team is 
+            redefining the boundaries of automated synthesis. This partnership enables rapid prototyping of small 
+            molecules at scales previously reserved for major pharmaceutical companies.
+          </p>
+        </div>
+        
+        <a href="/innovation/" 
+           class="inline-flex items-center gap-2 px-6 py-3
+                  bg-[#A51417] text-white font-semibold text-sm uppercase tracking-wider
+                  rounded hover:bg-[#8B1114] hover:-translate-y-0.5
+                  transition-all duration-300">
+          Explore Partnerships
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+      
+      {{/* Right: Pipeline visualization */}}
+      <div class="relative">
+        {{/* Pipeline timeline */}}
+        <div class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-lg">
+          <h4 class="text-white font-bold mb-8 text-center" style="font-family: 'Source Sans Pro', sans-serif;">
+            Translation Pipeline
+          </h4>
+          
+          <div class="relative">
+            {{/* Timeline line */}}
+            <div class="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-[#A51417] via-gray-600 to-gray-700"></div>
+            
+            {{/* Timeline stages */}}
+            <div class="flex justify-between relative">
+              <div class="text-center">
+                <div class="w-4 h-4 bg-[#A51417] rounded-full mx-auto mb-4 border-4 border-[#252525]"></div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-white">Discovery</span>
+              </div>
+              <div class="text-center">
+                <div class="w-4 h-4 bg-[#A51417] rounded-full mx-auto mb-4 border-4 border-[#252525]"></div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Validation</span>
+              </div>
+              <div class="text-center">
+                <div class="w-4 h-4 bg-gray-600 rounded-full mx-auto mb-4 border-4 border-[#252525]"></div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-gray-400">Optimization</span>
+              </div>
+              <div class="text-center">
+                <div class="w-4 h-4 bg-gray-700 rounded-full mx-auto mb-4 border-4 border-[#252525]"></div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-gray-500">Licensing</span>
+              </div>
+            </div>
+          </div>
+          
+          {{/* Stats */}}
+          <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-[#A51417]">65+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Publications</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-[#A51417]">15+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Years Experience</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-[#A51417]">5+</div>
+              <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Active Programs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ═══════════════════════════════════════════════════════════════════════════
+     RECENT NEWS / HIGHLIGHTS RIBBON
+   ═══════════════════════════════════════════════════════════════════════════ */}}
+<section class="py-12 bg-gray-50 dark:bg-[#1A1A1A] border-t border-gray-100 dark:border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <span class="bg-[#A51417] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded">
+          Recent
+        </span>
+        <p class="text-gray-700 dark:text-gray-300" style="font-family: 'Source Sans Pro', sans-serif;">
+          <strong class="text-[#252525] dark:text-white">2025:</strong> 
+          New publication in ACS Med. Chem. Lett. on [18F]-Taccalonolide pharmacokinetics
+        </p>
+      </div>
+      <a href="/publication/" 
+         class="text-[#A51417] font-semibold text-sm uppercase tracking-wider inline-flex items-center gap-2 hover:gap-3 transition-all">
+        View All Publications
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+{{/* ═══════════════════════════════════════════════════════════════════════════
+     CONTACT SECTION
+   ═══════════════════════════════════════════════════════════════════════════ */}}
+<section id="contact" class="py-20 lg:py-28 bg-white dark:bg-[#171717]">
+  <div class="max-w-4xl mx-auto px-4 lg:px-8 text-center">
+    <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+        style="font-family: 'Source Sans Pro', sans-serif;">
+      Get In Touch
+    </h3>
+    <h2 class="text-3xl lg:text-4xl font-bold text-[#252525] dark:text-white mb-6"
+        style="font-family: 'Libre Baskerville', Georgia, serif;">
+      Join Our Research Team
+    </h2>
+    <div class="w-16 h-1 bg-[#A51417] mx-auto mb-8"></div>
+    
+    <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-2xl mx-auto"
+       style="font-family: 'Source Sans Pro', sans-serif;">
+      We are always looking for talented researchers, graduate students, and industry partners 
+      who share our passion for translational chemistry and drug discovery.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="mailto:dougf@wustl.edu" 
+         class="inline-flex items-center justify-center gap-2 px-6 py-3
+                bg-[#A51417] text-white font-semibold text-sm uppercase tracking-wider
+                rounded hover:bg-[#8B1114] hover:-translate-y-0.5
+                transition-all duration-300 shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Contact Dr. Frantz
+      </a>
+      <a href="/team/" 
+         class="inline-flex items-center justify-center gap-2 px-6 py-3
+                bg-transparent text-[#252525] dark:text-white font-semibold text-sm uppercase tracking-wider
+                border-2 border-[#252525] dark:border-white rounded
+                hover:bg-[#252525] hover:text-white dark:hover:bg-white dark:hover:text-[#252525]
+                hover:-translate-y-0.5 transition-all duration-300">
+        Meet the Team
+      </a>
+    </div>
+  </div>
+</section>
+
+{{/* CSS Animation keyframes */}}
+<style>
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>
+
+{{ end }}

@@ -1,0 +1,289 @@
+{{ define "main" }}
+{{/*
+  FRANTZ LAB - TEAM PAGE
+  Hierarchical layout with Alumni section
+*/}}
+
+{{/* Hero header */}}
+<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#1A1A1A] dark:to-[#171717]">
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="max-w-3xl">
+      <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+          style="font-family: 'Source Sans Pro', sans-serif;">
+        Our Team
+      </h3>
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] dark:text-white mb-6"
+          style="font-family: 'Libre Baskerville', Georgia, serif;">
+        {{ .Title | default "Meet the Researchers" }}
+      </h1>
+      <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
+      <p class="text-gray-600 dark:text-gray-400 text-xl leading-relaxed"
+         style="font-family: 'Source Sans Pro', sans-serif;">
+        A dedicated team of researchers advancing the frontiers of synthetic chemistry and drug discovery.
+      </p>
+    </div>
+  </div>
+</section>
+
+{{/* Principal Investigator - Featured */}}
+{{ $pi := where .Pages "Params.weight" 1 }}
+{{ with index $pi 0 }}
+<section class="py-16 bg-white dark:bg-[#171717]">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="bg-[#252525] rounded-xl p-8 lg:p-12 text-white">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+        {{/* Image */}}
+        <div class="lg:col-span-1">
+          <div class="relative max-w-xs mx-auto lg:mx-0">
+            {{ with .Params.image }}
+            <img src="{{ .filename }}" 
+                 alt="{{ $.Title }}"
+                 class="w-full aspect-square object-cover rounded-lg shadow-2xl"
+                 loading="lazy">
+            {{ else }}
+            <div class="w-full aspect-square bg-gray-700 rounded-lg flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            {{ end }}
+            <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#A51417] rounded-lg flex items-center justify-center">
+              <span class="text-white text-xs font-bold uppercase tracking-wider">PI</span>
+            </div>
+          </div>
+        </div>
+        
+        {{/* Content */}}
+        <div class="lg:col-span-2">
+          <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-2"
+              style="font-family: 'Source Sans Pro', sans-serif;">
+            Principal Investigator
+          </h3>
+          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-2"
+              style="font-family: 'Libre Baskerville', Georgia, serif;">
+            {{ .Title }}
+          </h2>
+          <p class="text-[#A51417] font-semibold uppercase tracking-wider text-sm mb-6">
+            {{ .Params.role }}
+          </p>
+          
+          <div class="prose prose-invert prose-lg max-w-none mb-6 line-clamp-4"
+               style="font-family: 'Source Sans Pro', sans-serif;">
+            {{ .Summary | default (.Content | truncate 300) }}
+          </div>
+          
+          <div class="flex flex-wrap gap-4">
+            <a href="{{ .RelPermalink }}" 
+               class="inline-flex items-center gap-2 px-5 py-2
+                      bg-[#A51417] text-white font-semibold text-sm uppercase tracking-wider
+                      rounded hover:bg-[#8B1114] transition-all duration-300">
+              Full Bio
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            {{ with .Params.email }}
+            <a href="mailto:{{ . }}" 
+               class="inline-flex items-center gap-2 px-5 py-2
+                      bg-transparent border-2 border-white text-white font-semibold text-sm uppercase tracking-wider
+                      rounded hover:bg-white hover:text-[#252525] transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Contact
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* Current Team Grid */}}
+{{ $team := where .Pages "Params.weight" ">" 1 }}
+{{ if $team }}
+<section class="py-16 lg:py-24 bg-gray-50 dark:bg-[#1A1A1A]">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+          style="font-family: 'Source Sans Pro', sans-serif;">
+        Current Members
+      </h3>
+      <h2 class="text-3xl font-bold text-[#252525] dark:text-white mb-4"
+          style="font-family: 'Libre Baskerville', Georgia, serif;">
+        Research Team
+      </h2>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {{ range $team }}
+      <div class="team-card group bg-white dark:bg-[#1F1F1F] rounded-xl p-6 text-center
+                  shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        {{/* Photo */}}
+        <div class="relative mb-6">
+          {{ with .Params.image }}
+          <img src="{{ .filename }}" 
+               alt="{{ $.Title }}"
+               class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-gray-100 dark:border-gray-700
+                      group-hover:border-[#A51417] transition-colors duration-300"
+               loading="lazy">
+          {{ else }}
+          <div class="w-32 h-32 mx-auto rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center
+                      border-4 border-gray-100 dark:border-gray-700 group-hover:border-[#A51417] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          {{ end }}
+        </div>
+        
+        {{/* Info */}}
+        <h3 class="text-lg font-bold text-[#252525] dark:text-white mb-1"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          {{ .Title }}
+        </h3>
+        <p class="text-[#A51417] font-semibold text-sm uppercase tracking-wider mb-4">
+          {{ .Params.role }}
+        </p>
+        
+        {{/* Email link */}}
+        {{ with .Params.email }}
+        <a href="mailto:{{ . }}" 
+           class="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-[#A51417] 
+                  text-sm transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          {{ . }}
+        </a>
+        {{ end }}
+        
+        {{/* View profile link */}}
+        <a href="{{ .RelPermalink }}" 
+           class="block mt-4 text-[#A51417] text-sm font-semibold uppercase tracking-wider
+                  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          View Profile →
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{/* Alumni Section */}}
+<section class="py-16 lg:py-24 bg-white dark:bg-[#171717]">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+          style="font-family: 'Source Sans Pro', sans-serif;">
+        Success Stories
+      </h3>
+      <h2 class="text-3xl font-bold text-[#252525] dark:text-white mb-4"
+          style="font-family: 'Libre Baskerville', Georgia, serif;">
+        Alumni & Former Members
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg"
+         style="font-family: 'Source Sans Pro', sans-serif;">
+        Our graduates have gone on to successful careers in pharmaceutical industry, academia, and biotech.
+      </p>
+    </div>
+    
+    {{/* Alumni table */}}
+    <div class="overflow-x-auto">
+      <table class="w-full bg-white dark:bg-[#1F1F1F] shadow-lg rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-[#252525] text-white">
+            <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Name</th>
+            <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Former Role</th>
+            <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Current Position</th>
+            <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Organization</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
+            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Ryan Neff, PhD</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Senior Scientist</td>
+            <td class="px-6 py-4 text-[#A51417] font-medium">Merck & Co.</td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
+            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Ian Crouch, PhD</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Process Chemist</td>
+            <td class="px-6 py-4 text-[#A51417] font-medium">Bristol-Myers Squibb</td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
+            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Daniel Babinski, PhD</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Associate Director</td>
+            <td class="px-6 py-4 text-[#A51417] font-medium">Gilead Sciences</td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
+            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Monika El Arba, PhD</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Research Scientist</td>
+            <td class="px-6 py-4 text-[#A51417] font-medium">Pfizer</td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
+            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Catalina Munteanu, PhD</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Postdoctoral Fellow</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Principal Scientist</td>
+            <td class="px-6 py-4 text-[#A51417] font-medium">Abbvie</td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
+            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Ana C. Parra Rivera, PhD</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
+            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Senior Scientist</td>
+            <td class="px-6 py-4 text-[#A51417] font-medium">Eli Lilly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    {{/* Alumni statistics */}}
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="text-center p-6 bg-gray-50 dark:bg-[#1F1F1F] rounded-lg">
+        <div class="text-3xl font-bold text-[#A51417]">15+</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">PhD Graduates</div>
+      </div>
+      <div class="text-center p-6 bg-gray-50 dark:bg-[#1F1F1F] rounded-lg">
+        <div class="text-3xl font-bold text-[#A51417]">90%</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Industry Placement</div>
+      </div>
+      <div class="text-center p-6 bg-gray-50 dark:bg-[#1F1F1F] rounded-lg">
+        <div class="text-3xl font-bold text-[#A51417]">8</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Fortune 500 Companies</div>
+      </div>
+      <div class="text-center p-6 bg-gray-50 dark:bg-[#1F1F1F] rounded-lg">
+        <div class="text-3xl font-bold text-[#A51417]">3</div>
+        <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Faculty Positions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* Join Us CTA */}}
+<section class="py-16 bg-[#A51417]">
+  <div class="max-w-4xl mx-auto px-4 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4"
+        style="font-family: 'Libre Baskerville', Georgia, serif;">
+      Interested in Joining Our Team?
+    </h2>
+    <p class="text-white/80 text-lg mb-8"
+       style="font-family: 'Source Sans Pro', sans-serif;">
+      We are always looking for motivated graduate students, postdocs, and collaborators.
+    </p>
+    <a href="mailto:dougf@wustl.edu" 
+       class="inline-flex items-center gap-2 px-8 py-4
+              bg-white text-[#A51417] font-semibold text-sm uppercase tracking-wider
+              rounded hover:bg-gray-100 transition-all duration-300 shadow-lg">
+      Inquire About Positions
+    </a>
+  </div>
+</section>
+
+{{ end }}

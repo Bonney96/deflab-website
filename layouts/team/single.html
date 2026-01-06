@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{/*
+  FRANTZ LAB - TEAM MEMBER PROFILE
+*/}}
+
+<section class="py-16 lg:py-24 bg-white dark:bg-[#171717]">
+  <div class="max-w-4xl mx-auto px-4 lg:px-8">
+    {{/* Back link */}}
+    <nav class="mb-8">
+      <a href="/team/" class="text-[#A51417] text-sm font-semibold uppercase tracking-wider hover:underline inline-flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Team
+      </a>
+    </nav>
+    
+    {{/* Profile header */}}
+    <div class="flex flex-col md:flex-row gap-8 items-start mb-12">
+      {{/* Photo */}}
+      <div class="flex-shrink-0">
+        {{ with .Params.image }}
+        <img src="{{ .filename }}" 
+             alt="{{ $.Title }}"
+             class="w-48 h-48 md:w-64 md:h-64 rounded-lg object-cover shadow-xl"
+             loading="lazy">
+        {{ else }}
+        <div class="w-48 h-48 md:w-64 md:h-64 rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+        {{ end }}
+      </div>
+      
+      {{/* Info */}}
+      <div class="flex-1">
+        <h1 class="text-3xl lg:text-4xl font-bold text-[#252525] dark:text-white mb-2"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          {{ .Title }}
+        </h1>
+        <p class="text-[#A51417] font-semibold uppercase tracking-wider text-lg mb-4">
+          {{ .Params.role }}
+        </p>
+        
+        {{ with .Params.email }}
+        <a href="mailto:{{ . }}" 
+           class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-[#A51417] mb-6 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          {{ . }}
+        </a>
+        {{ end }}
+        
+        <div class="flex gap-3">
+          {{ with .Params.email }}
+          <a href="mailto:{{ . }}" 
+             class="inline-flex items-center gap-2 px-5 py-2
+                    bg-[#A51417] text-white font-semibold text-sm uppercase tracking-wider
+                    rounded hover:bg-[#8B1114] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Contact
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    
+    {{/* Bio content */}}
+    <article class="prose prose-lg dark:prose-invert max-w-none
+                    prose-headings:font-bold prose-headings:text-[#252525] dark:prose-headings:text-white
+                    prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6
+                    prose-h2:font-[Libre_Baskerville,Georgia,serif]
+                    prose-p:text-gray-600 dark:prose-p:text-gray-400 prose-p:leading-relaxed
+                    prose-a:text-[#A51417] prose-a:no-underline hover:prose-a:underline
+                    prose-li:text-gray-600 dark:prose-li:text-gray-400
+                    prose-strong:text-[#252525] dark:prose-strong:text-white">
+      {{ .Content }}
+    </article>
+  </div>
+</section>
+
+{{ end }}
