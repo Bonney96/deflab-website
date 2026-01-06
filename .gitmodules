@@ -1,0 +1,3 @@
+[submodule "themes/hugoblox-kit"]
+	path = themes/hugoblox-kit
+	url = https://github.com/HugoBlox/kit.git

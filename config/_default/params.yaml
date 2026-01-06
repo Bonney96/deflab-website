@@ -1,0 +1,80 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# HUGO BLOX CONFIGURATION
+# Schema: hugoblox.com/schema/v2
+# Tutorial: https://docs.hugoblox.com/tutorial/
+# Documentation: https://docs.hugoblox.com/
+# ══════════════════════════════════════════════════════════════════════════════
+hugoblox:
+  schema: "2.0"
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # IDENTITY
+  # Site-level branding
+  # ────────────────────────────────────────────────────────────────────────────
+  identity:
+    # Site name - shown in navbar, footer, copyright, and browser title by default
+    name: "The Frantz Lab"
+    # Legal entity for copyright notices (defaults to name if not set)
+    organization: "Washington University School of Medicine"
+    # Schema.org type for structured data
+    type: organization                        # person | organization | local_business
+    # Short tagline displayed on your site
+    tagline: "Department of Biochemistry & Molecular Biophysics"
+    # Site meta description for search engines and social sharing
+    description: "The Frantz Lab at Washington University in St. Louis - Research in organic chemistry and drug discovery."
+    # Social accounts (used for meta tags like Twitter Cards)
+    social:
+      twitter: ""              # Twitter/X handle for Twitter Cards (without @)
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # THEME
+  # Color and visual design system
+  # ────────────────────────────────────────────────────────────────────────────
+  theme:
+    # Mode: 'light', 'dark', or 'system' (follows OS preference)
+    mode: system
+    # Theme pack: name from data/themes/ or { light: "x", dark: "y" } for mix-and-match
+    pack: "default"
+    # Optional: Override theme pack colors
+    colors:
+      primary: ""                       # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
+      secondary: ""
+      neutral: ""                       # Affects gray utilities (text-gray-*, bg-gray-*)
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # NAVIGATION
+  # ────────────────────────────────────────────────────────────────────────────
+  navigation:
+    # Show a link to edit the page in the footer
+    show_edit_page: false
+    # Show breadcrumbs
+    breadcrumb: true
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # SEO
+  # ────────────────────────────────────────────────────────────────────────────
+  seo:
+    # Enable Open Graph and Twitter Cards
+    enable: true
+    # Default image for social sharing (relative to static/ folder)
+    image: ""
+    # Default image alt text
+    image_alt: ""
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # ANALYTICS
+  # ────────────────────────────────────────────────────────────────────────────
+  analytics:
+    # Google Analytics 4 (GA4) - replace with your measurement ID
+    google:
+      site_id: ""
+    # Plausible Analytics
+    plausible:
+      domain: ""
+
+  # ────────────────────────────────────────────────────────────────────────────
+  # COMMENTS
+  # ────────────────────────────────────────────────────────────────────────────
+  comments:
+    # Enable comments
+    enable: false
