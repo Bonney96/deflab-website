@@ -7,9 +7,18 @@ main:
   - name: Home
     url: /
     weight: 10
-  - name: Publications
-    url: /#publications
+  - name: Research
+    url: /research/
     weight: 20
-  - name: Team
-    url: /#team
+  - name: Innovation
+    url: /innovation/
     weight: 30
+  - name: Publications
+    url: /publication/
+    weight: 40
+  - name: Team
+    url: /team/
+    weight: 50
+  - name: Contact
+    url: /#contact
+    weight: 60

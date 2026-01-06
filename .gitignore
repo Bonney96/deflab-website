@@ -3,7 +3,7 @@
 /resources/
 .hugo_build.lock
 
-# Node modules (if using npm/yarn)
+# Node modules
 node_modules/
 package-lock.json
 yarn.lock
@@ -22,3 +22,7 @@ Thumbs.db
 
 # Hugo
 hugo_stats.json
+
+# Local Dev
+wrangler.json
+.env
