@@ -1,6 +1,6 @@
 {{/*
   FRANTZ LAB - CUSTOM HEAD HOOK
-  Injects Google Fonts and Custom CSS
+  Injects Google Fonts
 */}}
 
 {{/* Google Fonts - Libre Baskerville (Serif) + Source Sans Pro (Sans-Serif) */}}
@@ -8,13 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-{{/* Custom WashU Brand CSS */}}
-{{ $customCSS := resources.Get "css/custom.css" }}
-{{ if $customCSS }}
-<link rel="stylesheet" href="{{ $customCSS.RelPermalink }}">
-{{ end }}
-
-{{/* Inline critical CSS for above-the-fold content */}}
 <style>
   /* Font stack fallback while Google Fonts load */
   body {
@@ -24,45 +17,4 @@
   h1, h2 {
     font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   }
-  
-  /* WashU Red accent for immediate brand recognition */
-  :root {
-    --washu-red: #A51417;
-    --washu-dark-gray: #252525;
-  }
-  
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Prevent FOUT (Flash of Unstyled Text) */
-  .fonts-loading body {
-    opacity: 0.01;
-  }
-  
-  .fonts-loaded body {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
 </style>
-
-{{/* Font loading detection */}}
-<script>
-  // Add fonts-loading class initially
-  document.documentElement.classList.add('fonts-loading');
-  
-  // Check when fonts are loaded
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(function() {
-      document.documentElement.classList.remove('fonts-loading');
-      document.documentElement.classList.add('fonts-loaded');
-    });
-  } else {
-    // Fallback for browsers that don't support document.fonts
-    window.addEventListener('load', function() {
-      document.documentElement.classList.remove('fonts-loading');
-      document.documentElement.classList.add('fonts-loaded');
-    });
-  }
-</script>
