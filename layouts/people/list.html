@@ -138,6 +138,24 @@
         </a>
         {{ end }}
         
+        {{/* LinkedIn link */}}
+        {{ with .Params.social }}
+          {{ range where . "icon" "linkedin" }}
+            {{ with .link }}
+            <a href="{{ . }}" 
+               target="_blank" 
+               rel="noopener"
+               class="inline-flex items-center gap-2 text-[#0077b5] hover:text-[#005582] 
+                      text-sm transition-colors mt-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              LinkedIn
+            </a>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        
         {{/* View profile link */}}
         <a href="{{ .RelPermalink }}" 
            class="block mt-4 text-[#A51417] text-sm font-semibold uppercase tracking-wider
@@ -174,10 +192,16 @@
         </h3>
         <ul class="space-y-4">
           <li class="flex flex-col sm:flex-row gap-2 text-gray-700 dark:text-gray-300">
-            <div class="min-w-[200px]">
+            <div class="flex items-center gap-2 min-w-[200px]">
               <span class="font-bold text-[#252525] dark:text-white">Dr. Frederick Meece</span>
-              <a href="https://www.linkedin.com/in/frederick-meece-4a0b3b5b/" target="_blank" rel="noopener" class="inline-block ml-1 text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <a href="https://www.researchgate.net/scientific-contributions/Frederick-A-Meece-2113066888" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#00d0af] hover:text-[#00b89a] transition-colors"
+                 title="ResearchGate Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
               </a>
             </div>
             <span>Currently working as a medicinal chemist at Evestra Inc.</span>
@@ -194,10 +218,16 @@
         <div class="grid gap-8 md:grid-cols-2">
           {{/* Roberto Napoleon Silva Villatoro */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Roberto Napoleon Silva Villatoro</div>
-              <a href="https://www.linkedin.com/in/roberto-silva-villatoro-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Roberto Napoleon Silva Villatoro
+              <a href="https://www.linkedin.com/in/roberto-silva-villatoro-b96890129/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2024</div>
@@ -211,10 +241,16 @@
 
           {{/* Melissa Cadena */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Melissa Cadena</div>
-              <a href="https://www.linkedin.com/in/melissa-cadena-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Melissa Cadena
+              <a href="https://www.linkedin.com/in/melissaacadena/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2022</div>
@@ -228,10 +264,16 @@
 
           {{/* Nicholas Clanton */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Nicholas Clanton</div>
-              <a href="https://www.linkedin.com/in/nicholas-clanton-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Nicholas Clanton
+              <a href="https://www.linkedin.com/in/nick-clanton-717b83214/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2020</div>
@@ -245,10 +287,16 @@
 
           {{/* Charissa Munteanu */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Charissa Munteanu</div>
-              <a href="https://www.linkedin.com/in/charissa-munteanu-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Charissa Munteanu
+              <a href="https://www.linkedin.com/in/charissa-munteanu-765391185/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2019</div>
@@ -259,10 +307,16 @@
 
           {{/* Ana Cristina Parra Rivera */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Ana Cristina Parra Rivera</div>
-              <a href="https://www.linkedin.com/in/ana-cristina-parra-rivera-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Ana Cristina Parra Rivera
+              <a href="https://www.linkedin.com/in/ana-parra-rivera-a25439108/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2018</div>
@@ -276,10 +330,16 @@
 
           {{/* Marie El Arba */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Marie El Arba</div>
-              <a href="https://www.linkedin.com/in/marie-el-arba-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Marie El Arba
+              <a href="https://www.linkedin.com/in/marie-estefania-el-arba-phd-38331a68/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2018</div>
@@ -293,10 +353,16 @@
 
           {{/* Robynne Neff */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Robynne Neff</div>
-              <a href="https://www.linkedin.com/in/robynne-neff-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Robynne Neff
+              <a href="https://www.linkedin.com/in/robynne-neff-a0b81536/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2017</div>
@@ -310,10 +376,16 @@
 
           {{/* Hector Aguilar */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Hector Aguilar</div>
-              <a href="https://www.linkedin.com/in/hector-aguilar-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Hector Aguilar
+              <a href="https://www.linkedin.com/in/hector-aguilar-utsa/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2013</div>
@@ -327,10 +399,16 @@
 
           {{/* David Babinski */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. David Babinski</div>
-              <a href="https://www.linkedin.com/in/david-babinski-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. David Babinski
+              <a href="https://www.linkedin.com/in/davidbabinski/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2013</div>
@@ -344,10 +422,16 @@
 
           {{/* Ian Crouch */}}
           <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
-            <div class="flex items-center gap-2 mb-1">
-              <div class="font-bold text-lg text-[#252525] dark:text-white">Dr. Ian Crouch</div>
-              <a href="https://www.linkedin.com/in/ian-crouch-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
+              Dr. Ian Crouch
+              <a href="https://www.linkedin.com/in/ian-crouch-5951b813a/" 
+                 target="_blank" 
+                 rel="noopener"
+                 class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                 title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </a>
             </div>
             <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2013</div>
@@ -377,12 +461,7 @@
             <span class="text-sm text-gray-500">2014</span>
           </li>
           <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
-            <div class="flex items-center justify-center gap-2">
-              <span class="font-bold block text-[#252525] dark:text-white">Francisco Ruiz</span>
-              <a href="https://www.linkedin.com/in/francisco-ruiz-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              </a>
-            </div>
+            <span class="font-bold block text-[#252525] dark:text-white">Francisco Ruiz</span>
             <span class="text-sm text-gray-500">2013</span>
           </li>
           <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
@@ -404,28 +483,46 @@
             
             <div class="space-y-6">
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#252525] dark:text-white">Joshua Belfield (2022-2024)</div>
-                  <a href="https://www.linkedin.com/in/joshua-belfield-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#252525] dark:text-white flex items-center gap-2">
+                  Joshua Belfield (2022-2024)
+                  <a href="https://www.linkedin.com/in/joshua-belfield-59a637256/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
               </div>
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#252525] dark:text-white">Seth Brown (2022-2024)</div>
-                  <a href="https://www.linkedin.com/in/seth-brown-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#252525] dark:text-white flex items-center gap-2">
+                  Seth Brown (2022-2024)
+                  <a href="https://www.linkedin.com/in/seth-brown-1a3b30300/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
               </div>
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#252525] dark:text-white">Jonathan Allen (2021-2022)</div>
-                  <a href="https://www.linkedin.com/in/jonathan-allen-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#252525] dark:text-white flex items-center gap-2">
+                  Jonathan Allen (2021-2022)
+                  <a href="https://www.linkedin.com/in/jonathan-allen-507ba0233/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
@@ -437,10 +534,16 @@
                 <div class="font-bold text-[#252525] dark:text-white">Valeria Stevens (Summer 2021)</div>
               </div>
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#252525] dark:text-white">Noor Al Chaabawi (2020-2022)</div>
-                  <a href="https://www.linkedin.com/in/noor-al-chaabawi-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#252525] dark:text-white flex items-center gap-2">
+                  Noor Al Chaabawi (2020-2022)
+                  <a href="https://www.linkedin.com/in/noor-alchaabawi-64998a1b0/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
@@ -450,10 +553,16 @@
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Kinesiology major</div>
               </div>
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#252525] dark:text-white">Megan Thompkins (2020-2022)</div>
-                  <a href="https://www.linkedin.com/in/megan-thompkins-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#252525] dark:text-white flex items-center gap-2">
+                  Megan Thompkins (2020-2022)
+                  <a href="https://www.linkedin.com/in/megan-tompkins-6821981a6/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Microbiology and Immunology major</div>
@@ -464,10 +573,16 @@
               </div>
               
               <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Taylor Spiller (Spring 2019-Spring 2021)</div>
-                  <a href="https://www.linkedin.com/in/taylor-spiller-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#A51417] flex items-center gap-2">
+                  *Taylor Spiller (Spring 2019-Spring 2021)
+                  <a href="https://www.linkedin.com/in/taylor-spiller-427170321/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
@@ -475,34 +590,19 @@
               </div>
               
               <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Christian Strong (Spring 2019-Spring 2021)</div>
-                  <a href="https://www.linkedin.com/in/christian-strong-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                </div>
+                <div class="font-bold text-[#A51417]">*Christian Strong (Spring 2019-Spring 2021)</div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Top Scholar Chemical Engineering major</div>
                 <div class="text-sm mt-2">Note: 2020 Barry Goldwater Scholarship recipient; currently graduate student at Caltech</div>
               </div>
 
               <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Emerson Thomas (Spring 2019-Spring 2020)</div>
-                  <a href="https://www.linkedin.com/in/emerson-thomas-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                </div>
+                <div class="font-bold text-[#A51417]">*Emerson Thomas (Spring 2019-Spring 2020)</div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
                 <div class="text-sm mt-2">Note: Currently medical student at the University of Incarnate Word</div>
               </div>
               
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#252525] dark:text-white">Acasia Lanzaderas (2019-2020)</div>
-                  <a href="https://www.linkedin.com/in/acasia-lanzaderas-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                </div>
+                <div class="font-bold text-[#252525] dark:text-white">Acasia Lanzaderas (2019-2020)</div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
               </div>
               <div>
@@ -510,28 +610,24 @@
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
               </div>
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#252525] dark:text-white">Ashley Banfield (2019-2020)</div>
-                  <a href="https://www.linkedin.com/in/ashley-banfield-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                </div>
+                <div class="font-bold text-[#252525] dark:text-white">Ashley Banfield (2019-2020)</div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
               </div>
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Dat Le (2018-2019)</div>
-                  <a href="https://www.linkedin.com/in/dat-le-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                </div>
+                <div class="font-bold text-[#A51417]">*Dat Le (2018-2019)</div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
               </div>
               <div>
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Trang Le (2018-2019)</div>
-                  <a href="https://www.linkedin.com/in/trang-le-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#A51417] flex items-center gap-2">
+                  *Trang Le (2018-2019)
+                  <a href="https://www.linkedin.com/in/trang-le-3b49a817b/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
@@ -553,21 +649,33 @@
               </div>
               
               <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#252525] dark:text-white">Eli Ortiz (2018–2019)</div>
-                  <a href="https://www.linkedin.com/in/eli-ortiz-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#252525] dark:text-white flex items-center gap-2">
+                  Eli Ortiz (2018–2019)
+                  <a href="https://www.linkedin.com/in/eliezer-ortiz-110893b8/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
-                <div class="text-sm mt-2">Note: Currently a graduate student at UT Austin in Dr. Mike Krische’s group</div>
+                <div class="text-sm mt-2">Note: Currently a graduate student at UT Austin in Dr. Mike Krische's group</div>
               </div>
               
               <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Sara Dibrell (2015-2018)</div>
-                  <a href="https://www.linkedin.com/in/sara-dibrell-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#A51417] flex items-center gap-2">
+                  *Sara Dibrell (2015-2018)
+                  <a href="https://www.linkedin.com/in/saradibrellzott/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Top Scholar Biochemistry major</div>
@@ -585,10 +693,16 @@
               </div>
 
               <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Jack Hachem (2013-2014)</div>
-                  <a href="https://www.linkedin.com/in/jack-hachem-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <div class="font-bold text-[#A51417] flex items-center gap-2">
+                  *Jack Hachem (2013-2014)
+                  <a href="https://www.linkedin.com/in/jack-hachem-md-04039541/" 
+                     target="_blank" 
+                     rel="noopener"
+                     class="inline-flex items-center text-[#0077b5] hover:text-[#005582] transition-colors"
+                     title="LinkedIn Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                   </a>
                 </div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
@@ -635,12 +749,7 @@
               </div>
 
               <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Shane Appel (2011-2013)</div>
-                  <a href="https://www.linkedin.com/in/shane-appel-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                </div>
+                <div class="font-bold text-[#A51417]">*Shane Appel (2011-2013)</div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
                 <div class="text-sm mt-1 font-semibold">Honors Thesis: Generation of Novel Small Molecules that Induce Neurogenesis in Stem Cells</div>
               </div>
@@ -655,12 +764,7 @@
               </div>
 
               <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
-                <div class="flex items-center gap-2">
-                  <div class="font-bold text-[#A51417]">*Margie DeYoung (2009-2011)</div>
-                  <a href="https://www.linkedin.com/in/margie-deyoung-5b0a3a11a/" target="_blank" rel="noopener" class="text-[#0077b5] hover:text-[#005582]">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                  </a>
-                </div>
+                <div class="font-bold text-[#A51417]">*Margie DeYoung (2009-2011)</div>
                 <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry and Biology double major</div>
                 <div class="text-sm mt-1 font-semibold">Honors Thesis: Generation of Novel Small Molecule Libraries for Drug Discovery</div>
               </div>
