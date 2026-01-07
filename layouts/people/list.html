@@ -48,18 +48,11 @@
               </svg>
             </div>
             {{ end }}
-            <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-[#A51417] rounded-lg flex items-center justify-center">
-              <span class="text-white text-xs font-bold uppercase tracking-wider">PI</span>
-            </div>
           </div>
         </div>
         
         {{/* Content */}}
         <div class="lg:col-span-2">
-          <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-2"
-              style="font-family: 'Source Sans Pro', sans-serif;">
-            Principal Investigator
-          </h3>
           <h2 class="text-3xl lg:text-4xl font-bold text-[#252525] dark:text-white mb-2"
               style="font-family: 'Libre Baskerville', Georgia, serif;">
             {{ .Title }}
@@ -68,32 +61,16 @@
             {{ .Params.role }}
           </p>
           
-          <div class="prose prose-lg max-w-none mb-6 line-clamp-4 text-gray-600 dark:text-gray-300"
-               style="font-family: 'Source Sans Pro', sans-serif;">
-            {{ .Summary | default (.Content | truncate 300) }}
-          </div>
-          
           <div class="flex flex-wrap gap-4">
             <a href="{{ .RelPermalink }}" 
                class="inline-flex items-center gap-2 px-5 py-2
                       bg-[#A51417] text-white font-semibold text-sm uppercase tracking-wider
                       rounded hover:bg-[#8B1114] transition-all duration-300">
-              Full Bio
+              Read Full Bio
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
-            {{ with .Params.email }}
-            <a href="mailto:{{ . }}" 
-               class="inline-flex items-center gap-2 px-5 py-2
-                      bg-transparent border-2 border-[#252525] dark:border-white text-[#252525] dark:text-white font-semibold text-sm uppercase tracking-wider
-                      rounded hover:bg-[#252525] hover:text-white dark:hover:bg-white dark:hover:text-[#252525] transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Contact
-            </a>
-            {{ end }}
           </div>
         </div>
       </div>
@@ -186,81 +163,366 @@
           style="font-family: 'Libre Baskerville', Georgia, serif;">
         Alumni & Former Members
       </h2>
-      <p class="text-gray-600 dark:text-gray-400 text-lg"
-         style="font-family: 'Source Sans Pro', sans-serif;">
-        Our graduates have gone on to successful careers in pharmaceutical industry, academia, and biotech.
-      </p>
     </div>
     
-    {{/* Alumni table */}}
-    <div class="overflow-x-auto">
-      <table class="w-full bg-white dark:bg-[#1F1F1F] shadow-lg rounded-lg overflow-hidden">
-        <thead>
-          <tr class="bg-[#252525] text-white">
-            <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Name</th>
-            <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Former Role</th>
-            <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Current Position</th>
-            <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Organization</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
-          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
-            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Ryan Neff, PhD</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Senior Scientist</td>
-            <td class="px-6 py-4 text-[#A51417] font-medium">Merck & Co.</td>
-          </tr>
-          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
-            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Ian Crouch, PhD</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Process Chemist</td>
-            <td class="px-6 py-4 text-[#A51417] font-medium">Bristol-Myers Squibb</td>
-          </tr>
-          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
-            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Daniel Babinski, PhD</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Associate Director</td>
-            <td class="px-6 py-4 text-[#A51417] font-medium">Gilead Sciences</td>
-          </tr>
-          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
-            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Monika El Arba, PhD</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Research Scientist</td>
-            <td class="px-6 py-4 text-[#A51417] font-medium">Pfizer</td>
-          </tr>
-          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
-            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Catalina Munteanu, PhD</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Postdoctoral Fellow</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Principal Scientist</td>
-            <td class="px-6 py-4 text-[#A51417] font-medium">Abbvie</td>
-          </tr>
-          <tr class="hover:bg-gray-50 dark:hover:bg-[#252525] transition-colors">
-            <td class="px-6 py-4 font-medium text-[#252525] dark:text-white">Ana C. Parra Rivera, PhD</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Graduate Student</td>
-            <td class="px-6 py-4 text-gray-600 dark:text-gray-400">Senior Scientist</td>
-            <td class="px-6 py-4 text-[#A51417] font-medium">Eli Lilly</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-    {{/* Alumni statistics */}}
-    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="text-center p-6 bg-gray-50 dark:bg-[#1F1F1F] rounded-lg">
-        <div class="text-3xl font-bold text-[#A51417]">15+</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">PhD Graduates</div>
+    <div class="space-y-16">
+      {{/* Former Postdocs */}}
+      <div>
+        <h3 class="text-2xl font-bold text-[#A51417] mb-6 border-b border-gray-200 dark:border-gray-800 pb-3"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          Former Postdocs
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex flex-col sm:flex-row gap-2 text-gray-700 dark:text-gray-300">
+            <span class="font-bold text-[#252525] dark:text-white min-w-[200px]">Dr. Frederick Meece</span>
+            <span>Currently working as a medicinal chemist at Evestra Inc.</span>
+          </li>
+        </ul>
       </div>
-      <div class="text-center p-6 bg-gray-50 dark:bg-[#1F1F1F] rounded-lg">
-        <div class="text-3xl font-bold text-[#A51417]">90%</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Industry Placement</div>
+
+      {{/* Former Doctoral Students */}}
+      <div>
+        <h3 class="text-2xl font-bold text-[#A51417] mb-6 border-b border-gray-200 dark:border-gray-800 pb-3"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          Former Doctoral Students
+        </h3>
+        <div class="grid gap-8 md:grid-cols-2">
+          {{/* Roberto Napoleon Silva Villatoro */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Roberto Napoleon Silva Villatoro</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2024</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> Adventures in Catalysis: Development of Transition Metal-Catalyzed Reactions for C-X Bond Formations and High-Resolution Mass Spectrometry Tools for Probing Catalytic Reaction Mechanisms
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Currently a Post-Doc in Dr. Mary Watson's lab at the University of Delaware
+            </div>
+          </div>
+
+          {{/* Melissa Cadena */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Melissa Cadena</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2022</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> Mechanistic Studies and Development of Novel Palladium Catalyzed Methods Towards Functionalized Building Blocks
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Currently a senior scientist in Organic Chemistry at AbbVie
+            </div>
+          </div>
+
+          {{/* Nicholas Clanton */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Nicholas Clanton</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2020</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> Leveraging Natural Product Scaffolds for Drug Discovery and Development
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Current Assistant Director of the Voelcker Preclinical Pharmacology Core for Accelerated Drug Discovery
+            </div>
+          </div>
+
+          {{/* Charissa Munteanu */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Charissa Munteanu</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2019</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> Discovery and Development of New Metal Catalyzed Methods to Key Building Blocks in Organic Synthesis
+            </div>
+          </div>
+
+          {{/* Ana Cristina Parra Rivera */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Ana Cristina Parra Rivera</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2018</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> New Metal-Catalyzed Methods for Enabling Step Efficient Syntheses of Biologically Relevant Molecules
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Currently a research scientist at J-Star Research in New Jersey
+            </div>
+          </div>
+
+          {{/* Marie El Arba */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Marie El Arba</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2018</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> Metal-Catalyzed Transformations of Stereodefined Enol Triflates and Their Derivatives
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Currently a Professor of Instruction at Trinity University
+            </div>
+          </div>
+
+          {{/* Robynne Neff */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Robynne Neff</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2017</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> The Development of the Alkynyl Heck Reaction Towards the Synthesis of Allenes
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Currently a process development senior scientist at Amgen in California
+            </div>
+          </div>
+
+          {{/* Hector Aguilar */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Hector Aguilar</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2013</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> Synthesis and Biological Evaluation of Isoxazole Molecules Able to Induce Stem Cell Differentiation
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Currently a Professor of Instruction at The University of Texas at San Antonio
+            </div>
+          </div>
+
+          {{/* David Babinski */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. David Babinski</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2013</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> Synthesis of Stereodefined Acetoacetate-Derived Enol Triflates and Their Synthetic Utility
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Currently a principal research chemist at AbbVie
+            </div>
+          </div>
+
+          {{/* Ian Crouch */}}
+          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+            <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">Dr. Ian Crouch</div>
+            <div class="text-[#A51417] text-sm font-semibold mb-3">Ph.D. 2013</div>
+            <div class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+              <span class="font-semibold text-gray-900 dark:text-gray-200">Dissertation:</span> Palladium-Catalyzed Elimination Reactions of Stereodefined Enol Triflates
+            </div>
+            <div class="text-gray-700 dark:text-gray-300 text-sm italic">
+              Currently a research scientist at J-Star Research in New Jersey
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="text-center p-6 bg-gray-50 dark:bg-[#1F1F1F] rounded-lg">
-        <div class="text-3xl font-bold text-[#A51417]">8</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Fortune 500 Companies</div>
+
+      {{/* Former Master's Students */}}
+      <div>
+        <h3 class="text-2xl font-bold text-[#A51417] mb-6 border-b border-gray-200 dark:border-gray-800 pb-3"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          Former Master's Students
+        </h3>
+        <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
+            <span class="font-bold block text-[#252525] dark:text-white">Kristina Marques</span>
+            <span class="text-sm text-gray-500">2015</span>
+          </li>
+          <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
+            <span class="font-bold block text-[#252525] dark:text-white">Amanda Nolan</span>
+            <span class="text-sm text-gray-500">2014</span>
+          </li>
+          <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
+            <span class="font-bold block text-[#252525] dark:text-white">Francisco Ruiz</span>
+            <span class="text-sm text-gray-500">2013</span>
+          </li>
+          <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
+            <span class="font-bold block text-[#252525] dark:text-white">Ray Still</span>
+            <span class="text-sm text-gray-500">2013</span>
+          </li>
+        </ul>
       </div>
-      <div class="text-center p-6 bg-gray-50 dark:bg-[#1F1F1F] rounded-lg">
-        <div class="text-3xl font-bold text-[#A51417]">3</div>
-        <div class="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-1">Faculty Positions</div>
+
+      {{/* Former Undergraduate Students */}}
+      <div>
+        <h3 class="text-2xl font-bold text-[#A51417] mb-6 border-b border-gray-200 dark:border-gray-800 pb-3"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          Former Undergraduate Students
+        </h3>
+        <div class="prose prose-lg dark:prose-invert max-w-none">
+          <p class="text-sm italic mb-6">* Denotes Honor's College graduation</p>
+          <div class="grid gap-x-12 gap-y-8 md:grid-cols-2">
+            
+            <div class="space-y-6">
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Joshua Belfield (2022-2024)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Seth Brown (2022-2024)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Jonathan Allen (2021-2022)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Samuel Goen (Summer 2021)</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Valeria Stevens (Summer 2021)</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Noor Al Chaabawi (2020-2022)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Joseph Nieto (2020-2022)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Kinesiology major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Megan Thompkins (2020-2022)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Microbiology and Immunology major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Cody Phillips (2020-2021)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
+              </div>
+              
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Taylor Spiller (Spring 2019-Spring 2021)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+                <div class="text-sm mt-2">Note: Most Distinguished Organic Chemistry Student; currently graduate student at the University of Michigan</div>
+              </div>
+              
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Christian Strong (Spring 2019-Spring 2021)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Top Scholar Chemical Engineering major</div>
+                <div class="text-sm mt-2">Note: 2020 Barry Goldwater Scholarship recipient; currently graduate student at Caltech</div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Emerson Thomas (Spring 2019-Spring 2020)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
+                <div class="text-sm mt-2">Note: Currently medical student at the University of Incarnate Word</div>
+              </div>
+              
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Acasia Lanzaderas (2019-2020)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Shanel Watkins (2019-2020)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Ashley Banfield (2019-2020)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#A51417]">*Dat Le (2018-2019)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#A51417]">*Trang Le (2018-2019)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Julie Contreras (2018-2019)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Savanah Kemberling (2018–2019)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Elizabeth Garcia (2017-2018)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#252525] dark:text-white">Eli Ortiz (2018–2019)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
+                <div class="text-sm mt-2">Note: Currently a graduate student at UT Austin in Dr. Mike Krische’s group</div>
+              </div>
+              
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Sara Dibrell (2015-2018)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Top Scholar Biochemistry major</div>
+                <div class="text-sm mt-2">Note: 2018 Barry Goldwater Scholarship recipient; NSF Graduate Research Fellowship recipient; currently a graduate student at Caltech in Dr. Sarah Reisman's group</div>
+                <div class="text-sm mt-1 font-semibold">Honors Thesis: Discovery and Development of Na1.7 Antagonists for the Therapeutic Treatment of Chronic Pain</div>
+              </div>
+
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Yazel Nava Valdez (Summer 2015)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biotechnology Engineering major from Instituto Tecnológico y de Estudios Superiores de Monterrey, Campus Monterrey</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Ana Maldonaldo (2014-2015)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Jack Hachem (2013-2014)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
+                <div class="text-sm mt-1 font-semibold">Honors Thesis: Investigating Rat C6 Glioblastoma Cell Differentiation with Novel Small Molecules</div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Charissa Munteanu (2013-2014)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biochemistry major</div>
+                <div class="text-sm mt-1 font-semibold">Honors Thesis: Pd-Catalyzed Reactions of (E)- and (Z)-Enol Triflates to Form Alkynes</div>
+              </div>
+
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Chris Bemben (2010–2011)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Josh Mijares (2010–2011)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Kristina Marques (2012)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Galyn Lacewell (2011–2012)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Marie El Arba (2011–2013)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Ana Cristina Parra Rivera (2011-2013)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+                <div class="text-sm mt-1 font-semibold">Honors Thesis: Discovery and Development of New Small Molecules that Induce Cardiogenesis in Stem Cells</div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Jesus Jimenez (2011–2013)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
+                <div class="text-sm mt-1 font-semibold">Honors Thesis: Development of Novel 4-Aminoquinolines as Therapeutic Agents for the Treatment of Leishmaniasis</div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Shane Appel (2011-2013)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Biology major</div>
+                <div class="text-sm mt-1 font-semibold">Honors Thesis: Generation of Novel Small Molecules that Induce Neurogenesis in Stem Cells</div>
+              </div>
+
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Robynne Neff (2009-2012)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+              <div>
+                <div class="font-bold text-[#252525] dark:text-white">Timothy Dreier (2010-2011)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry major</div>
+              </div>
+
+              <div class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded">
+                <div class="font-bold text-[#A51417]">*Margie DeYoung (2009-2011)</div>
+                <div class="text-gray-600 dark:text-gray-400 text-sm">Chemistry and Biology double major</div>
+                <div class="text-sm mt-1 font-semibold">Honors Thesis: Generation of Novel Small Molecule Libraries for Drug Discovery</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -273,7 +535,7 @@
         style="font-family: 'Libre Baskerville', Georgia, serif;">
       Interested in Joining Our Team?
     </h2>
-    <p class="text-white/80 text-lg mb-8"
+    <p class="text-white text-lg mb-8"
        style="font-family: 'Source Sans Pro', sans-serif;">
       We are always looking for motivated graduate students, postdocs, and collaborators.
     </p>
