@@ -4,7 +4,7 @@
 */
 
 body {
-  /* border: 5px solid red !important; */ /* Uncomment to test if CSS is loading */
+  border: 5px solid red !important; /* Uncomment to test if CSS is loading */
 }
 
 /* ... rest of the file ... */
