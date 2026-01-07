@@ -5,7 +5,7 @@ email: kayylen.fernandez@utsa.edu
 image:
   filename: /images/Screenshot 2025-09-03 at 12_25_33 PM.avif
   alt: Kayylen Fernandez
-weight: 14
+weight: 100
 ---
 
 **Role:** 5th Year PhD Student

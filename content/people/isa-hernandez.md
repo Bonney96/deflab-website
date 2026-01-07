@@ -1,11 +1,11 @@
 ---
 title: Isa Hernandez
 role: Graduate Student
-email: isa.hernandez@wustl.edu
+email: hisa@wustl.edu
 image:
   filename: /images/IMG_1831_edited.avif
   alt: Isa Hernandez
-weight: 2
+weight: 3
 social:
   - icon: linkedin
     icon_pack: fab
@@ -16,7 +16,7 @@ social:
 
 **Education:** B.S. in Biochemistry, University of Texas at San Antonio
 
-**Email:** [isa.hernandez@wustl.edu](mailto:isa.hernandez@wustl.edu)
+**Email:** [hisa@wustl.edu](mailto:hisa@wustl.edu)
 
 **Hometown:** Kyle, TX
 

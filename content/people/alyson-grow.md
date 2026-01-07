@@ -1,11 +1,11 @@
 ---
 title: Alyson Grow
 role: Graduate Student
-email: alyson.grow@wustl.edu
+email: agrow@wustl.edu
 image:
   filename: /images/IMG_3042_HEIC.avif
   alt: Alyson Grow
-weight: 2
+weight: 5
 social:
   - icon: linkedin
     icon_pack: fab
@@ -16,7 +16,7 @@ social:
 
 **Education:** B.S. in Chemistry, Stephen F Austin University
 
-**Email:** [alyson.grow@wustl.edu](mailto:alyson.grow@wustl.edu)
+**Email:** [agrow@wustl.edu](mailto:agrow@wustl.edu)
 
 **Hometown:** Haltom City, TX
 

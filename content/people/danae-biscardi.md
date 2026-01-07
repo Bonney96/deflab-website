@@ -1,11 +1,11 @@
 ---
 title: Danae Biscardi
 role: Graduate Student
-email: danae.biscardi@wustl.edu
+email: bdanae@wustl.edu
 image:
   filename: /images/IMG_1342_edited.avif
   alt: Danae Biscardi
-weight: 2
+weight: 4
 social:
   - icon: linkedin
     icon_pack: fab
@@ -16,7 +16,7 @@ social:
 
 **Education:** B.S. in Biochemistry, University of Texas at San Antonio
 
-**Email:** [danae.biscardi@wustl.edu](mailto:danae.biscardi@wustl.edu)
+**Email:** [bdanae@wustl.edu](mailto:bdanae@wustl.edu)
 
 **Hometown:** Riverside, CA
 

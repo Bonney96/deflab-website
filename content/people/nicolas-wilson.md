@@ -1,7 +1,7 @@
 ---
 title: Nicolas Wilson
 role: Graduate Student
-email: nicolas.wilson@wustl.edu
+email: wilsonn@wustl.edu
 image:
   filename: /images/IMG_9561_HEIC.avif
   alt: Nicolas Wilson
@@ -14,7 +14,7 @@ social:
 
 **Role:** 5th Year PhD Student
 
-**Email:** [nicolas.wilson@wustl.edu](mailto:nicolas.wilson@wustl.edu)
+**Email:** [wilsonn@wustl.edu](mailto:wilsonn@wustl.edu)
 
 **Hometown:** San Antonio, TX
 
