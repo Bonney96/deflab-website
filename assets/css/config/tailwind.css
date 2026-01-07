@@ -4,11 +4,9 @@
 /* Typography plugin for prose styles */
 @plugin "@tailwindcss/typography";
 
-/* Content detection sources - EXPLICITLY SCAN PROJECT FILES */
-@source "../../../layouts/**/*.html";
-@source "../../../content/**/*.md";
-
-/* Fallback to hugo_stats if available (for theme files) */
+/* Content detection sources */
+/* Note: @source is a Tailwind v4 directive - linters may show warnings that can be ignored */
+/* Hugo stats file contains all detected classes from templates */
 @source "hugo_stats.json";
 
 /* Custom Variants Configuration */
