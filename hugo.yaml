@@ -6,7 +6,7 @@
 # Website name
 title: 'The Frantz Lab'
 # Website URL
-baseURL: 'https://Bonney96.github.io/deflab-website/'
+baseURL: '/'
 
 ############################
 ## LANGUAGE
