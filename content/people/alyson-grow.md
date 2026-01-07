@@ -11,3 +11,13 @@ social:
     icon_pack: fab
     link: https://www.linkedin.com/in/alyson-grow-019271244/
 ---
+
+**Role:** 2nd Year PhD Student
+
+**Education:** B.S. in Chemistry, Stephen F Austin University
+
+**Email:** [alyson.grow@wustl.edu](mailto:alyson.grow@wustl.edu)
+
+**Hometown:** Haltom City, TX
+
+**Hobbies:** reading, going to concerts, crafts, playing instruments

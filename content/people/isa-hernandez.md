@@ -11,3 +11,13 @@ social:
     icon_pack: fab
     link: https://www.linkedin.com/in/isa-hernandez-0819a415a/
 ---
+
+**Role:** 4th Year PhD Student
+
+**Education:** B.S. in Biochemistry, University of Texas at San Antonio
+
+**Email:** [isa.hernandez@wustl.edu](mailto:isa.hernandez@wustl.edu)
+
+**Hometown:** Kyle, TX
+
+**Hobbies:** soccer, cooking, hanging out with family and friends
