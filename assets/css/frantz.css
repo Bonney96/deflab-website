@@ -1,48 +1,48 @@
 /* 
   Hugo Blox Tailwind CSS v4 - Main Entry Point
   OVERRIDE: Frantz Lab Custom Configuration
+  NOTE: Imports are relative to PROJECT ROOT because Hugo/PostCSS processes via stdin
 */
 
 /* Tailwind CSS v4 Base */
 @import "tailwindcss";
 
 /* Configuration */
-/* Override content scanning: explicit paths from the root of assets/css/ */
-@source "../../layouts/**/*.html";
-@source "../../content/**/*.md";
-@source "../../themes/hugoblox-kit/layouts/**/*.html";
-@source "../../themes/hugoblox-kit/modules/blox/layouts/**/*.html";
+@source "layouts/**/*.html";
+@source "content/**/*.md";
+@source "themes/hugoblox-kit/layouts/**/*.html";
+@source "themes/hugoblox-kit/modules/blox/layouts/**/*.html";
 
-/* Explicit relative paths for PostCSS resolution */
-@import "./config/tailwind.css";
-@import "./config/theme.css";
+/* Imports relative to project root */
+@import "assets/css/config/tailwind.css";
+@import "assets/css/config/theme.css";
 
 /* Base styles and utilities */
-@import "./framework/base.css";
+@import "assets/css/framework/base.css";
 
-/* Hugo Blox theme system (color utilities) */
-@import "./color-utilities.css";
+/* Hugo Blox theme system */
+@import "assets/css/color-utilities.css";
 
-/* Hugo Blox layout utilities (radius, spacing tokens) */
-@import "./layout-utilities.css";
+/* Hugo Blox layout utilities */
+@import "assets/css/layout-utilities.css";
 
 /* Hugo Blox framework components */
-@import "./framework/components.css";
+@import "assets/css/framework/components.css";
 
 /* Hugo Blox module components */
-@import "./components/all.css";
-@import "./blox/all.css";
-@import "./views/all.css";
-@import "./chroma.css";
+@import "assets/css/components/all.css";
+@import "assets/css/blox/all.css";
+@import "assets/css/views/all.css";
+@import "assets/css/chroma.css";
 
 /* Hugo Blox Search */
-@import "./hb-search.css";
+@import "assets/css/hb-search.css";
 
 /* Hugo Blox Animations */
-@import "./animations.css";
+@import "assets/css/animations.css";
 
 /* Safelist */
-@import "./config/safelist.css";
+@import "assets/css/config/safelist.css";
 
 /* Custom Styles Override */
-@import "./custom.css";
+@import "assets/css/custom.css";
