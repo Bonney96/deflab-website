@@ -6,6 +6,10 @@ image:
   filename: /images/doug-frantz-profile.avif
   alt: Doug E. Frantz
 weight: 1
+social:
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/in/doug-frantz-3a11949/
 ---
 
 ## About Me
@@ -15,6 +19,8 @@ Doug E. Frantz was born in Kettering, OH in 1971. He obtained his B.S. in Chemis
 He joined the Department of Process Research at Merck & Co., Inc. in 2000 in Rahway, NJ where he worked on the development of practical and efficient syntheses to various drug candidates in Merck’s pipeline. In late 2001, he moved to a new Merck site in Wayne, PA where he continued to work in the area of pre-clinical drug development and process chemistry.
 
 With a desire to return back to Texas, late in 2005 Dr. Frantz joined the faculty in the Department of Biochemistry at the University of Texas Southwestern Medical Center at Dallas as a research assistant professor and Director of the Synthetic Chemistry Core Facility. In 2009, he was recruited by the University of Texas at San Antonio in San Antonio, Texas where he served as Professor of Chemistry. during his tenure at UTSA Dr. Frantz pioneered the creation of the Center for Innovative Drug Discovery (CIDD) as well as the creation of the Preclinical Pharmacy Core. He currently serves as a Professor in Biochemistry & Molecular Biophysics at the University of Washington in St. Louis School of Medicine.
+
+Visit our [former lab website](https://sciences.utsa.edu/labs/doug-frantz/) at UTSA for historical context and past research.
 
 ## Awards
 
