@@ -10,24 +10,16 @@
     
     {{/* Brand */}}
     <div class="flex-shrink-0">
-      <a class="navbar-brand flex items-center gap-2 text-[#252525] dark:text-white no-underline hover:no-underline" 
+      <a class="navbar-brand flex items-center gap-3 text-[#252525] dark:text-white no-underline hover:no-underline" 
          href="{{ site.Home.RelPermalink }}" 
          title="{{ $branding.site_title }}">
-        {{/* Logo if available */}}
-        {{ with $logo.resource }}
-          {{ if $logo.is_svg }}
-            <span class="h-8 w-auto">{{- .Content | safeHTML -}}</span>
-          {{ else }}
-            <img
-              fetchpriority="high"
-              decoding="async"
-              class="h-8 w-auto"
-              width="{{ .Width }}"
-              height="{{ .Height }}"
-              src="{{ .RelPermalink }}"
-              alt="{{ $branding.name }}" />
-          {{ end }}
-        {{ end }}
+        <img
+          fetchpriority="high"
+          decoding="async"
+          class="h-10 w-auto"
+          src="/images/WashU/WashU_idPo1_U73w_1.svg"
+          alt="Washington University in St. Louis" />
+        <span class="h-8 w-px bg-gray-300 dark:bg-gray-600 mx-1 hidden sm:block"></span>
         <span class="font-semibold text-lg tracking-wide" style="font-family: 'Source Sans Pro', sans-serif;">
           Frantz Laboratory
         </span>

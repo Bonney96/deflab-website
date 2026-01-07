@@ -38,49 +38,33 @@
       </h2>
       <p class="text-[#252525] dark:text-gray-400 text-lg"
          style="font-family: 'Source Sans Pro', sans-serif;">
-        Click on each area to explore our research programs in detail.
+        Explore our key research programs below.
       </p>
     </div>
     
-    {{/* Cards grid */}}
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    {{/* Research Content (Consolidated) */}}
+    <div class="space-y-24 mt-20">
       {{ range .Pages }}
-      <article class="group bg-white dark:bg-[#1F1F1F] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl 
-                     transition-all duration-500 hover:-translate-y-2 cursor-pointer border border-gray-100 dark:border-gray-800">
-        <a href="{{ .RelPermalink }}" class="block">
-          {{/* Card image if available */}}
-          {{ $image := .Resources.GetMatch "featured*" }}
-          {{ if $image }}
-          <div class="relative h-48 overflow-hidden">
-            <img src="{{ $image.RelPermalink }}" 
-                 alt="{{ .Title }}" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                 loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-          </div>
-          {{ else }}
-          <div class="h-4 bg-gradient-to-r from-[#A51417] to-[#8B1114] group-hover:h-2 transition-all duration-300"></div>
-          {{ end }}
-          
-          <div class="p-8">
-            <h3 class="text-xl font-bold text-[#252525] dark:text-white mb-3 group-hover:text-[#A51417] transition-colors"
+      <div id="{{ .File.ContentBaseName }}" class="scroll-mt-32">
+        <div class="max-w-4xl mx-auto">
+          {{/* Header for each project */}}
+          <div class="mb-8 border-l-4 border-[#A51417] pl-6">
+            <h2 class="text-3xl font-bold text-[#252525] dark:text-white mb-4"
                 style="font-family: 'Libre Baskerville', Georgia, serif;">
               {{ .Title }}
-            </h3>
-            <p class="text-[#252525] dark:text-gray-400 mb-6 leading-relaxed"
+            </h2>
+            <p class="text-xl text-[#A51417] dark:text-[#A51417] font-semibold"
                style="font-family: 'Source Sans Pro', sans-serif;">
               {{ .Summary }}
             </p>
-            <span class="inline-flex items-center gap-2 text-[#A51417] font-semibold text-sm uppercase tracking-wider
-                        group-hover:gap-3 transition-all duration-300">
-              Read More
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
           </div>
-        </a>
-      </article>
+          
+          {{/* Content */}}
+          <div class="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
       {{ end }}
     </div>
   </div>

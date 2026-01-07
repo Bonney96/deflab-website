@@ -13,8 +13,8 @@ module.exports = {
         'washu-dark-gray': '#252525',
       },
       fontFamily: {
-        'serif': ['"Libre Baskerville"', 'Georgia', 'serif'],
-        'sans': ['"Source Sans Pro"', 'sans-serif'],
+        'serif': ['"IvyPresto Headline"', '"Libre Baskerville"', 'Georgia', 'serif'],
+        'sans': ['"IvyStyle Sans"', '"Source Sans Pro"', 'sans-serif'],
       }
     },
   },

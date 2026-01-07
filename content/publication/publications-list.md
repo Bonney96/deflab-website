@@ -10,8 +10,6 @@ summary: A comprehensive list of publications from the Frantz Lab.
 
 63. Wilson, N. A; Palmer, W. M; Ganley, J. M; Coombs, J. R; Levorse, M, S; Albaneze-Walker, J; Frantz, D. E. "Palladium-Catalyzed Cyanations of Aryl Imidazolylsulfonates with K4[Fe(CN)6]: A Pragmatic Approach to Benzonitriles from Phenols." Synthesis 2024; 56(17): 2655-2662. DOI: 10.1055/a-2331-2707
 
-65. Jakskowski, L. N; Clanton, N. A; Wilkinson, N. J; Bartels, J. L; LoCoco, P. M; Frantz, A. N; Boyer, A. D; Boerma J. W; Bush, J. E; Brown, S. D; Fernandez, K; Archer, N. E; Tekin, V; Fernandez, S. R; Risinger, A. L; Frantz, D. E; Lapi, S. E. "Pharmacokinetic and Biodistribution Studies of [18F]-Taccalonolide: A Covalent Microtubule Stabilizer with Antitumor Efficacy." ACS Med. Chem. Lett. 2025, 16, 8, 1569–1574.  DOI: 10.1021/acsmedchemlett.5c00208
-
 61. Clanton, N.A.; Wilson, N.A.; Ortiz, E.; Blumberg, S.T.; Frantz, D.E. "Site-Selective Functionalization of Unactivated Allylic C–H Bonds via Direct Deprotonation with KTMP: Application to the Formal Total Synthesis of (+)-Artemisinin from Amorphadiene." Org. Lett., 2023 25 (1), 277-281. DOI:10.1021/acs.orglett.2c04145
 
 60. Cadena, M.; Villatoro, R.S.; Gupta, J.S.; Phillips, C.; Allen, J.B.; Arman, H.D.; Wherritt, D.J.; Clanton, N.A.; Ruchelman, A.L.; Simmons, E.M.; DelMonte, A.J.; Coombs, J.R.; Frantz, D.E. "Pd-Catalyzed Chemoselective O-Benzylation of Ambident 2-Quinolinone Nucleophiles." ACS Catal. 2022, 12 (16), 10199-10206. (Highlighted in Synfacts) DOI:10.1021/acscatal.2c02783
