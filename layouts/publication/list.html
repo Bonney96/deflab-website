@@ -129,23 +129,13 @@
       </h2>
     </div>
     
-    {{/* Search/filter bar */}}
-    <div class="mb-8">
-      <input type="text" 
-             id="publication-search"
-             placeholder="Search publications..."
-             class="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg
-                    bg-white dark:bg-[#1F1F1F] text-[#252525] dark:text-white
-                    focus:ring-2 focus:ring-[#A51417] focus:border-transparent
-                    placeholder-gray-400">
-    </div>
-    
     {{/* Publications list from content */}}
     {{ range .Pages }}
     <div class="bg-white dark:bg-[#171717] rounded-lg shadow-md p-6 lg:p-8">
       <div class="prose prose-lg dark:prose-invert max-w-none publication-list
                   prose-p:my-4 prose-p:text-gray-600 dark:prose-p:text-gray-400
-                  prose-strong:text-[#A51417]">
+                  prose-strong:text-[#A51417]
+                  prose-a:text-[#A51417] prose-a:no-underline hover:prose-a:underline">
         {{ .Content }}
       </div>
     </div>
@@ -172,28 +162,6 @@
     </div>
   </div>
 </section>
-
-{{/* Simple publication search script */}}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('publication-search');
-  if (searchInput) {
-    searchInput.addEventListener('input', function(e) {
-      const query = e.target.value.toLowerCase();
-      const publications = document.querySelectorAll('.publication-list p');
-      
-      publications.forEach(function(pub) {
-        const text = pub.textContent.toLowerCase();
-        if (text.includes(query) || query === '') {
-          pub.style.display = 'block';
-        } else {
-          pub.style.display = 'none';
-        }
-      });
-    });
-  }
-});
-</script>
 
 <style>
 /* Style publication items */
