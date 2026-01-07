@@ -5,7 +5,7 @@ email: jyoti.shahgupta@utsa.edu
 image:
   filename: /images/Screenshot 2025-09-03 at 12_28_01 PM.avif
   alt: Jyoti Shah Gupta
-weight: 15
+weight: 101
 ---
 
 **Role:** 4th Year PhD Student
