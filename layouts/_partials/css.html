@@ -1,8 +1,8 @@
 {{/*
   OVERRIDE: FRANTZ LAB CUSTOM CSS PIPELINE
-  Bypasses complex dynamic source generation in favor of explicit configuration.
+  Loads 'frantz.css' to avoid conflict with theme's 'main.css'
 */}}
-{{ with resources.Get "css/main.css" }}
+{{ with resources.Get "css/frantz.css" }}
   {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
   {{ with . | css.TailwindCSS $opts }}
     {{ if hugo.IsDevelopment }}
@@ -13,4 +13,6 @@
       {{ end }}
     {{ end }}
   {{ end }}
+{{ else }}
+  {{ errorf "Frantz Lab CSS Pipeline: Could not find assets/css/frantz.css" }}
 {{ end }}
