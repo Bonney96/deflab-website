@@ -1,48 +1,48 @@
 /* 
   Hugo Blox Tailwind CSS v4 - Main Entry Point
   OVERRIDE: Frantz Lab Custom Configuration
-  NOTE: Imports are relative to PROJECT ROOT because Hugo/PostCSS processes via stdin
+  NOTE: Imports use explicit ./assets/css/ paths because PostCSS runs from project root via stdin
 */
 
 /* Tailwind CSS v4 Base */
 @import "tailwindcss";
 
 /* Configuration */
-@source "layouts/**/*.html";
-@source "content/**/*.md";
-@source "themes/hugoblox-kit/layouts/**/*.html";
-@source "themes/hugoblox-kit/modules/blox/layouts/**/*.html";
+@source "../../layouts/**/*.html";
+@source "../../content/**/*.md";
+@source "../../themes/hugoblox-kit/layouts/**/*.html";
+@source "../../themes/hugoblox-kit/modules/blox/layouts/**/*.html";
 
-/* Imports relative to project root */
-@import "assets/css/config/tailwind.css";
-@import "assets/css/config/theme.css";
+/* Imports relative to project root with ./ prefix to avoid node_modules resolution */
+@import "./assets/css/config/tailwind.css";
+@import "./assets/css/config/theme.css";
 
 /* Base styles and utilities */
-@import "assets/css/framework/base.css";
+@import "./assets/css/framework/base.css";
 
 /* Hugo Blox theme system */
-@import "assets/css/color-utilities.css";
+@import "./assets/css/color-utilities.css";
 
 /* Hugo Blox layout utilities */
-@import "assets/css/layout-utilities.css";
+@import "./assets/css/layout-utilities.css";
 
 /* Hugo Blox framework components */
-@import "assets/css/framework/components.css";
+@import "./assets/css/framework/components.css";
 
 /* Hugo Blox module components */
-@import "assets/css/components/all.css";
-@import "assets/css/blox/all.css";
-@import "assets/css/views/all.css";
-@import "assets/css/chroma.css";
+@import "./assets/css/components/all.css";
+@import "./assets/css/blox/all.css";
+@import "./assets/css/views/all.css";
+@import "./assets/css/chroma.css";
 
 /* Hugo Blox Search */
-@import "assets/css/hb-search.css";
+@import "./assets/css/hb-search.css";
 
 /* Hugo Blox Animations */
-@import "assets/css/animations.css";
+@import "./assets/css/animations.css";
 
 /* Safelist */
-@import "assets/css/config/safelist.css";
+@import "./assets/css/config/safelist.css";
 
 /* Custom Styles Override */
-@import "assets/css/custom.css";
+@import "./assets/css/custom.css";
