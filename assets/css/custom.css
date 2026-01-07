@@ -2,11 +2,11 @@
    FRANTZ LABORATORY - WASHU BRAND DESIGN SYSTEM
    DEBUG MODE: ON
 */
-
-body {
-  border: 5px solid red !important; /* Uncomment to test if CSS is loading */
-}
-
+  
+  body {
+    /* border: 5px solid red !important; */ /* Uncomment to test if CSS is loading */
+  }
+  
 /* ... rest of the file ... */
 
 :root {

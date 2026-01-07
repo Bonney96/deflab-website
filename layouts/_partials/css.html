@@ -1,17 +1,16 @@
 {{/*
   OVERRIDE: FRANTZ LAB CUSTOM CSS PIPELINE
-  Loads 'frantz.css' to avoid conflict with theme's 'main.css'
+  Uses resources.PostCSS which is more reliable with npm-based Tailwind v4 setups
+  than the newer css.TailwindCSS function which expects binaries in PATH.
 */}}
 {{ with resources.Get "css/frantz.css" }}
   {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
-  {{ with . | css.TailwindCSS $opts }}
-    {{ if hugo.IsDevelopment }}
-      <link rel="stylesheet" href="{{ .RelPermalink }}">
-    {{ else }}
-      {{ with . | fingerprint }}
-        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-      {{ end }}
-    {{ end }}
+  {{ $css := . | resources.PostCSS }}
+  {{ if hugo.IsProduction }}
+    {{ $css = $css | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+  {{ else }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   {{ end }}
 {{ else }}
   {{ errorf "Frantz Lab CSS Pipeline: Could not find assets/css/frantz.css" }}
