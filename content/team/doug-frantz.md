@@ -1,14 +1,12 @@
 ---
 title: Doug E. Frantz, PhD
-role: Vice-Chancellor for Innovation and Commercialization
+role: Principal Investigator
 email: dougf@wustl.edu
 image:
-  filename: /images/ad420a_f98d68876fc145f595d999cec41dda12~mv2.avif
+  filename: /images/abfbe6_bc37aab5c910407a8b3342daa25928e7~mv2.avif
   alt: Doug E. Frantz
 weight: 1
 ---
-
-![Doug E. Frantz](/images/ad420a_f98d68876fc145f595d999cec41dda12~mv2.avif)
 
 ## About Me
 
@@ -16,7 +14,7 @@ Doug E. Frantz was born in Kettering, OH in 1971. He obtained his B.S. in Chemis
 
 He joined the Department of Process Research at Merck & Co., Inc. in 2000 in Rahway, NJ where he worked on the development of practical and efficient syntheses to various drug candidates in Merck’s pipeline. In late 2001, he moved to a new Merck site in Wayne, PA where he continued to work in the area of pre-clinical drug development and process chemistry.
 
-With a desire to return back to Texas, late in 2005 Dr. Frantz joined the faculty in the Department of Biochemistry at the University of Texas Southwestern Medical Center at Dallas as a research assistant professor and Director of the Synthetic Chemistry Core Facility. In 2009, he was recruited by the University of Texas at San Antonio in San Antonio, Texas where he served as Professor of Chemistry. during his tenure at UTSA Dr. Frantz pioneered the creation of the Center for Innovative Drug Discovery (CIDD) as well as the creation of the Preclinical Pharmacy Core. He currently serves as Vice-Chancellor of Innovation and Commercializations as well as a Professor in Biochemistry & Molecular Biophysics at the University of Washington in St. Louis School of Medicine.
+With a desire to return back to Texas, late in 2005 Dr. Frantz joined the faculty in the Department of Biochemistry at the University of Texas Southwestern Medical Center at Dallas as a research assistant professor and Director of the Synthetic Chemistry Core Facility. In 2009, he was recruited by the University of Texas at San Antonio in San Antonio, Texas where he served as Professor of Chemistry. during his tenure at UTSA Dr. Frantz pioneered the creation of the Center for Innovative Drug Discovery (CIDD) as well as the creation of the Preclinical Pharmacy Core. He currently serves as a Professor in Biochemistry & Molecular Biophysics at the University of Washington in St. Louis School of Medicine.
 
 ## Awards
 

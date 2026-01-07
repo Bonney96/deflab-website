@@ -1,6 +1,6 @@
 ---
 title: Publications
-summary: "Over 65 peer-reviewed publications advancing synthetic chemistry and drug discovery"
+summary: "Peer-reviewed publications advancing synthetic chemistry and drug discovery"
 type: publication
 cascade:
   type: publication
