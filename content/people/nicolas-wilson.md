@@ -2,6 +2,9 @@
 title: Nicolas Wilson
 role: Graduate Student
 email: nicolas.wilson@wustl.edu
+image:
+  filename: /images/IMG_9561_HEIC.avif
+  alt: Nicolas Wilson
 weight: 2
 social:
   - icon: linkedin

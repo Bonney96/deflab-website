@@ -2,6 +2,9 @@
 title: Elizabeth Forman
 role: Graduate Student
 email: elizabeth.forman@wustl.edu
+image:
+  filename: /images/IMG_7090_JPG.avif
+  alt: Elizabeth Forman
 weight: 2
 social:
   - icon: linkedin
