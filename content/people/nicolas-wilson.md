@@ -1,17 +1,13 @@
 ---
 title: Nicolas Wilson
-role: 5th Year PhD Student
-email: wilsonn@wustl.edu
+role: Graduate Student
+email: nicolas.wilson@wustl.edu
 image:
-  filename: /images/IMG_9561_HEIC.avif
+  filename: /images/WashU/WashU_idPo1_U73w_1.svg
   alt: Nicolas Wilson
-weight: 10
+weight: 2
+social:
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/in/nicolas-wilson-080627160/
 ---
-
-**Role:** 5th Year PhD Student
-
-**Email:** [wilsonn@wustl.edu](mailto:wilsonn@wustl.edu)
-
-**Hometown:** San Antonio, TX
-
-**Hobbies:** hanging out with family, brewing beer, making music

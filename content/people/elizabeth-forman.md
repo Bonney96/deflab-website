@@ -1,19 +1,13 @@
 ---
 title: Elizabeth Forman
-role: Research Assistant
-email: e.forman@wustl.edu
+role: Graduate Student
+email: elizabeth.forman@wustl.edu
 image:
-  filename: /images/IMG_7090_JPG.avif
+  filename: /images/WashU/WashU_idPo1_U73w_1.svg
   alt: Elizabeth Forman
-weight: 20
+weight: 2
+social:
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/in/elizabeth-d-forman-/
 ---
-
-**Role:** Research Assistant
-
-**Education:** B.S. in Chemistry, Washington University in St. Louis
-
-**Email:** [e.forman@wustl.edu](mailto:e.forman@wustl.edu)
-
-**Hometown:** Cincinnati, OH
-
-**Hobbies:** dance, paint and bullet journal
