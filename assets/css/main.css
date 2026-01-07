@@ -7,6 +7,12 @@
 @import "tailwindcss";
 
 /* Configuration */
+/* Override content scanning: explicit paths from the root of assets/css/ */
+@source "../../layouts/**/*.html";
+@source "../../content/**/*.md";
+@source "../../themes/hugoblox-kit/layouts/**/*.html";
+@source "../../themes/hugoblox-kit/modules/blox/layouts/**/*.html";
+
 @import "config/tailwind.css";
 @import "config/theme.css";
 
