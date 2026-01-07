@@ -11,7 +11,7 @@
     <div class="max-w-3xl">
       <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
           style="font-family: 'Source Sans Pro', sans-serif;">
-        Our Team
+        Our People
       </h3>
       <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] dark:text-white mb-6"
           style="font-family: 'Libre Baskerville', Georgia, serif;">
@@ -31,7 +31,7 @@
 {{ with index $pi 0 }}
 <section class="py-16 bg-white dark:bg-[#171717]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
-    <div class="bg-[#252525] rounded-xl p-8 lg:p-12 text-white">
+    <div class="bg-gray-50 dark:bg-[#252525] border border-gray-100 dark:border-gray-800 rounded-xl p-8 lg:p-12 shadow-lg">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
         {{/* Image */}}
         <div class="lg:col-span-1">
@@ -60,7 +60,7 @@
               style="font-family: 'Source Sans Pro', sans-serif;">
             Principal Investigator
           </h3>
-          <h2 class="text-3xl lg:text-4xl font-bold text-white mb-2"
+          <h2 class="text-3xl lg:text-4xl font-bold text-[#252525] dark:text-white mb-2"
               style="font-family: 'Libre Baskerville', Georgia, serif;">
             {{ .Title }}
           </h2>
@@ -68,7 +68,7 @@
             {{ .Params.role }}
           </p>
           
-          <div class="prose prose-invert prose-lg max-w-none mb-6 line-clamp-4"
+          <div class="prose prose-lg max-w-none mb-6 line-clamp-4 text-gray-600 dark:text-gray-300"
                style="font-family: 'Source Sans Pro', sans-serif;">
             {{ .Summary | default (.Content | truncate 300) }}
           </div>
@@ -86,8 +86,8 @@
             {{ with .Params.email }}
             <a href="mailto:{{ . }}" 
                class="inline-flex items-center gap-2 px-5 py-2
-                      bg-transparent border-2 border-white text-white font-semibold text-sm uppercase tracking-wider
-                      rounded hover:bg-white hover:text-[#252525] transition-all duration-300">
+                      bg-transparent border-2 border-[#252525] dark:border-white text-[#252525] dark:text-white font-semibold text-sm uppercase tracking-wider
+                      rounded hover:bg-[#252525] hover:text-white dark:hover:bg-white dark:hover:text-[#252525] transition-all duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>

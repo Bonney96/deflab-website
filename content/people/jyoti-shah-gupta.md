@@ -8,8 +8,6 @@ image:
 weight: 15
 ---
 
-![Jyoti Shah Gupta](/images/Screenshot 2025-09-03 at 12_28_01 PM.avif)
-
 **Role:** 4th Year PhD Student
 
 **Education:** B.S. in Chemistry, Tribhuvan University, Nepal

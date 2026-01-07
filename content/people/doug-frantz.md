@@ -3,7 +3,7 @@ title: Doug E. Frantz, PhD
 role: Principal Investigator
 email: dougf@wustl.edu
 image:
-  filename: /images/abfbe6_bc37aab5c910407a8b3342daa25928e7~mv2.avif
+  filename: /images/doug-frantz-profile.avif
   alt: Doug E. Frantz
 weight: 1
 ---

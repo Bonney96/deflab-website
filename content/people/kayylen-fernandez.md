@@ -8,8 +8,6 @@ image:
 weight: 14
 ---
 
-![Kayylen Fernandez](/images/Screenshot 2025-09-03 at 12_25_33 PM.avif)
-
 **Role:** 5th Year PhD Student
 
 **Education:** B.S. in Chemistry, University of Texas at San Antonio

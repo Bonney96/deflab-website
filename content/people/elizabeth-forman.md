@@ -8,8 +8,6 @@ image:
 weight: 20
 ---
 
-![Elizabeth Forman](/images/IMG_7090_JPG.avif)
-
 **Role:** Research Assistant
 
 **Education:** B.S. in Chemistry, Washington University in St. Louis

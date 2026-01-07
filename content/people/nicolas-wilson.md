@@ -8,8 +8,6 @@ image:
 weight: 10
 ---
 
-![Nicolas Wilson](/images/IMG_9561_HEIC.avif)
-
 **Role:** 5th Year PhD Student
 
 **Email:** [wilsonn@wustl.edu](mailto:wilsonn@wustl.edu)

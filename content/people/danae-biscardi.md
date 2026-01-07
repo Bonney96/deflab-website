@@ -8,8 +8,6 @@ image:
 weight: 12
 ---
 
-![Danae Biscardi](/images/IMG_1342_edited.avif)
-
 **Role:** 3rd Year PhD Student
 
 **Education:** B.S. in Biochemistry, University of Texas at San Antonio

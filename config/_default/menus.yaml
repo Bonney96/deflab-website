@@ -14,7 +14,7 @@ main:
     url: /publication/
     weight: 40
   - name: People
-    url: /team/
+    url: /people/
     weight: 50
   - name: Contact
     url: /#contact

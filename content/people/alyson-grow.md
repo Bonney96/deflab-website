@@ -8,8 +8,6 @@ image:
 weight: 13
 ---
 
-![Alyson Grow](/images/IMG_3042_HEIC.avif)
-
 **Role:** 2nd Year PhD Student
 
 **Education:** B.S. in Chemistry, Stephen F Austin University
