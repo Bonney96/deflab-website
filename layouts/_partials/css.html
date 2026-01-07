@@ -1,11 +1,11 @@
 {{/*
   OVERRIDE: FRANTZ LAB CUSTOM CSS PIPELINE
-  Uses resources.PostCSS which is more reliable with npm-based Tailwind v4 setups
-  than the newer css.TailwindCSS function which expects binaries in PATH.
+  Uses css.PostCSS (Hugo 0.128+ compatible)
 */}}
 {{ with resources.Get "css/frantz.css" }}
   {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
-  {{ $css := . | resources.PostCSS }}
+  {{/* Hugo 0.128+ replaced resources.PostCSS with css.PostCSS */}}
+  {{ $css := . | css.PostCSS }}
   {{ if hugo.IsProduction }}
     {{ $css = $css | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
