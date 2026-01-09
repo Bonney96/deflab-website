@@ -47,8 +47,12 @@
              alt="{{ $item.caption | default $.Title }}" 
              class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500 bg-gray-200 dark:bg-gray-800">
         
-        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300">
-          <div class="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-t from-black/70 to-transparent">
+        <!-- Hover Overlay: Dimmer -->
+        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition duration-300 pointer-events-none"></div>
+
+        <!-- Hover Overlay: Caption -->
+        <div class="absolute inset-0 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
+          <div class="p-4 bg-gradient-to-t from-black/70 to-transparent">
             <p class="text-white text-sm font-medium">{{ $item.caption }}</p>
           </div>
         </div>
