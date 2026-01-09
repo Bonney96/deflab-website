@@ -129,6 +129,6 @@ summary: A comprehensive list of publications from the Frantz Lab.
 
 3\. Frantz, D.E.; Singleton, D.A. "Carbometalations of simple alkenes with allyldibromoborane" Org. Lett., 1999, 1, 485-486. [DOI:10.1021/ol990673q](https://doi.org/10.1021/ol990673q)
 
-2. Frantz, D.E.; Singleton, D.A.; Snyder, J.P. " 13C kinetic isotope effects for the addition of lithium dibutylcuprate to cyclohexenone. Reductive elimination is rate-determining" J. Am. Chem. Soc., 1997, 119, 3383-3384. [DOI:10.1021/ja9636348](https://doi.org/10.1021/ja9636348)
+2\. Frantz, D.E.; Singleton, D.A.; Snyder, J.P. " 13C kinetic isotope effects for the addition of lithium dibutylcuprate to cyclohexenone. Reductive elimination is rate-determining" J. Am. Chem. Soc., 1997, 119, 3383-3384. [DOI:10.1021/ja9636348](https://doi.org/10.1021/ja9636348)
 
-1. Singleton, D.A.; Waller, S.C.; Zhang, Z.; Frantz, D.E.; Leung, S.-W. "Allylboration of alkenes with allyldihaloboranes" J. Am. Chem. Soc., 1996, 118, 9986-9987. [DOI:10.1021/ja961616k](https://doi.org/10.1021/ja961616k)
+1\. Singleton, D.A.; Waller, S.C.; Zhang, Z.; Frantz, D.E.; Leung, S.-W. "Allylboration of alkenes with allyldihaloboranes" J. Am. Chem. Soc., 1996, 118, 9986-9987. [DOI:10.1021/ja961616k](https://doi.org/10.1021/ja961616k)

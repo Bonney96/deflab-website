@@ -12,7 +12,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   identity:
     # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "Frantz Laboratory"
+    name: "Frantz Lab"
     # Legal entity for copyright notices (defaults to name if not set)
     organization: "Washington University School of Medicine"
     # Schema.org type for structured data
