@@ -1,0 +1,151 @@
+{{ define "main" }}
+
+{{/* Hero header */}}
+<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white dark:from-[#1A1A1A] dark:to-[#171717]">
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    <nav class="mb-6">
+      <a href="/photos/" class="text-[#A51417] text-sm font-semibold uppercase tracking-wider hover:underline inline-flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Photos
+      </a>
+    </nav>
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div>
+        <h1 class="text-3xl lg:text-4xl font-bold text-[#252525] dark:text-white mb-4"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+          {{ .Title }}
+        </h1>
+        <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
+        <div class="text-gray-600 dark:text-gray-400 text-lg mb-2">
+          {{ .Date.Format "January 2, 2006" }}
+        </div>
+        {{ with .Summary }}
+        <p class="text-gray-600 dark:text-gray-400 text-xl leading-relaxed max-w-3xl"
+           style="font-family: 'Source Sans Pro', sans-serif;">
+          {{ . }}
+        </p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* Masonry Gallery */}}
+<section class="py-12 lg:py-16 bg-[#F5F5F5] dark:bg-[#171717]">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
+    
+    {{ if .Params.gallery_items }}
+    <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+      {{ range $index, $item := .Params.gallery_items }}
+      <div class="break-inside-avoid relative group cursor-zoom-in rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white dark:bg-[#252525]"
+           onclick="openLightbox({{ $index }})">
+        <img src="/images/{{ $item.image }}" 
+             alt="{{ $item.caption | default $.Title }}" 
+             class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500">
+        
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300">
+          <div class="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-t from-black/70 to-transparent">
+            <p class="text-white text-sm font-medium">{{ $item.caption }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ else }}
+    <div class="text-center py-20 text-gray-500">
+      <p class="text-xl">No photos in this album yet.</p>
+    </div>
+    {{ end }}
+
+    <div class="mt-12 max-w-4xl mx-auto prose dark:prose-invert">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+{{/* Lightbox Modal */}}
+<div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex items-center justify-center p-4">
+  <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-[#A51417] z-50 p-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  
+  <button onclick="prevImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-[#A51417] p-2 hidden md:block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+  
+  <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-[#A51417] p-2 hidden md:block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+
+  <div class="relative max-w-full max-h-full flex flex-col items-center">
+    <img id="lightboxImage" src="" alt="" class="max-h-[85vh] max-w-full object-contain shadow-2xl rounded-sm">
+    <p id="lightboxCaption" class="text-white mt-4 text-lg font-medium text-center"></p>
+  </div>
+</div>
+
+<script>
+  let currentImageIndex = 0;
+  const galleryItems = [
+    {{ range .Params.gallery_items }}
+    {
+      src: "/images/{{ .image }}",
+      caption: "{{ .caption }}"
+    },
+    {{ end }}
+  ];
+
+  function openLightbox(index) {
+    if (!galleryItems || galleryItems.length === 0) return;
+    currentImageIndex = index;
+    updateLightbox();
+    document.getElementById('lightboxModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    // Add keyboard navigation
+    document.addEventListener('keydown', handleKeyDown);
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightboxModal').classList.add('hidden');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', handleKeyDown);
+  }
+
+  function updateLightbox() {
+    const item = galleryItems[currentImageIndex];
+    document.getElementById('lightboxImage').src = item.src;
+    document.getElementById('lightboxCaption').textContent = item.caption;
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+    updateLightbox();
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+    updateLightbox();
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  }
+
+  // Close on background click
+  document.getElementById('lightboxModal').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+</script>
+
+{{ end }}

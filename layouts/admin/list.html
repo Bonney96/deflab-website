@@ -1,0 +1,71 @@
+{{ define "main" }}
+<section class="py-20 bg-gray-100 dark:bg-gray-900 min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Photo Moderation Queue</h1>
+    
+    <div class="bg-white dark:bg-gray-800 shadow overflow-hidden sm:rounded-md">
+      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+        {{/* Mock Data for Visualization */}}
+        <li class="p-6 flex items-center gap-6">
+          <div class="flex-shrink-0 h-32 w-32 bg-gray-200 rounded-lg overflow-hidden">
+            <img src="/images/1742395304790.jpeg" alt="Pending submission" class="h-full w-full object-cover">
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white">Submission by: john.doe@wustl.edu</h3>
+              <p class="text-sm text-gray-500">Submitted 2 hours ago</p>
+            </div>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-300"><strong>Target Album:</strong> WashU Boston Biotech Committee</p>
+            <p class="mt-2 text-gray-700 dark:text-gray-200 italic">"Great time at the event! Here is a group photo."</p>
+          </div>
+          <div class="flex gap-4">
+            <button class="p-2 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition" title="Approve">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+              </svg>
+            </button>
+            <button class="p-2 rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition" title="Reject">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+              </svg>
+            </button>
+          </div>
+        </li>
+
+        <li class="p-6 flex items-center gap-6">
+          <div class="flex-shrink-0 h-32 w-32 bg-gray-200 rounded-lg overflow-hidden">
+             <!-- Placeholder for another image -->
+             <div class="h-full w-full flex items-center justify-center bg-gray-300 text-gray-500">Img</div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white">Submission by: guest@example.com</h3>
+              <p class="text-sm text-gray-500">Submitted 5 hours ago</p>
+            </div>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-300"><strong>Target Album:</strong> General / Unsorted</p>
+            <p class="mt-2 text-gray-700 dark:text-gray-200 italic">"Lab cleanup day."</p>
+          </div>
+          <div class="flex gap-4">
+            <button class="p-2 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition" title="Approve">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+              </svg>
+            </button>
+            <button class="p-2 rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition" title="Reject">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.095c.5 0 .905-.405.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
+      
+      <div class="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600">
+        <p class="text-sm text-gray-500 dark:text-gray-300">
+          This is a mockup of the admin interface. Real implementation requires backend integration.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
