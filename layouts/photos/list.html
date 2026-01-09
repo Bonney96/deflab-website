@@ -21,13 +21,13 @@
         </p>
       </div>
       
-      {{/* Upload Button */}}
-      <button id="openUploadModal" class="bg-[#A51417] hover:bg-[#8e1114] text-white font-bold py-3 px-6 rounded shadow-lg transition duration-300 flex items-center gap-2">
+      {{/* Upload Button / Email Link */}}
+      <a href="mailto:abonney@wustl.edu?subject=New%20Lab%20Photos%20Submission" class="bg-[#A51417] hover:bg-[#8e1114] text-white font-bold py-3 px-6 rounded shadow-lg transition duration-300 flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
-        Upload Lab Photos
-      </button>
+        Email Lab Photos
+      </a>
     </div>
   </div>
 </section>
@@ -47,7 +47,7 @@
         <div class="h-64 bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
           {{ if .Params.gallery_items }}
             {{ $cover := index .Params.gallery_items 0 }}
-            <img src="/images/{{ $cover.image }}" alt="{{ .Title }}" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+            <img src="{{ printf "images/%s" $cover.image | relURL }}" loading="lazy" alt="{{ .Title }}" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
           {{ else }}
             <div class="w-full h-full flex items-center justify-center text-gray-400">
               <span class="text-4xl">📁</span>
@@ -72,169 +72,5 @@
     </div>
   </div>
 </section>
-
-{{/* Upload Modal */}}
-<div id="uploadModal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-  <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" id="modalOverlay"></div>
-
-    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-    <div class="inline-block align-bottom bg-white dark:bg-[#252525] rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-full">
-      <div class="bg-white dark:bg-[#252525] px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-        <div class="sm:flex sm:items-start">
-          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white" id="modal-title">
-              Upload Lab Photos
-            </h3>
-            <div class="mt-2">
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                Share your photos with the lab! All submissions are reviewed by an admin before publishing.
-              </p>
-
-              <form id="uploadForm" class="space-y-4">
-                {{/* Photo Select */}}
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Photo(s)</label>
-                  <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 dark:border-gray-600 border-dashed rounded-md hover:border-[#A51417] transition cursor-pointer" id="dropZone">
-                    <div class="space-y-1 text-center">
-                      <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                      <div class="flex text-sm text-gray-600 dark:text-gray-400">
-                        <label for="file-upload" class="relative cursor-pointer bg-white dark:bg-[#252525] rounded-md font-medium text-[#A51417] hover:text-[#8e1114] focus-within:outline-none">
-                          <span>Upload a file</span>
-                          <input id="file-upload" name="file-upload" type="file" class="sr-only" accept=".jpg,.jpeg,.png,.heic" multiple>
-                        </label>
-                        <p class="pl-1">or drag and drop</p>
-                      </div>
-                      <p class="text-xs text-gray-500">PNG, JPG, HEIC up to 8MB</p>
-                    </div>
-                  </div>
-                  <div id="fileList" class="mt-2 text-sm text-gray-600 dark:text-gray-400"></div>
-                </div>
-
-                {{/* Album Select */}}
-                <div>
-                  <label for="album" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Album</label>
-                  <select id="album" name="album" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#A51417] focus:border-[#A51417] sm:text-sm rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <option value="general">General / Unsorted</option>
-                    {{ range .Pages }}
-                    <option value="{{ .Title }}">{{ .Title }}</option>
-                    {{ end }}
-                  </select>
-                </div>
-
-                {{/* Name/Email */}}
-                <div>
-                  <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Email (required)</label>
-                  <input type="email" name="email" id="email" required class="mt-1 focus:ring-[#A51417] focus:border-[#A51417] block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white p-2 border">
-                </div>
-
-                {{/* Caption */}}
-                <div>
-                  <label for="caption" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Caption (optional)</label>
-                  <textarea id="caption" name="caption" rows="2" class="mt-1 focus:ring-[#A51417] focus:border-[#A51417] block w-full shadow-sm sm:text-sm border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white p-2 border"></textarea>
-                </div>
-
-                {{/* Honey Pot */}}
-                <div class="hidden">
-                  <label for="website_url">Website</label>
-                  <input type="text" id="website_url" name="website_url">
-                </div>
-
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bg-gray-50 dark:bg-[#1a1a1a] px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <button type="button" id="submitUpload" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#A51417] text-base font-medium text-white hover:bg-[#8e1114] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#A51417] sm:ml-3 sm:w-auto sm:text-sm">
-          Submit for Review
-        </button>
-        <button type="button" id="cancelUpload" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:hover:bg-gray-600">
-          Cancel
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('uploadModal');
-    const openBtn = document.getElementById('openUploadModal');
-    const cancelBtn = document.getElementById('cancelUpload');
-    const submitBtn = document.getElementById('submitUpload');
-    const overlay = document.getElementById('modalOverlay');
-    const fileInput = document.getElementById('file-upload');
-    const fileList = document.getElementById('fileList');
-
-    function toggleModal(show) {
-      if (show) {
-        modal.classList.remove('hidden');
-      } else {
-        modal.classList.add('hidden');
-      }
-    }
-
-    openBtn.addEventListener('click', () => toggleModal(true));
-    cancelBtn.addEventListener('click', () => toggleModal(false));
-    overlay.addEventListener('click', () => toggleModal(false));
-
-    fileInput.addEventListener('change', function() {
-      const files = Array.from(this.files);
-      if (files.length > 0) {
-        fileList.innerHTML = files.map(f => `<div class="truncate">${f.name} (${(f.size/1024/1024).toFixed(2)} MB)</div>`).join('');
-      } else {
-        fileList.innerHTML = '';
-      }
-    });
-
-    submitBtn.addEventListener('click', function() {
-      const email = document.getElementById('email').value;
-      const honeypot = document.getElementById('website_url').value;
-      const files = fileInput.files;
-
-      // Bot Protection: Check Honey Pot
-      if (honeypot) {
-        console.log("Bot detected");
-        return;
-      }
-
-      if (!email) {
-        alert('Please enter your email address.');
-        return;
-      }
-
-      if (files.length === 0) {
-        alert('Please select at least one photo.');
-        return;
-      }
-
-      // Security: File Size and Type Validation
-      const maxSize = 8 * 1024 * 1024; // 8MB
-      const allowedTypes = ['image/jpeg', 'image/png', 'image/heic', 'image/heif'];
-      
-      for (let i = 0; i < files.length; i++) {
-        if (files[i].size > maxSize) {
-           alert(`File "${files[i].name}" exceeds the 8MB limit.`);
-           return;
-        }
-        // Note: Client-side type check is advisory.
-        if (!files[i].type.startsWith('image/') && !files[i].name.toLowerCase().endsWith('.heic')) {
-            alert(`File "${files[i].name}" is not a supported image type.`);
-            return;
-        }
-      }
-      
-      // Simulate submission
-      alert('Success! Your photo has been sent to the lab admin for moderation. It will appear on the site once approved.');
-      toggleModal(false);
-      document.getElementById('uploadForm').reset();
-      fileList.innerHTML = '';
-    });
-  });
-</script>
 
 {{ end }}

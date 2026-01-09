@@ -42,9 +42,10 @@
       {{ range $index, $item := .Params.gallery_items }}
       <div class="break-inside-avoid relative group cursor-zoom-in rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white dark:bg-[#252525]"
            onclick="openLightbox({{ $index }})">
-        <img src="/images/{{ $item.image }}" 
+        <img src="{{ printf "images/%s" $item.image | relURL }}" 
+             loading="lazy"
              alt="{{ $item.caption | default $.Title }}" 
-             class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500">
+             class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500 bg-gray-200 dark:bg-gray-800">
         
         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300">
           <div class="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-t from-black/70 to-transparent">
@@ -97,7 +98,7 @@
   const galleryItems = [
     {{ range .Params.gallery_items }}
     {
-      src: "/images/{{ .image }}",
+      src: "{{ printf "images/%s" .image | relURL }}",
       caption: "{{ .caption }}"
     },
     {{ end }}

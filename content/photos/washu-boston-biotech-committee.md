@@ -1,6 +1,6 @@
 ---
 title: "WashU Boston Biotech Committee"
-date: 2026-01-09
+date: 2025-04-15
 summary: "Photos from the WashU Boston Biotech Committee event."
 gallery_items:
   - image: "1742395304790.jpeg"
