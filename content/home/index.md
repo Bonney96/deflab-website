@@ -1,4 +1,4 @@
 ---
-title: Frantz Laboratory
+title: Frantz Lab
 type: home
 ---
