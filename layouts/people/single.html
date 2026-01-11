@@ -20,8 +20,11 @@
       {{/* Photo */}}
       <div class="flex-shrink-0">
         {{ with .Params.image }}
+        {{/* PERFORMANCE: Explicit width/height prevents layout shift (McMaster-Carr technique) */}}
         <img src="{{ .filename }}" 
              alt="{{ $.Title }}"
+             width="192"
+             height="192"
              class="w-48 h-48 md:w-64 md:h-64 rounded-lg object-cover shadow-xl"
              loading="lazy">
         {{ else }}

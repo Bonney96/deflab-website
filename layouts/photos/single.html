@@ -42,8 +42,10 @@
       {{ range $index, $item := .Params.gallery_items }}
       <div class="break-inside-avoid relative group cursor-zoom-in rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white dark:bg-[#252525]"
            onclick="openLightbox({{ $index }})">
+        {{/* PERFORMANCE: Background color acts as placeholder while lazy loading */}}
         <img src="{{ printf "images/%s" $item.image | relURL }}" 
              loading="lazy"
+             decoding="async"
              alt="{{ $item.caption | default $.Title }}" 
              class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500 bg-gray-200 dark:bg-gray-800">
         

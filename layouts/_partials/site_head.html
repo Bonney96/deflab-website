@@ -79,10 +79,8 @@
     <link href="{{ $hb_community_styles.RelPermalink }}" rel="stylesheet" />
   {{ end }}
 
-  {{ if fileExists "assets/css/custom.css" }}
-    {{ $styles := resources.Get "css/custom.css" | minify | fingerprint "sha256" }}
-    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
-  {{ end }}
+  {{/* NOTE: custom.css is already imported via frantz.css in css.html partial.
+       Removed redundant external link to prevent double-loading. */}}
 
   {{/* Externalized init scripts for CSP-friendly head */}}
   {{- $hb_head := resources.Get "js/hb-head.js" | js.Build | resources.Minify -}}
@@ -205,6 +203,58 @@
   {{ partial "jsonld/main" (dict "page" . "summary" $desc) }}
 
   <title>{{$title}}</title>
+
+  {{/* ═══════════════════════════════════════════════════════════════════════════
+       PERFORMANCE: ASSET PRELOADING (McMaster-Carr technique)
+       Tell the browser to download critical assets BEFORE it discovers them in CSS
+  ═══════════════════════════════════════════════════════════════════════════ */}}
+  
+  {{/* Preload Google Fonts for faster first paint */}}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"></noscript>
+
+  {{/* ═══════════════════════════════════════════════════════════════════════════
+       PERFORMANCE: CRITICAL CSS (McMaster-Carr technique)
+       Inline the most important styles to prevent render-blocking
+  ═══════════════════════════════════════════════════════════════════════════ */}}
+  <style>
+    /* Critical CSS - Inlined for instant first paint */
+    :root {
+      --washu-red: #A51417;
+      --washu-red-dark: #8B1114;
+      --washu-dark-gray: #252525;
+      --washu-charcoal: #1A1A1A;
+      --pure-white: #FFFFFF;
+      --light-gray: #F5F5F5;
+      --off-white: #FAFAFA;
+      --border-subtle: #EBEBEB;
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition-smooth: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+      --font-serif: 'Libre Baskerville', Georgia, serif;
+      --font-sans: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .dark {
+      --light-gray: #1F1F1F;
+      --off-white: #171717;
+      --border-subtle: #2A2A2A;
+    }
+    /* Critical header styles */
+    .header {
+      background: var(--pure-white);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all var(--transition-smooth);
+    }
+    .dark .header {
+      background: var(--washu-charcoal);
+      border-bottom-color: #333;
+    }
+    .header.scrolled { box-shadow: var(--shadow-md); }
+    /* Prevent FOUT */
+    body { font-family: var(--font-sans); }
+    h1, h2 { font-family: var(--font-serif); }
+  </style>
 
   {{/* Load font theme - uses typography config from get_theme_config */}}
   {{/* Supported values: 'sans' (Inter, default), 'serif' (Roboto Slab), 'native' (system fonts) */}}
