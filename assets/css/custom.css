@@ -15,7 +15,7 @@
   --washu-red-dark: #8B1114;
   --washu-red-light: #C41E22;
   --washu-dark-gray: #252525;
-  --washu-charcoal: #1A1A1A;
+  --washu-charcoal: #111111;
   
   /* Neutral Supports */
   --light-gray: #F5F5F5;
@@ -54,8 +54,8 @@
 
 /* Dark mode overrides */
 .dark {
-  --light-gray: #1F1F1F;
-  --off-white: #171717;
+  --light-gray: #1A1A1A;
+  --off-white: #111111;
   --border-color: #333333;
   --border-subtle: #2A2A2A;
   --glass-bg: rgba(37, 37, 37, 0.95);
@@ -633,7 +633,7 @@ body, p, li {
 }
 
 .dark .alumni-section {
-  background: #1A1A1A;
+  background: #111111;
 }
 
 .alumni-table {
@@ -751,7 +751,7 @@ body, p, li {
 }
 
 .dark .publication-featured {
-  background: #1F1F1F;
+  background: #1A1A1A;
 }
 
 .publication-featured .publication-title {

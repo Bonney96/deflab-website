@@ -5,7 +5,7 @@
 {{ $branding := partialCached "functions/get_branding" . "branding" }}
 {{ $logo := partialCached "functions/get_logo" (dict "constraint" "max_height" "size" 36) "navbar_logo" }}
 
-<header id="site-header" class="header sticky top-0 z-50 bg-white dark:bg-[#1A1A1A] border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
+<header id="site-header" class="header sticky top-0 z-50 bg-white dark:bg-[#111111] border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
   <nav class="navbar px-4 lg:px-8 flex justify-between items-center h-16 max-w-7xl mx-auto">
     
     {{/* Brand */}}
@@ -16,7 +16,7 @@
         <img
           fetchpriority="high"
           decoding="async"
-          class="h-10 w-auto"
+          class="h-10 w-auto dark:brightness-0 dark:invert"
           src="/images/WashU/WashU_idPo1_U73w_1.svg"
           alt="Washington University in St. Louis" />
         <span class="h-8 w-px bg-gray-300 dark:bg-gray-600 mx-1 hidden sm:block"></span>
@@ -44,7 +44,7 @@
     {{/* Main navigation */}}
     <ul id="nav-menu" class="navbar-nav hidden peer-checked:flex lg:flex flex-col lg:flex-row items-start lg:items-center 
         absolute lg:relative top-16 lg:top-0 left-0 right-0 lg:left-auto lg:right-auto
-        bg-white dark:bg-[#1A1A1A] lg:bg-transparent 
+        bg-white dark:bg-[#111111] lg:bg-transparent 
         border-b lg:border-0 border-gray-100 dark:border-gray-800
         p-4 lg:p-0 gap-1 lg:gap-1 xl:gap-2
         shadow-lg lg:shadow-none z-40">
@@ -81,7 +81,7 @@
                      before:content-[''] before:absolute before:left-0 lg:before:-left-2 
                      before:top-1/2 before:-translate-y-1/2
                      before:w-1 before:h-4 before:bg-[#A51417] before:rounded-sm
-                     bg-gray-50 dark:bg-gray-900 lg:bg-transparent dark:lg:bg-transparent
+                     bg-gray-50 dark:bg-[#111111] lg:bg-transparent dark:lg:bg-transparent
                      rounded lg:rounded-none
                    {{ end }}"
             {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}

@@ -26,3 +26,6 @@ hugo_stats.json
 # Local Dev
 wrangler.json
 .env
+
+# Ignore scripts directory
+/scripts/

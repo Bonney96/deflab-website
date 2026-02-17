@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{/* Hero header */}}
-<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#1A1A1A] dark:to-[#171717]">
+<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#111111] dark:to-[#111111]">
   <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
   <div class="max-w-7xl mx-auto px-4 lg:px-8 relative">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -33,7 +33,7 @@
 </section>
 
 {{/* Albums Grid */}}
-<section class="py-16 lg:py-24 bg-[#F5F5F5] dark:bg-[#171717]">
+<section class="py-16 lg:py-24 bg-[#F5F5F5] dark:bg-[#111111]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <h2 class="text-3xl font-bold text-[#252525] dark:text-white mb-12"
         style="font-family: 'Libre Baskerville', Georgia, serif;">
@@ -42,7 +42,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {{ range .Pages }}
-      <a href="{{ .RelPermalink }}" class="group block bg-white dark:bg-[#252525] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+      <a href="{{ .RelPermalink }}" class="group block bg-white dark:bg-[#1A1A1A] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
         {{/* Preview Image - grab the first image from gallery_items if available */}}
         <div class="h-64 bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
           {{ if .Params.gallery_items }}

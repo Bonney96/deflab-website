@@ -5,7 +5,7 @@
 */}}
 
 {{/* Hero header */}}
-<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white dark:from-[#1A1A1A] dark:to-[#171717]">
+<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white dark:from-[#111111] dark:to-[#111111]">
   <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
   <div class="max-w-4xl mx-auto px-4 lg:px-8">
     <nav class="mb-6">
@@ -31,7 +31,7 @@
 </section>
 
 {{/* Content */}}
-<article class="py-12 lg:py-16 bg-white dark:bg-[#171717]">
+<article class="py-12 lg:py-16 bg-white dark:bg-[#111111]">
   <div class="max-w-4xl mx-auto px-4 lg:px-8">
     <div class="prose prose-lg dark:prose-invert max-w-none
                 prose-headings:font-bold prose-headings:text-[#252525] dark:prose-headings:text-white
@@ -54,7 +54,7 @@
         {{ $currentPage := . }}
         {{ range first 2 (where (where .Site.RegularPages "Section" "research") ".RelPermalink" "!=" $currentPage.RelPermalink) }}
         <a href="{{ .RelPermalink }}" 
-           class="group bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg hover:shadow-lg transition-all duration-300">
+           class="group bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition-all duration-300">
           <h4 class="font-bold text-[#252525] dark:text-white group-hover:text-[#A51417] transition-colors mb-2"
               style="font-family: 'Libre Baskerville', Georgia, serif;">
             {{ .Title }}

@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{/* Hero header */}}
-<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white dark:from-[#1A1A1A] dark:to-[#171717]">
+<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white dark:from-[#111111] dark:to-[#111111]">
   <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <nav class="mb-6">
@@ -34,13 +34,13 @@
 </section>
 
 {{/* Masonry Gallery */}}
-<section class="py-12 lg:py-16 bg-[#F5F5F5] dark:bg-[#171717]">
+<section class="py-12 lg:py-16 bg-[#F5F5F5] dark:bg-[#111111]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     
     {{ if .Params.gallery_items }}
     <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
       {{ range $index, $item := .Params.gallery_items }}
-      <div class="break-inside-avoid relative group cursor-zoom-in rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white dark:bg-[#252525]"
+      <div class="break-inside-avoid relative group cursor-zoom-in rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white dark:bg-[#1A1A1A]"
            onclick="openLightbox({{ $index }})">
         {{/* PERFORMANCE: Background color acts as placeholder while lazy loading */}}
         <img src="{{ printf "images/%s" $item.image | relURL }}" 

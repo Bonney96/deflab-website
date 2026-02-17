@@ -5,7 +5,7 @@
 */}}
 
 {{/* Hero header */}}
-<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#1A1A1A] dark:to-[#171717]">
+<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#111111] dark:to-[#111111]">
   <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="max-w-3xl">
@@ -29,9 +29,9 @@
 {{/* Principal Investigator - Featured */}}
 {{ $pi := where .Pages "Params.weight" 1 }}
 {{ with index $pi 0 }}
-<section class="py-16 bg-white dark:bg-[#171717]">
+<section class="py-16 bg-white dark:bg-[#111111]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
-    <div class="bg-gray-50 dark:bg-[#252525] border border-gray-100 dark:border-gray-800 rounded-xl p-8 lg:p-12 shadow-lg">
+    <div class="bg-gray-50 dark:bg-[#1A1A1A] border border-gray-100 dark:border-gray-800 rounded-xl p-8 lg:p-12 shadow-lg">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
         {{/* Image */}}
         <div class="lg:col-span-1">
@@ -82,7 +82,7 @@
 {{/* Current Team Grid */}}
 {{ $team := where .Pages "Params.weight" ">" 1 }}
 {{ if $team }}
-<section class="py-16 lg:py-24 bg-gray-50 dark:bg-[#1A1A1A]">
+<section class="py-16 lg:py-24 bg-gray-50 dark:bg-[#111111]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-12">
       <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
@@ -102,7 +102,7 @@
     {{ if $wustl_sorted }}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
       {{ range $wustl_sorted }}
-      <div class="team-card group bg-white dark:bg-[#1F1F1F] rounded-xl p-6 text-center
+      <div class="team-card group bg-white dark:bg-[#1A1A1A] rounded-xl p-6 text-center
                   shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
         {{/* Photo */}}
         <div class="relative mb-6">
@@ -172,7 +172,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {{ range $utsa_sorted }}
-      <div class="team-card group bg-white dark:bg-[#1F1F1F] rounded-xl p-6 text-center
+      <div class="team-card group bg-white dark:bg-[#1A1A1A] rounded-xl p-6 text-center
                   shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
         {{/* Photo */}}
         <div class="relative mb-6">
@@ -228,7 +228,7 @@
 {{ end }}
 
 {{/* Alumni Section */}}
-<section class="py-16 lg:py-24 bg-white dark:bg-[#171717]">
+<section class="py-16 lg:py-24 bg-white dark:bg-[#111111]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-12">
       <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
@@ -275,7 +275,7 @@
         </h3>
         <div class="grid gap-8 md:grid-cols-2">
           {{/* Roberto Napoleon Silva Villatoro */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. Roberto Napoleon Silva Villatoro
               <a href="https://www.linkedin.com/in/roberto-silva-villatoro-b96890129/" 
@@ -298,7 +298,7 @@
           </div>
 
           {{/* Melissa Cadena */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1">
               Dr. Melissa Cadena
             </div>
@@ -312,7 +312,7 @@
           </div>
 
           {{/* Nicholas Clanton */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. Nicholas Clanton
               <a href="https://www.linkedin.com/in/nick-clanton-717b83214/" 
@@ -335,7 +335,7 @@
           </div>
 
           {{/* Charissa Munteanu */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. Charissa Munteanu
               <a href="https://www.linkedin.com/in/charissa-munteanu-765391185/" 
@@ -355,7 +355,7 @@
           </div>
 
           {{/* Ana Cristina Parra Rivera */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. Ana Cristina Parra Rivera
               <a href="https://www.linkedin.com/in/ana-parra-rivera-a25439108/" 
@@ -378,7 +378,7 @@
           </div>
 
           {{/* Marie El Arba */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. Marie El Arba
               <a href="https://www.linkedin.com/in/marie-estefania-el-arba-phd-38331a68/" 
@@ -401,7 +401,7 @@
           </div>
 
           {{/* Robynne Neff */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. Robynne Neff
               <a href="https://www.linkedin.com/in/robynne-neff-a0b81536/" 
@@ -424,7 +424,7 @@
           </div>
 
           {{/* Hector Aguilar */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. Hector Aguilar
               <a href="https://www.linkedin.com/in/hector-aguilar-utsa/" 
@@ -447,7 +447,7 @@
           </div>
 
           {{/* David Babinski */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. David Babinski
               <a href="https://www.linkedin.com/in/davidbabinski/" 
@@ -470,7 +470,7 @@
           </div>
 
           {{/* Ian Crouch */}}
-          <div class="bg-gray-50 dark:bg-[#1F1F1F] p-6 rounded-lg">
+          <div class="bg-gray-50 dark:bg-[#1A1A1A] p-6 rounded-lg">
             <div class="font-bold text-lg text-[#252525] dark:text-white mb-1 flex items-center gap-2">
               Dr. Ian Crouch
               <a href="https://www.linkedin.com/in/ian-crouch-5951b813a/" 
@@ -501,19 +501,19 @@
           Former Master's Students
         </h3>
         <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
+          <li class="bg-gray-50 dark:bg-[#1A1A1A] p-4 rounded text-center">
             <span class="font-bold block text-[#252525] dark:text-white">Kristina Marques</span>
             <span class="text-sm text-gray-500">2015</span>
           </li>
-          <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
+          <li class="bg-gray-50 dark:bg-[#1A1A1A] p-4 rounded text-center">
             <span class="font-bold block text-[#252525] dark:text-white">Amanda Nolan</span>
             <span class="text-sm text-gray-500">2014</span>
           </li>
-          <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
+          <li class="bg-gray-50 dark:bg-[#1A1A1A] p-4 rounded text-center">
             <span class="font-bold block text-[#252525] dark:text-white">Francisco Ruiz</span>
             <span class="text-sm text-gray-500">2013</span>
           </li>
-          <li class="bg-gray-50 dark:bg-[#1F1F1F] p-4 rounded text-center">
+          <li class="bg-gray-50 dark:bg-[#1A1A1A] p-4 rounded text-center">
             <span class="font-bold block text-[#252525] dark:text-white">Ray Still</span>
             <span class="text-sm text-gray-500">2013</span>
           </li>
