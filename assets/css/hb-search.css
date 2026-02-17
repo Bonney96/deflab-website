@@ -14,7 +14,7 @@
 /* Search result highlights */
 .search-result mark {
   background-color: rgb(254 240 138);
-  color: rgb(17 24 39);
+  color: rgb(23 23 23);
   font-weight: 600;
   padding: 0.05rem 0.2rem;
   border-radius: 0.125rem;
@@ -59,7 +59,7 @@
 }
 
 .dark .search-skeleton {
-  background: linear-gradient(90deg, rgb(55 65 81) 25%, rgb(75 85 99) 50%, rgb(55 65 81) 75%);
+  background: linear-gradient(90deg, rgb(64 64 64) 25%, rgb(82 82 82) 50%, rgb(64 64 64) 75%);
   background-size: 200% 100%;
 }
 

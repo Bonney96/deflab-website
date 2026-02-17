@@ -9,21 +9,21 @@
 @layer utilities {
   /* Custom Hugo Blox Dark Color */
   .bg-hb-dark {
-    background-color: var(--color-hb-dark, rgb(23 24 28));
+    background-color: var(--color-hb-dark, rgb(17 17 17));
   }
   .text-hb-dark {
-    color: var(--color-hb-dark, rgb(23 24 28));
+    color: var(--color-hb-dark, rgb(17 17 17));
   }
   .border-hb-dark {
-    border-color: var(--color-hb-dark, rgb(23 24 28));
+    border-color: var(--color-hb-dark, rgb(17 17 17));
   }
 
   /* Dark mode variants */
   .dark\:bg-hb-dark:where(.dark, .dark *) {
-    background-color: var(--color-hb-dark, rgb(23 24 28));
+    background-color: var(--color-hb-dark, rgb(17 17 17));
   }
   .dark\:text-hb-dark:where(.dark, .dark *) {
-    color: var(--color-hb-dark, rgb(23 24 28));
+    color: var(--color-hb-dark, rgb(17 17 17));
   }
 }
 

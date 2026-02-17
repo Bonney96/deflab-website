@@ -14,7 +14,7 @@
 .dark .prose .chroma,
 .dark .prose pre {
   color: white;
-  background-color: rgb(71 85 105); /* slate-700 equivalent */
+  background-color: rgb(64 64 64); /* neutral-700 */
 }
 
 /* Fix LaTeX/TeX math rendering in code blocks - prevent inheriting italic from Chroma in dark mode */

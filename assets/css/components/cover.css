@@ -55,7 +55,7 @@
 }
 
 .dark .article-cover-fade {
-  background: linear-gradient(to bottom, transparent, rgb(15, 23, 42));
+  background: linear-gradient(to bottom, transparent, rgb(17, 17, 17));
 }
 
 /* Style variants */
