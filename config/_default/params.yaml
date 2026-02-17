@@ -61,7 +61,7 @@ hugoblox:
     colors:
       primary: "#A51417"                # WashU Red - Primary brand color
       secondary: "#252525"              # WashU Dark Gray - Text and accents
-      neutral: "slate"                  # Gray utilities
+      neutral: "neutral"                # True neutral gray (no blue tint)
 
   # ────────────────────────────────────────────────────────────────────────────
   # NAVIGATION

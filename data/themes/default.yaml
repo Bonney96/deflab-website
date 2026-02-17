@@ -1,0 +1,40 @@
+# HugoBlox Theme Pack - Frantz Lab Override
+# Neutralized dark mode (no blue tint)
+
+hugoblox:
+  meta:
+    format: "hugoblox-theme@1"
+    name: "Default"
+    vendor: "hugoblox"
+    version: "1.0.0"
+    license: "MIT"
+
+  type: "dual"
+
+  light:
+    colors:
+      primary: "indigo"
+      secondary: "blue"
+    surfaces:
+      background: "#ffffff"
+      foreground: "#171717"
+      header:
+        background: "#f5f5f5"
+        foreground: "#171717"
+      footer:
+        background: "#f5f5f5"
+        foreground: "#171717"
+
+  dark:
+    colors:
+      primary: "blue"
+      secondary: "teal"
+    surfaces:
+      background: "#111111"
+      foreground: "#f5f5f5"
+      header:
+        background: "#111111"
+        foreground: "#f5f5f5"
+      footer:
+        background: "#1A1A1A"
+        foreground: "#e5e5e5"
