@@ -209,11 +209,10 @@
        Tell the browser to download critical assets BEFORE it discovers them in CSS
   ═══════════════════════════════════════════════════════════════════════════ */}}
   
-  {{/* Preload Google Fonts for faster first paint */}}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"></noscript>
+  {{/* Preload Adobe Typekit (WashU Brand Fonts) for faster first paint */}}
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="preload" href="https://use.typekit.net/mav2zlt.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://use.typekit.net/mav2zlt.css"></noscript>
 
   {{/* ═══════════════════════════════════════════════════════════════════════════
        PERFORMANCE: CRITICAL CSS (McMaster-Carr technique)
@@ -222,8 +221,8 @@
   <style>
     /* Critical CSS - Inlined for instant first paint */
     :root {
-      --washu-red: #A51417;
-      --washu-red-dark: #8B1114;
+      --washu-red: #BA0C2F;
+      --washu-red-dark: #971B2F;
       --washu-dark-gray: #252525;
       --washu-charcoal: #1A1A1A;
       --pure-white: #FFFFFF;
@@ -232,23 +231,14 @@
       --border-subtle: #EBEBEB;
       --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
       --transition-smooth: 400ms cubic-bezier(0.4, 0, 0.2, 1);
-      --font-serif: 'Libre Baskerville', Georgia, serif;
-      --font-sans: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-    .dark {
-      --light-gray: #1F1F1F;
-      --off-white: #171717;
-      --border-subtle: #2A2A2A;
+      --font-serif: 'IvyPresto Headline', Georgia, serif;
+      --font-sans: 'IvyStyle Sans', Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
     }
     /* Critical header styles */
     .header {
       background: var(--pure-white);
       border-bottom: 1px solid var(--border-subtle);
       transition: all var(--transition-smooth);
-    }
-    .dark .header {
-      background: var(--washu-charcoal);
-      border-bottom-color: #333;
     }
     .header.scrolled { box-shadow: var(--shadow-md); }
     /* Prevent FOUT */

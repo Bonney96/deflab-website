@@ -1,11 +1,11 @@
 {{ define "main" }}
 
 {{/* Hero header */}}
-<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white dark:from-[#111111] dark:to-[#111111]">
-  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
+<section class="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#BA0C2F]"></div>
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <nav class="mb-6">
-      <a href="/group-life/" class="text-[#A51417] text-sm font-semibold uppercase tracking-wider hover:underline inline-flex items-center gap-2">
+      <a href="/group-life/" class="text-[#BA0C2F] text-sm font-semibold uppercase tracking-wider hover:underline inline-flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
@@ -14,17 +14,17 @@
     </nav>
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
       <div>
-        <h1 class="text-3xl lg:text-4xl font-bold text-[#252525] dark:text-white mb-4"
-            style="font-family: 'Libre Baskerville', Georgia, serif;">
+        <h1 class="text-3xl lg:text-4xl font-bold text-[#252525] mb-4"
+            style="font-family: 'IvyPresto Headline', Georgia, serif;">
           {{ .Title }}
         </h1>
-        <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
-        <div class="text-gray-600 dark:text-gray-400 text-lg mb-2">
+        <div class="w-16 h-1 bg-[#BA0C2F] mb-6"></div>
+        <div class="text-gray-600 text-lg mb-2">
           {{ .Date.Format "January 2, 2006" }}
         </div>
         {{ with .Summary }}
-        <p class="text-gray-600 dark:text-gray-400 text-xl leading-relaxed max-w-3xl"
-           style="font-family: 'Source Sans Pro', sans-serif;">
+        <p class="text-gray-600 text-xl leading-relaxed max-w-3xl"
+           style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
           {{ . }}
         </p>
         {{ end }}
@@ -34,20 +34,20 @@
 </section>
 
 {{/* Masonry Gallery */}}
-<section class="py-12 lg:py-16 bg-[#F5F5F5] dark:bg-[#111111]">
+<section class="py-12 lg:py-16 bg-[#F4EEEA]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     
     {{ if .Params.gallery_items }}
     <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
       {{ range $index, $item := .Params.gallery_items }}
-      <div class="break-inside-avoid relative group cursor-zoom-in rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white dark:bg-[#1A1A1A]"
+      <div class="break-inside-avoid relative group cursor-zoom-in rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 bg-white"
            onclick="openLightbox({{ $index }})">
         {{/* PERFORMANCE: Background color acts as placeholder while lazy loading */}}
         <img src="{{ printf "images/%s" $item.image | relURL }}" 
              loading="lazy"
              decoding="async"
              alt="{{ $item.caption | default $.Title }}" 
-             class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500 bg-gray-200 dark:bg-gray-800">
+             class="w-full h-auto object-cover transform group-hover:scale-[1.02] transition duration-500 bg-gray-200">
         
         <!-- Hover Overlay: Dimmer -->
         <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition duration-300 pointer-events-none"></div>
@@ -67,7 +67,7 @@
     </div>
     {{ end }}
 
-    <div class="mt-12 max-w-4xl mx-auto prose dark:prose-invert">
+    <div class="mt-12 max-w-4xl mx-auto prose">
       {{ .Content }}
     </div>
   </div>
@@ -75,19 +75,19 @@
 
 {{/* Lightbox Modal */}}
 <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-95 flex items-center justify-center p-4">
-  <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-[#A51417] z-50 p-2">
+  <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-[#BA0C2F] z-50 p-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
     </svg>
   </button>
   
-  <button onclick="prevImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-[#A51417] p-2 hidden md:block">
+  <button onclick="prevImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-[#BA0C2F] p-2 hidden md:block">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
     </svg>
   </button>
   
-  <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-[#A51417] p-2 hidden md:block">
+  <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-[#BA0C2F] p-2 hidden md:block">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
     </svg>

@@ -33,7 +33,7 @@ hugoblox:
     enable: true
     sticky: true
     align: "center"
-    theme_toggle: true
+    theme_toggle: false
     search: false
     language_switcher: false
     cta:
@@ -59,7 +59,7 @@ hugoblox:
     pack: "default"
     # WashU Official Colors
     colors:
-      primary: "#A51417"                # WashU Red - Primary brand color
+      primary: "#BA0C2F"                # WashU Red - Primary brand color (Pantone 200)
       secondary: "#252525"              # WashU Dark Gray - Text and accents
       neutral: "neutral"                # True neutral gray (no blue tint)
 

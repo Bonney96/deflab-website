@@ -11,14 +11,15 @@
 
 :root {
   /* Primary Brand Colors - WASHU Official */
-  --washu-red: #A51417;
-  --washu-red-dark: #8B1114;
+  --washu-red: #BA0C2F;
+  --washu-red-dark: #971B2F;
   --washu-red-light: #C41E22;
   --washu-dark-gray: #252525;
   --washu-charcoal: #111111;
-  
+
   /* Neutral Supports */
-  --light-gray: #F5F5F5;
+  --warm-white: #F4EEEA;
+  --light-gray: #F4EEEA;
   --off-white: #FAFAFA;
   --pure-white: #FFFFFF;
   --border-color: #E0E0E0;
@@ -26,23 +27,22 @@
   
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.95);
-  --glass-bg-dark: rgba(37, 37, 37, 0.95);
   --glass-border: rgba(255, 255, 255, 0.2);
   --glass-shadow: rgba(0, 0, 0, 0.1);
   
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
-  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
-  --shadow-card: 0 2px 15px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 5px 0 rgba(0, 0, 0, 0.13);
+  --shadow-lg: 0 3px 8px 0 rgba(0, 0, 0, 0.18);
+  --shadow-hover: 0 3px 8px 0 rgba(0, 0, 0, 0.18);
+  --shadow-card: 0 2px 5px 0 rgba(0, 0, 0, 0.13);
   
   /* Typography */
-  --font-serif: 'IvyPresto Headline', 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-  --font-sans: 'IvyStyle Sans', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'IvyPresto Headline', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IvyStyle Sans', Calibri, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* Spacing */
-  --section-padding: clamp(3rem, 8vw, 6rem);
+  --section-padding: clamp(3rem, 6vw, 5rem);
   --container-padding: clamp(1rem, 5vw, 3rem);
   
   /* Transitions */
@@ -52,21 +52,11 @@
   --transition-bounce: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Dark mode overrides */
-.dark {
-  --light-gray: #1A1A1A;
-  --off-white: #111111;
-  --border-color: #333333;
-  --border-subtle: #2A2A2A;
-  --glass-bg: rgba(37, 37, 37, 0.95);
-}
-
 /* ─────────────────────────────────────────────────────────────────────────────
    2. TYPOGRAPHY SYSTEM
    ───────────────────────────────────────────────────────────────────────────── */
 
-/* Load Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+/* WashU Brand Fonts loaded via Adobe Typekit in head-end.html */
 
 /* Headings - Serif, Authoritative */
 h1, h2, .heading-serif {
@@ -75,10 +65,6 @@ h1, h2, .heading-serif {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
-}
-
-.dark h1, .dark h2, .dark .heading-serif {
-  color: var(--pure-white);
 }
 
 h1 {
@@ -106,10 +92,6 @@ body, p, li {
   color: #444;
 }
 
-.dark body, .dark p, .dark li {
-  color: #D1D5DB;
-}
-
 /* ─────────────────────────────────────────────────────────────────────────────
    3. CUSTOM NAVBAR - STICKY WITH INNOVATION HIGHLIGHT
    ───────────────────────────────────────────────────────────────────────────── */
@@ -118,11 +100,6 @@ body, p, li {
   background: var(--pure-white);
   border-bottom: 1px solid var(--border-subtle);
   transition: all var(--transition-smooth);
-}
-
-.dark .header {
-  background: var(--washu-charcoal);
-  border-bottom-color: #333;
 }
 
 .header.scrolled {
@@ -139,10 +116,6 @@ body, p, li {
   letter-spacing: 0.02em;
 }
 
-.dark .navbar-brand {
-  color: var(--pure-white) !important;
-}
-
 /* Navigation links */
 .nav-link {
   font-family: var(--font-sans);
@@ -153,10 +126,6 @@ body, p, li {
   position: relative;
   padding: 0.5rem 0;
   transition: color var(--transition-base);
-}
-
-.dark .nav-link {
-  color: #E5E5E5;
 }
 
 .nav-link::after {
@@ -307,7 +276,7 @@ body, p, li {
   font-weight: 600;
   font-size: 0.875rem;
   padding: 0.875rem 2rem;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   transition: all var(--transition-smooth);
   text-decoration: none;
@@ -380,11 +349,6 @@ body, p, li {
   box-shadow: var(--shadow-card);
 }
 
-.dark .pillar-card {
-  background: var(--washu-charcoal);
-  border-top-color: #333;
-}
-
 .pillar-card::before {
   content: '';
   position: absolute;
@@ -397,7 +361,7 @@ body, p, li {
 }
 
 .pillar-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
 
@@ -421,19 +385,11 @@ body, p, li {
   font-weight: 700;
 }
 
-.dark .pillar-card-title {
-  color: var(--pure-white);
-}
-
 .pillar-card-description {
   font-family: var(--font-sans);
   color: #666;
   line-height: 1.7;
   margin-bottom: 1.5rem;
-}
-
-.dark .pillar-card-description {
-  color: #9CA3AF;
 }
 
 .pillar-card-link {
@@ -568,10 +524,6 @@ body, p, li {
   transition: all var(--transition-smooth);
 }
 
-.dark .team-card {
-  background: var(--washu-charcoal);
-}
-
 .team-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
@@ -597,10 +549,6 @@ body, p, li {
   font-weight: 700;
   color: var(--washu-dark-gray);
   margin-bottom: 0.25rem;
-}
-
-.dark .team-card-name {
-  color: var(--pure-white);
 }
 
 .team-card-role {
@@ -632,19 +580,11 @@ body, p, li {
   padding: var(--section-padding) var(--container-padding);
 }
 
-.dark .alumni-section {
-  background: #111111;
-}
-
 .alumni-table {
   width: 100%;
   border-collapse: collapse;
   background: var(--pure-white);
   box-shadow: var(--shadow-card);
-}
-
-.dark .alumni-table {
-  background: var(--washu-charcoal);
 }
 
 .alumni-table th {
@@ -711,10 +651,6 @@ body, p, li {
   line-height: 1.4;
 }
 
-.dark .publication-title {
-  color: var(--pure-white);
-}
-
 .publication-journal {
   font-style: italic;
   color: #888;
@@ -748,10 +684,6 @@ body, p, li {
   padding: 2rem;
   margin-bottom: 2rem;
   border-left: 5px solid var(--washu-red);
-}
-
-.dark .publication-featured {
-  background: #1A1A1A;
 }
 
 .publication-featured .publication-title {
@@ -828,10 +760,6 @@ body, p, li {
   font-size: 1.125rem;
   color: #666;
   line-height: 1.7;
-}
-
-.dark .section-header .lead {
-  color: #9CA3AF;
 }
 
 .section-divider {

@@ -5,22 +5,22 @@
 {{ $branding := partialCached "functions/get_branding" . "branding" }}
 {{ $logo := partialCached "functions/get_logo" (dict "constraint" "max_height" "size" 36) "navbar_logo" }}
 
-<header id="site-header" class="header sticky top-0 z-50 bg-white dark:bg-[#111111] border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
+<header id="site-header" class="header sticky top-0 z-50 bg-white border-b border-gray-100 transition-all duration-300">
   <nav class="navbar px-4 lg:px-8 flex justify-between items-center h-16 max-w-7xl mx-auto">
     
     {{/* Brand */}}
     <div class="flex-shrink-0">
-      <a class="navbar-brand flex items-center gap-3 text-[#252525] dark:text-white no-underline hover:no-underline" 
+      <a class="navbar-brand flex items-center gap-3 text-[#252525] no-underline hover:no-underline" 
          href="{{ site.Home.RelPermalink }}" 
          title="{{ $branding.site_title }}">
         <img
           fetchpriority="high"
           decoding="async"
-          class="h-10 w-auto dark:brightness-0 dark:invert"
+          class="h-12 w-auto"
           src="/images/WashU/washu-medicine-logo.svg"
           alt="Washington University School of Medicine" />
-        <span class="h-8 w-px bg-gray-300 dark:bg-gray-600 mx-1 hidden sm:block"></span>
-        <span class="font-semibold text-lg tracking-wide" style="font-family: 'Source Sans Pro', sans-serif;">
+        <span class="h-8 w-px bg-gray-300 mx-1 hidden sm:block"></span>
+        <span class="font-semibold text-lg tracking-wide" style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
           Frantz Lab
         </span>
       </a>
@@ -30,7 +30,7 @@
     <input id="nav-toggle" type="checkbox" class="hidden peer" />
     <label
       for="nav-toggle"
-      class="order-3 cursor-pointer flex items-center lg:hidden text-[#252525] dark:text-white p-2">
+      class="order-3 cursor-pointer flex items-center lg:hidden text-[#252525] p-2">
       <svg id="show-button" class="h-6 w-6 fill-current peer-checked:hidden" viewBox="0 0 20 20">
         <title>Open Menu</title>
         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -44,9 +44,8 @@
     {{/* Main navigation */}}
     <ul id="nav-menu" class="navbar-nav hidden peer-checked:flex lg:flex flex-col lg:flex-row items-start lg:items-center 
         absolute lg:relative top-16 lg:top-0 left-0 right-0 lg:left-auto lg:right-auto
-        bg-white dark:bg-[#111111] lg:bg-transparent 
-        border-b lg:border-0 border-gray-100 dark:border-gray-800
-        p-4 lg:p-0 gap-1 lg:gap-1 xl:gap-2
+        bg-white lg:bg-transparent 
+        border-b lg:border-0 border-gray-100        p-4 lg:p-0 gap-1 lg:gap-1 xl:gap-2
         shadow-lg lg:shadow-none z-40">
       
       {{ $currentPage := . }}
@@ -69,20 +68,18 @@
         <li class="nav-item w-full lg:w-auto {{ if $isInnovation }}nav-item-innovation{{ end }}">
           <a
             class="nav-link block lg:inline-block px-3 py-2 lg:py-1 
-                   text-[#252525] dark:text-gray-200
-                   font-medium text-sm
+                   text-[#252525]                   font-medium text-sm
                    transition-all duration-200
                    relative
-                   hover:text-[#A51417]
-                   {{ if $active }}text-[#A51417] font-semibold{{ end }}
+                   hover:text-[#BA0C2F]
+                   {{ if $active }}text-[#BA0C2F] font-semibold{{ end }}
                    {{ if $isInnovation }}
-                     text-[#A51417] font-bold
+                     text-[#BA0C2F] font-bold
                      lg:ml-2
                      before:content-[''] before:absolute before:left-0 lg:before:-left-2 
                      before:top-1/2 before:-translate-y-1/2
-                     before:w-1 before:h-4 before:bg-[#A51417] before:rounded-sm
-                     bg-gray-50 dark:bg-[#111111] lg:bg-transparent dark:lg:bg-transparent
-                     rounded lg:rounded-none
+                     before:w-1 before:h-4 before:bg-[#BA0C2F] before:rounded-sm
+                     bg-gray-50 lg:bg-transparent                     rounded lg:rounded-none
                    {{ end }}"
             {{ if findRE `^http` .URL }}target="_blank" rel="noopener"{{ end }}
             href="{{ $url }}">
@@ -94,40 +91,13 @@
 
     {{/* Right side controls */}}
     <div class="flex items-center gap-2">
-      {{/* Theme toggle */}}
-      {{ $show_mode_toggle := site.Params.hugoblox.header.theme_toggle | default true }}
-      {{ if $show_mode_toggle }}
-      <button class="theme-toggle p-2 text-[#252525] dark:text-gray-200 hover:text-[#A51417] dark:hover:text-[#A51417] transition-colors" 
-              accesskey="t" 
-              title="Toggle dark mode">
-        <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-             stroke-linejoin="round" class="block dark:hidden">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-        <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-             stroke-linejoin="round" class="hidden dark:block">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-      </button>
-      {{ end }}
-
       {{/* Contact CTA button - Desktop only */}}
       <a href="/#contact" 
          class="hidden lg:inline-flex items-center gap-2 px-4 py-2 
                 text-sm font-semibold uppercase tracking-wider
-                border-2 border-[#A51417] text-[#A51417]
-                hover:bg-[#A51417] hover:text-white
-                rounded transition-all duration-200">
+                border-2 border-[#BA0C2F] text-[#BA0C2F]
+                hover:bg-[#BA0C2F] hover:text-white
+                rounded-sm transition-all duration-200">
         Contact Lab
       </a>
     </div>

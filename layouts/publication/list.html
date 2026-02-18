@@ -5,21 +5,21 @@
 */}}
 
 {{/* Hero header */}}
-<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#111111] dark:to-[#111111]">
-  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
+<section class="relative py-16 lg:py-20 bg-gradient-to-br from-[#F4EEEA] to-white">
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#BA0C2F]"></div>
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="max-w-3xl">
-      <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
-          style="font-family: 'Source Sans Pro', sans-serif;">
+      <h3 class="text-[#BA0C2F] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+          style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
         Research Output
       </h3>
-      <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] dark:text-white mb-6"
-          style="font-family: 'Libre Baskerville', Georgia, serif;">
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] mb-6"
+          style="font-family: 'IvyPresto Headline', Georgia, serif;">
         Publications
       </h1>
-      <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
-      <p class="text-gray-600 dark:text-gray-400 text-xl leading-relaxed"
-         style="font-family: 'Source Sans Pro', sans-serif;">
+      <div class="w-16 h-1 bg-[#BA0C2F] mb-6"></div>
+      <p class="text-gray-600 text-xl leading-relaxed"
+         style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
         Peer-reviewed publications in leading chemistry and biomedical journals.
       </p>
     </div>
@@ -27,22 +27,21 @@
 </section>
 
 {{/* Full Publications List */}}
-<section class="py-16 bg-gray-50 dark:bg-[#111111]">
+<section class="py-16 bg-[#F4EEEA]">
   <div class="max-w-5xl mx-auto px-4 lg:px-8">
     <div class="flex items-center justify-between mb-8">
-      <h2 class="text-2xl font-bold text-[#252525] dark:text-white"
-          style="font-family: 'Libre Baskerville', Georgia, serif;">
+      <h2 class="text-2xl font-bold text-[#252525]"
+          style="font-family: 'IvyPresto Headline', Georgia, serif;">
         Complete Publication List
       </h2>
     </div>
     
     {{/* Publications list from content */}}
     {{ range .Pages }}
-    <div class="bg-white dark:bg-[#1A1A1A] rounded-lg shadow-md p-6 lg:p-8">
-      <div class="prose prose-lg dark:prose-invert max-w-none publication-list
-                  prose-p:my-4 prose-p:text-gray-600 dark:prose-p:text-gray-400
-                  prose-strong:text-[#A51417]
-                  prose-a:text-[#A51417] prose-a:no-underline hover:prose-a:underline">
+    <div class="bg-white rounded-sm shadow p-6 lg:p-8">
+      <div class="prose prose-lg max-w-none publication-list
+                  prose-p:my-4 prose-p:text-gray-600                  prose-strong:text-[#BA0C2F]
+                  prose-a:text-[#BA0C2F] prose-a:no-underline hover:prose-a:underline">
         {{ .Content }}
       </div>
     </div>
@@ -55,15 +54,15 @@
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
       <div>
-        <div class="text-4xl lg:text-5xl font-bold text-[#A51417] mb-2">4</div>
+        <div class="text-4xl lg:text-5xl font-bold text-[#BA0C2F] mb-2">4</div>
         <div class="text-sm text-gray-400 uppercase tracking-wider">JACS Publications</div>
       </div>
       <div>
-        <div class="text-4xl lg:text-5xl font-bold text-[#A51417] mb-2">3</div>
+        <div class="text-4xl lg:text-5xl font-bold text-[#BA0C2F] mb-2">3</div>
         <div class="text-sm text-gray-400 uppercase tracking-wider">Nature/Science</div>
       </div>
       <div>
-        <div class="text-4xl lg:text-5xl font-bold text-[#A51417] mb-2">5000+</div>
+        <div class="text-4xl lg:text-5xl font-bold text-[#BA0C2F] mb-2">5000+</div>
         <div class="text-sm text-gray-400 uppercase tracking-wider">Total Citations</div>
       </div>
     </div>
@@ -78,20 +77,16 @@
   transition: all 0.2s ease;
 }
 
-.dark .publication-list p {
-  border-bottom-color: #333;
-}
-
 .publication-list p:hover {
   padding-left: 1rem;
-  border-left: 3px solid #A51417;
+  border-left: 3px solid #BA0C2F;
   background: rgba(165, 20, 23, 0.03);
 }
 
 /* Highlight journal names */
 .publication-list strong,
 .publication-list em {
-  color: #A51417;
+  color: #BA0C2F;
 }
 
 /* TOC/Graphical abstract images */
@@ -106,10 +101,6 @@
   background: #f9f9f9;
 }
 
-.dark .pub-toc-image {
-  border-color: #333;
-  background: #1A1A1A;
-}
 </style>
 
 {{/* Inject TOC/graphical abstract images below each publication */}}

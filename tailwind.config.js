@@ -9,12 +9,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'washu-red': '#A51417',
+        'washu-red': '#BA0C2F',
         'washu-dark-gray': '#252525',
       },
       fontFamily: {
-        'serif': ['"IvyPresto Headline"', '"Libre Baskerville"', 'Georgia', 'serif'],
-        'sans': ['"IvyStyle Sans"', '"Source Sans Pro"', 'sans-serif'],
+        'serif': ['"IvyPresto Headline"', 'Georgia', 'serif'],
+        'sans': ['"IvyStyle Sans"', 'Calibri', 'sans-serif'],
       }
     },
   },

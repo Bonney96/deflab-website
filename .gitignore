@@ -29,3 +29,6 @@ wrangler.json
 
 # Ignore scripts directory
 /scripts/
+
+# Design notes (internal reference only)
+/design-notes/

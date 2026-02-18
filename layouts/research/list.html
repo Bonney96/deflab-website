@@ -5,21 +5,21 @@
 */}}
 
 {{/* Hero header */}}
-<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#111111] dark:to-[#111111]">
-  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
+<section class="relative py-16 lg:py-20 bg-gradient-to-br from-[#F4EEEA] to-white">
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#BA0C2F]"></div>
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     <div class="max-w-3xl">
-      <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
-          style="font-family: 'Source Sans Pro', sans-serif;">
+      <h3 class="text-[#BA0C2F] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+          style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
         Research Programs
       </h3>
-      <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] dark:text-white mb-6"
-          style="font-family: 'Libre Baskerville', Georgia, serif;">
+      <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] mb-6"
+          style="font-family: 'IvyPresto Headline', Georgia, serif;">
         {{ .Title | default "Translational Chemistry & Drug Discovery" }}
       </h1>
-      <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
-      <p class="text-gray-600 dark:text-gray-400 text-xl leading-relaxed"
-         style="font-family: 'Source Sans Pro', sans-serif;">
+      <div class="w-16 h-1 bg-[#BA0C2F] mb-6"></div>
+      <p class="text-gray-600 text-xl leading-relaxed"
+         style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
         {{ .Summary | default "Integrated expertise spanning synthetic methodology, chemical screening, and translational biology to accelerate drug discovery." }}
       </p>
     </div>
@@ -27,17 +27,17 @@
 </section>
 
 {{/* Research Pillars Grid */}}
-<section class="py-16 lg:py-24 bg-[#F5F5F5] dark:bg-[#111111]">
+<section class="py-16 lg:py-24 bg-[#F5F5F5]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
     
     {{/* Section intro */}}
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-3xl font-bold text-[#252525] dark:text-white mb-4"
-          style="font-family: 'Libre Baskerville', Georgia, serif;">
+      <h2 class="text-3xl font-bold text-[#252525] mb-4"
+          style="font-family: 'IvyPresto Headline', Georgia, serif;">
         Our Research Focus Areas
       </h2>
-      <p class="text-[#252525] dark:text-gray-400 text-lg"
-         style="font-family: 'Source Sans Pro', sans-serif;">
+      <p class="text-[#252525] text-lg"
+         style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
         Explore our key research programs below.
       </p>
     </div>
@@ -48,19 +48,19 @@
       <div id="{{ .File.ContentBaseName }}" class="scroll-mt-32">
         <div class="max-w-4xl mx-auto">
           {{/* Header for each project */}}
-          <div class="mb-8 border-l-4 border-[#A51417] pl-6">
-            <h2 class="text-3xl font-bold text-[#252525] dark:text-white mb-4"
-                style="font-family: 'Libre Baskerville', Georgia, serif;">
+          <div class="mb-8 border-l-4 border-[#BA0C2F] pl-6">
+            <h2 class="text-3xl font-bold text-[#252525] mb-4"
+                style="font-family: 'IvyPresto Headline', Georgia, serif;">
               {{ .Title }}
             </h2>
-            <p class="text-xl text-[#A51417] dark:text-[#A51417] font-semibold"
-               style="font-family: 'Source Sans Pro', sans-serif;">
+            <p class="text-xl text-[#BA0C2F] font-semibold"
+               style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
               {{ .Summary }}
             </p>
           </div>
           
           {{/* Content */}}
-          <div class="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+          <div class="prose prose-lg max-w-none text-gray-600">
             {{ .Content }}
           </div>
         </div>

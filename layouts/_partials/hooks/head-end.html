@@ -1,20 +1,18 @@
 {{/*
   FRANTZ LAB - CUSTOM HEAD HOOK
-  Injects Google Fonts
+  Injects Adobe Typekit (WashU Brand Fonts)
 */}}
 
-{{/* Google Fonts - Libre Baskerville (Serif) + Source Sans Pro (Sans-Serif) */}}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+{{/* Adobe Typekit - IvyPresto Headline (Serif) + IvyStyle Sans (Sans-Serif) + IvyPresto Text (Serif Body) */}}
+<link rel="stylesheet" href="https://use.typekit.net/mav2zlt.css">
 
 <style>
-  /* Font stack fallback while Google Fonts load */
+  /* Font stack fallback while Typekit loads */
   body {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'IvyStyle Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Calibri, sans-serif;
   }
-  
+
   h1, h2 {
-    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    font-family: 'IvyPresto Headline', Georgia, 'Times New Roman', serif;
   }
 </style>

@@ -1,28 +1,28 @@
 {{ define "main" }}
 
 {{/* Hero header */}}
-<section class="relative py-20 lg:py-28 bg-gradient-to-br from-gray-50 to-white dark:from-[#111111] dark:to-[#111111]">
-  <div class="absolute top-0 left-0 w-2 h-full bg-[#A51417]"></div>
+<section class="relative py-20 lg:py-28 bg-gradient-to-br from-[#F4EEEA] to-white">
+  <div class="absolute top-0 left-0 w-2 h-full bg-[#BA0C2F]"></div>
   <div class="max-w-7xl mx-auto px-4 lg:px-8 relative">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
       <div class="max-w-3xl">
-        <h3 class="text-[#A51417] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
-            style="font-family: 'Source Sans Pro', sans-serif;">
+        <h3 class="text-[#BA0C2F] text-sm font-semibold uppercase tracking-[0.15em] mb-4"
+            style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
           Life at Frantz Lab
         </h3>
-        <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] dark:text-white mb-6"
-            style="font-family: 'Libre Baskerville', Georgia, serif;">
+        <h1 class="text-4xl lg:text-5xl font-bold text-[#252525] mb-6"
+            style="font-family: 'IvyPresto Headline', Georgia, serif;">
           {{ .Title }}
         </h1>
-        <div class="w-16 h-1 bg-[#A51417] mb-6"></div>
-        <p class="text-gray-600 dark:text-gray-400 text-xl leading-relaxed"
-           style="font-family: 'Source Sans Pro', sans-serif;">
+        <div class="w-16 h-1 bg-[#BA0C2F] mb-6"></div>
+        <p class="text-gray-600 text-xl leading-relaxed"
+           style="font-family: 'IvyStyle Sans', Calibri, sans-serif;">
           {{ .Summary }}
         </p>
       </div>
       
       {{/* Upload Button / Email Link */}}
-      <a href="mailto:abonney@wustl.edu?subject=New%20Lab%20Photos%20Submission" class="bg-[#A51417] hover:bg-[#8e1114] text-white font-bold py-3 px-6 rounded shadow-lg transition duration-300 flex items-center gap-2">
+      <a href="mailto:abonney@wustl.edu?subject=New%20Lab%20Photos%20Submission" class="bg-[#BA0C2F] hover:bg-[#8e1114] text-white font-bold py-3 px-6 rounded shadow-lg transition duration-300 flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
@@ -33,21 +33,21 @@
 </section>
 
 {{/* Albums Grid */}}
-<section class="py-16 lg:py-24 bg-[#F5F5F5] dark:bg-[#111111]">
+<section class="py-16 lg:py-24 bg-[#F5F5F5]">
   <div class="max-w-7xl mx-auto px-4 lg:px-8">
-    <h2 class="text-3xl font-bold text-[#252525] dark:text-white mb-12"
-        style="font-family: 'Libre Baskerville', Georgia, serif;">
+    <h2 class="text-3xl font-bold text-[#252525] mb-12"
+        style="font-family: 'IvyPresto Headline', Georgia, serif;">
       Albums
     </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {{ range .Pages }}
-      <a href="{{ .RelPermalink }}" class="group block bg-white dark:bg-[#1A1A1A] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+      <a href="{{ .RelPermalink }}" class="group block bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
         {{/* Preview Image - grab the first image from gallery_items if available */}}
-        <div class="h-64 bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
+        <div class="h-64 bg-gray-200 overflow-hidden relative">
           {{ if .Params.gallery_items }}
             {{ $cover := index .Params.gallery_items 0 }}
-            <img src="{{ printf "images/%s" $cover.image | relURL }}" loading="lazy" alt="{{ .Title }}" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+            <img src="{{ printf "images/%s" $cover.image | relURL }}" loading="lazy" alt="{{ .Title }}" class="w-full h-full object-cover transform group-hover:scale-[1.02] transition duration-500">
           {{ else }}
             <div class="w-full h-full flex items-center justify-center text-gray-400">
               <span class="text-4xl">📁</span>
@@ -57,13 +57,13 @@
         </div>
         
         <div class="p-6">
-          <h3 class="text-xl font-bold text-[#252525] dark:text-white mb-2 group-hover:text-[#A51417] transition duration-300">
+          <h3 class="text-xl font-bold text-[#252525] mb-2 group-hover:text-[#BA0C2F] transition duration-300">
             {{ .Title }}
           </h3>
-          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+          <p class="text-gray-600 text-sm mb-4">
             {{ .Date.Format "January 2, 2006" }}
           </p>
-          <p class="text-gray-500 dark:text-gray-400 line-clamp-2">
+          <p class="text-gray-500 line-clamp-2">
             {{ .Summary }}
           </p>
         </div>
