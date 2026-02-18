@@ -14,7 +14,7 @@ hugoblox:
     # Site name - shown in navbar, footer, copyright, and browser title by default
     name: "Frantz Lab"
     # Legal entity for copyright notices (defaults to name if not set)
-    organization: "Washington University School of Medicine"
+    organization: "WashU Medicine"
     # Schema.org type for structured data
     type: organization
     # Short tagline displayed on your site
