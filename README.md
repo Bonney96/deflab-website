@@ -1,59 +1,162 @@
-# The Frantz Lab Website
+# Frantz Lab Website
 
-This repository contains the source code for the official website of the Frantz Lab at Washington University in St. Louis.
+Official website for the **Frantz Lab** at Washington University in St. Louis — advancing translational chemistry and drug discovery through innovative synthetic methods, high-throughput screening, and strategic industry partnerships.
 
-## Live Site
+**Live site:** [deflab-website.pages.dev](https://deflab-website.pages.dev/)
 
-The live website can be viewed at: [https://deflab-website.pages.dev/](https://deflab-website.pages.dev/)
+---
 
-## Setup
+## About
 
-This site is built with [HugoBlox](https://github.com/HugoBlox/kit), a Hugo-based static site generator.
+The Frantz Lab, led by **Prof. Doug Frantz**, is part of the Department of Biochemistry & Molecular Biophysics at WashU Medicine. Research focuses on:
+
+- **Drug Discovery & Medicinal Chemistry** — taccalonolide-based therapeutics for triple-negative breast cancer
+- **Synthetic Methods & Catalysis** — Pd-catalyzed allene synthesis, metal-catalyzed borylation, late-stage functionalization
+
+---
+
+## Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| [Hugo](https://gohugo.io/) | Static site generator |
+| [HugoBlox](https://hugoblox.com/) | Theme framework |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Styling |
+| [Cloudflare Pages](https://pages.cloudflare.com/) | Hosting & deployment |
+
+---
+
+## Local Development
 
 ### Prerequisites
 
-- [Hugo Extended](https://gohugo.io/installation/) (version 0.154.2 or later)
-- [Go](https://go.dev/dl/) (for Hugo modules)
-- [Node.js](https://nodejs.org/) (optional, for some features)
+- **Hugo Extended** ≥ 0.154.2 ([install](https://gohugo.io/installation/))
+- **Go** ([install](https://go.dev/dl/)) — required for Hugo modules
+- **Node.js** ≥ 18.0.0 ([install](https://nodejs.org/))
 
-### Getting Started
+### Setup
 
-1. **Install Hugo modules:**
-   ```bash
-   hugo mod get -u
-   hugo mod tidy
-   ```
-
-2. **Start the development server:**
-   ```bash
-   hugo server
-   ```
-   The site will be available at `http://localhost:1313`
-
-3. **Build the site:**
-   ```bash
-   hugo
-   ```
-   The generated site will be in the `public/` directory.
-
-### Theme
-
-The HugoBlox kit theme is included as a git submodule in `themes/hugoblox-kit/`.
-
-To update the theme:
 ```bash
+# Install Hugo modules
+hugo mod get -u && hugo mod tidy
+
+# Install Node dependencies (for Tailwind CSS)
+npm install
+
+# Start dev server with live reload
+hugo server
+```
+
+The site will be available at `http://localhost:1313`.
+
+### Build
+
+```bash
+hugo
+```
+
+Output goes to `public/`. The Cloudflare Pages deployment runs this automatically on push to `main`.
+
+---
+
+## Project Structure
+
+```
+deflab-website/
+├── config/_default/
+│   ├── hugo.yaml          # Hugo config (baseURL, modules)
+│   ├── params.yaml        # Site identity, theme colors, SEO
+│   ├── menus.yaml         # Navigation menu items
+│   └── module.yaml        # Hugo module mounts
+├── content/
+│   ├── home/              # Homepage section blocks
+│   ├── people/            # Lab member profiles
+│   ├── research/          # Research area pages
+│   ├── publication/       # Publications list
+│   └── group-life/        # Photo albums (conferences, outings, etc.)
+├── layouts/
+│   ├── home.html          # Custom homepage layout
+│   └── _partials/
+│       ├── components/
+│       │   ├── headers/navbar.html   # Custom navbar
+│       │   └── footers/minimal.html  # Custom footer
+│       └── hooks/                    # Hugo hook partials
+├── static/
+│   └── images/
+│       ├── WashU/         # Institutional logos
+│       └── publications/  # Publication cover images
+├── assets/
+│   └── media/             # Site icon, logo assets for Hugo pipeline
+└── themes/hugoblox-kit/   # Theme submodule
+```
+
+---
+
+## Adding & Editing Content
+
+### Lab Members
+
+Create a new file in `content/people/`:
+
+```bash
+hugo new people/firstname-lastname.md
+```
+
+Edit the front matter to set name, role, bio, and photo. Photos go in `static/images/`.
+
+### Publications
+
+The publications list lives at `content/publication/publications-list.md`. Add new entries as numbered list items following the existing citation format.
+
+### Research Pages
+
+Research area pages are in `content/research/`. Each `.md` file becomes a page with its own URL.
+
+### Group Life Albums
+
+Photo album pages live in `content/group-life/`. Each album is a `.md` file with an image gallery block.
+
+---
+
+## Configuration
+
+Key settings in `config/_default/params.yaml`:
+
+| Setting | Description |
+|---------|-------------|
+| `identity.name` | Site name shown in navbar and title |
+| `identity.organization` | Legal entity for copyright |
+| `identity.tagline` | Short tagline |
+| `theme.colors.primary` | WashU Red `#BA0C2F` |
+| `theme.colors.secondary` | WashU Dark Gray `#252525` |
+| `header.cta` | Contact button in navbar |
+
+---
+
+## Theme
+
+The HugoBlox kit theme is included as a Git submodule at `themes/hugoblox-kit/`.
+
+```bash
+# Update theme to latest
 git submodule update --remote themes/hugoblox-kit
 ```
 
-### Configuration
+Custom layout overrides in the top-level `layouts/` directory take precedence over theme defaults.
 
-- Main config: `hugo.yaml`
-- Module config: `config/_default/module.yaml`
-- Site parameters: `config/_default/params.yaml`
-- Navigation: `config/_default/menus.yaml`
+---
 
-### Documentation
+## Deployment
 
-For more information, visit:
-- [HugoBlox Documentation](https://docs.hugoblox.com/)
-- [Hugo Documentation](https://gohugo.io/documentation/)
+The site deploys automatically via **Cloudflare Pages** on every push to `main`. No manual steps needed.
+
+To preview a branch deployment, push to any non-main branch — Cloudflare Pages will generate a preview URL.
+
+---
+
+## Links
+
+- [HugoBlox Docs](https://docs.hugoblox.com/)
+- [Hugo Docs](https://gohugo.io/documentation/)
+- [WashU Medicine](https://medicine.washu.edu/)
+- [Frantz Lab Department Page](https://biochem.wustl.edu/)
