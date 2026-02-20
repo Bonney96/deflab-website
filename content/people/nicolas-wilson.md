@@ -12,7 +12,7 @@ social:
     link: https://www.linkedin.com/in/nicolas-wilson-080627160/
 ---
 
-**Role:** 5th Year PhD Student
+**Role:** 5th year PhD student
 
 **Email:** [wilsonn@wustl.edu](mailto:wilsonn@wustl.edu)
 

@@ -12,9 +12,9 @@ social:
     link: https://www.linkedin.com/in/danae-biscardi-470976215/
 ---
 
-**Role:** 3rd Year PhD Student
+**Role:** 3rd year PhD student
 
-**Education:** B.S. in Biochemistry, University of Texas at San Antonio
+**Education:** BS in Biochemistry, University of Texas at San Antonio
 
 **Email:** [bdanae@wustl.edu](mailto:bdanae@wustl.edu)
 

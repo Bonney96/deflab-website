@@ -1,6 +1,6 @@
 ---
 title: Jyoti Shah Gupta
-role: 4th Year PhD Student (at UTSA)
+role: 4th year PhD student (at UTSA)
 email: jyoti.shahgupta@utsa.edu
 image:
   filename: /images/Screenshot 2025-09-03 at 12_28_01 PM.avif
@@ -8,9 +8,9 @@ image:
 weight: 101
 ---
 
-**Role:** 4th Year PhD Student
+**Role:** 4th year PhD student
 
-**Education:** B.S. in Chemistry, Tribhuvan University, Nepal
+**Education:** BS in Chemistry, Tribhuvan University, Nepal
 
 **Email:** [jyoti.shahgupta@utsa.edu](mailto:jyoti.shahgupta@utsa.edu)
 

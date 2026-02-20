@@ -12,9 +12,9 @@ social:
     link: https://www.linkedin.com/in/alyson-grow-019271244/
 ---
 
-**Role:** 2nd Year PhD Student
+**Role:** 2nd year PhD student
 
-**Education:** B.S. in Chemistry, Stephen F Austin University
+**Education:** BS in Chemistry, Stephen F Austin University
 
 **Email:** [agrow@wustl.edu](mailto:agrow@wustl.edu)
 

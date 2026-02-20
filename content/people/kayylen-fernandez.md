@@ -1,6 +1,6 @@
 ---
 title: Kayylen Fernandez
-role: 5th Year PhD Student (at UTSA)
+role: 5th year PhD student (at UTSA)
 email: kayylen.fernandez@utsa.edu
 image:
   filename: /images/Screenshot 2025-09-03 at 12_25_33 PM.avif
@@ -8,9 +8,9 @@ image:
 weight: 100
 ---
 
-**Role:** 5th Year PhD Student
+**Role:** 5th year PhD student
 
-**Education:** B.S. in Chemistry, University of Texas at San Antonio
+**Education:** BS in Chemistry, University of Texas at San Antonio
 
 **Email:** [kayylen.fernandez@utsa.edu](mailto:kayylen.fernandez@utsa.edu)
 

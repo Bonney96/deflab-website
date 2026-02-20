@@ -12,9 +12,9 @@ social:
     link: https://www.linkedin.com/in/isa-hernandez-0819a415a/
 ---
 
-**Role:** 4th Year PhD Student
+**Role:** 4th year PhD student
 
-**Education:** B.S. in Biochemistry, University of Texas at San Antonio
+**Education:** BS in Biochemistry, University of Texas at San Antonio
 
 **Email:** [hisa@wustl.edu](mailto:hisa@wustl.edu)
 
