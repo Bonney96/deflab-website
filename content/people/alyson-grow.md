@@ -12,12 +12,4 @@ social:
     link: https://www.linkedin.com/in/alyson-grow-019271244/
 ---
 
-**Role:** 2nd year PhD student
-
-**Education:** BS in Chemistry, Stephen F Austin University
-
-**Email:** [agrow@wustl.edu](mailto:agrow@wustl.edu)
-
-**Hometown:** Haltom City, TX
-
-**Hobbies:** reading, going to concerts, crafts, playing instruments
+Alyson is a 2nd-year PhD student and Graduate Research Assistant specializing in organic chemistry at Washington University in St. Louis. Hailing from Haltom City, TX, she recently earned her B.S. in Chemistry from Stephen F. Austin State University. Now advancing her doctoral research at WashU, Alyson balances academic rigor with a strong passion for the arts and live entertainment. Her hobbies include reading, crafting, playing instruments, and attending live concerts.
