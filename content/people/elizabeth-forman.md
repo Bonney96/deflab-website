@@ -1,6 +1,6 @@
 ---
 title: Elizabeth Forman
-role: Research Assistant
+role: research assistant
 email: e.forman@wustl.edu
 image:
   filename: /images/IMG_7090_JPG.avif
@@ -12,4 +12,12 @@ social:
     link: https://www.linkedin.com/in/elizabeth-d-forman-/
 ---
 
-Elizabeth (Ellie) is a Research Assistant at the Washington University School of Medicine in St. Louis, specializing in biochemistry and molecular biophysics. A Cincinnati native, she earned her B.A. in Chemistry with dual minors in Statistics and Anthropology from WashU. She brings experience from both industry and academia, having developed analytical methods as an mRNA intern at Pfizer and advanced RNA tracking research in the Heemstra Lab. Passionate about interdisciplinary science and community health, she also serves on the MOEDA Junior Executive Board. Outside the lab, Ellie loves to dance, paint, and bullet journal.
+**Role:** research assistant
+
+**Education:** BS in Chemistry, Washington University in St. Louis
+
+**Email:** [e.forman@wustl.edu](mailto:e.forman@wustl.edu)
+
+**Hometown:** Cincinnati, OH
+
+**Hobbies:** dance, paint and bullet journal

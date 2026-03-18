@@ -12,4 +12,12 @@ social:
     link: https://www.linkedin.com/in/danae-biscardi-470976215/
 ---
 
-Danae is a 3rd-year PhD candidate in chemistry at Washington University in St. Louis. Originally from Riverside, CA, she earned her B.S. in Biochemistry from the University of Texas at San Antonio, where she was recognized as an NIH IMSD Scholar. Building on her prior experience as a Postbaccalaureate Fellow and Research Assistant, she specializes in data analysis and synthetic chemistry research. When she steps away from her work, Danae enjoys reading, photography, baking, and hanging out with her family.
+**Role:** 3rd year PhD student
+
+**Education:** BS in Biochemistry, University of Texas at San Antonio
+
+**Email:** [bdanae@wustl.edu](mailto:bdanae@wustl.edu)
+
+**Hometown:** Riverside, CA
+
+**Hobbies:** reading, photography, baking and hanging with family
