@@ -1,0 +1,22 @@
+{{/*
+  Override of Hugo Blox `jsonld/website.html`.
+  Adds `name`/`alternateName` — the WebSite structured data fields Google uses
+  to pick the site name shown in search results (without them, results on the
+  *.pages.dev mirror displayed "Cloudflare" as the site name).
+*/}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title }},
+  "alternateName": ["Frantz Lab", "Frantz Lab at WashU"],
+  {{- if site.Params.hugoblox.search.enable }}
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {{ printf "%s?q={search_term_string}" site.BaseURL }},
+    "query-input": "required name=search_term_string"
+  },
+  {{end -}}
+  "url": {{site.BaseURL}}
+}
+</script>
