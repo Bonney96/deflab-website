@@ -84,6 +84,16 @@ hugoblox:
     image_alt: ""
 
   # ────────────────────────────────────────────────────────────────────────────
+  # SITE VERIFICATION
+  # Proves site ownership to search engines (no DNS access needed).
+  # Google Search Console: add https://frantzlab.wustl.edu/ as a URL-prefix
+  # property, choose the "HTML tag" method, and paste the content="..." value here.
+  # ────────────────────────────────────────────────────────────────────────────
+  verification:
+    google: "yEdcVGLmQUNk3O18_5fYjCN9-o96ybq1saymmaJ8qH4"
+    bing: ""
+
+  # ────────────────────────────────────────────────────────────────────────────
   # ANALYTICS
   # ────────────────────────────────────────────────────────────────────────────
   analytics:
