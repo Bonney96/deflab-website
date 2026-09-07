@@ -17,4 +17,6 @@ gallery_items:
     caption: "Hot pot restaurant entrance"
   - image: "IMG_6831.jpeg"
     caption: "Oktoberfest night out"
+  - image: "IMG_8989.jpeg"
+    caption: "Lab reunion in Chicago"
 ---
