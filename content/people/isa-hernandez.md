@@ -12,7 +12,7 @@ social:
     link: https://www.linkedin.com/in/isa-hernandez-0819a415a/
 ---
 
-**Role:** 4th year PhD student
+**Role:** 5th year PhD student
 
 **Education:** BS in Biochemistry, University of Texas at San Antonio
 
