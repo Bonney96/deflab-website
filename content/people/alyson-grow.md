@@ -3,7 +3,7 @@ title: Alyson Grow
 role: Graduate Student
 email: agrow@wustl.edu
 image:
-  filename: /images/IMG_3042_HEIC.avif
+  filename: /images/alysonheadshot.JPEG
   alt: Alyson Grow
 weight: 5
 social:
@@ -12,7 +12,7 @@ social:
     link: https://www.linkedin.com/in/alyson-grow-019271244/
 ---
 
-**Role:** 2nd year PhD student
+**Role:** 3rd year PhD student
 
 **Education:** BS in Chemistry, Stephen F Austin University
 
