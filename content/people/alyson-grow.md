@@ -3,7 +3,7 @@ title: Alyson Grow
 role: Graduate Student
 email: agrow@wustl.edu
 image:
-  filename: /images/alysonheadshot.JPEG
+  filename: /images/alysonheadshot.JPG
   alt: Alyson Grow
 weight: 5
 social:
