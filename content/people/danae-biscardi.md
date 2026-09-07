@@ -12,7 +12,7 @@ social:
     link: https://www.linkedin.com/in/danae-biscardi-470976215/
 ---
 
-**Role:** 3rd year PhD student
+**Role:** 4th year PhD student
 
 **Education:** BS in Biochemistry, University of Texas at San Antonio
 
