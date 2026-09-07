@@ -17,4 +17,6 @@ gallery_items:
     caption: "City skyline sightseeing"
   - image: "IMG_6769.jpeg"
     caption: "Welch Foundation event"
+  - image: "IMG_8989.jpeg"
+    caption: "Frantz lab reunion at ACS"
 ---
