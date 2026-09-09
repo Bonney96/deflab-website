@@ -1,6 +1,6 @@
 ---
 title: "Lab Life & Celebrations"
-date:
+date: 2026-02-09
 summary: "On-campus group photos, holiday events, and lab fun at the Frantz Lab."
 gallery_items:
   - image: "IMG_1693.jpeg"
