@@ -17,7 +17,7 @@ gallery_items:
     caption: "City skyline sightseeing"
   - image: "IMG_6769.jpeg"
     caption: "Welch Foundation event"
-    image: "IMG_4804.JPG"
+  - image: "IMG_4804.JPG"
     caption: "BMS visit to WashU"
 
 ---
