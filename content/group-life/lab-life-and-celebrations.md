@@ -6,7 +6,7 @@ gallery_items:
   - image: "IMG_1693.jpeg"
     caption: "Lab group photo on campus"
   - image: "IMG_2478.jpeg"
-    caption: "Group Halloween as the Noble Gases"
+    caption: "Group halloween as the noble gases"
   - image: "IMG_5075.jpeg"
     caption: "Holiday gift exchange"
   - image: "IMG_5878.jpeg"
