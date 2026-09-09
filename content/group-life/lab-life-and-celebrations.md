@@ -11,6 +11,5 @@ gallery_items:
     caption: "Holiday gift exchange"
   - image: "IMG_5878.jpeg"
     caption: "Holiday season in the lab"
-    image: "IMG_6409.jpeg"
 
 ---
